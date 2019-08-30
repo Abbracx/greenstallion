@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Add Borrower Group
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'dashboard' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Add Borrower Group
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                    <section class="">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Add Borrower Group</h6>
+
+                                <div class="heading-elements">
+
+                                </div>
+                            </div>
+                            <form method="POST" action="http://ulm.webstudio.co.zw/borrower/group/store" accept-charset="UTF-8"
+                                class="form-horizontal"><input name="_token" type="hidden" value="XMYfN77DELFCKQV0UnqaGEW5AFvH5dwyFfcW4eLQ">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-2 control-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" placeholder="" required="required" name="name"
+                                                type="text" id="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="borrower_group_payment_days">Payment
+                                            Days</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control select2" name="borrower_group_payment_days[]"
+                                                id="borrower_group_payment_days" multiple>
+                                                <option value="monday">Monday</option>
+                                                <option value="tuesday">Tuesday</option>
+                                                <option value="wednesday">Wednesday</option>
+                                                <option value="thursday">Thursday</option>
+                                                <option value="friday">Friday</option>
+                                                <option value="saturday">Saturday</option>
+                                                <option value="sunday">Sunday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="notes" class="col-sm-2 control-label">Notes</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" placeholder="" rows="3" name="notes" cols="50"
+                                                id="notes"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.panel-body -->
+                                <div class="panel-footer">
+                                    <div class="heading-elements">
+                                        <button type="submit" class="btn btn-primary pull-right">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+                    </section>
+{% endblock content %}

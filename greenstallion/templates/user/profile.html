@@ -1,0 +1,93 @@
+ {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Edit User
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'dashboard' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Edit User
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                    <section class="">
+                        <div class="box box-default">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"> Edit User</h6>
+
+                                <div class="heading-elements">
+
+                                </div>
+                            </div>
+                            <form method="POST" action="http://ulm.webstudio.co.zw/user/profile" accept-charset="UTF-8"
+                                class="form-horizontal form-bordered form-label-stripped" enctype="multipart/form-data"><input
+                                    name="_token" type="hidden" value="XMYfN77DELFCKQV0UnqaGEW5AFvH5dwyFfcW4eLQ">
+
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="First Name" class="control-label">First Name</label>
+
+                                        <input class="form-control" required="required" name="first_name" type="text"
+                                            value="Branch">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Middle/ Last Name" class="control-label">Middle/ Last Name</label>
+                                        <input class="form-control" required="required" name="last_name" type="text"
+                                            value="Manager">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Gender" class=" control-label">Gender</label>
+                                        <select class="form-control" name="gender">
+                                            <option value="Male" selected="selected">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Phone" class="control-label">Phone</label>
+                                        <input class="form-control" name="phone" type="text">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="Email" class="control-label">Email</label>
+                                        <input class="form-control" required="required" name="email" type="email" value="admin@webstudio.co.zw">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Password" class="control-label">Password</label>
+                                        <input class="form-control" name="password" type="password" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Repeat Password" class="control-label">Repeat Password</label>
+                                        <input class="form-control" name="rpassword" type="password" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Address" class="control-label">Address</label>
+                                        <textarea class="form-control wysihtml5" rows="3" name="address" cols="50"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Notes" class="control-label">Notes</label>
+
+                                        <textarea class="form-control wysihtml5" rows="3" name="notes" cols="50"></textarea>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="heading-elements">
+                                        <button type="submit" class="btn btn-primary pull-right">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+  {% endblock content %}

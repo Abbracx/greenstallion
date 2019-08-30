@@ -1,0 +1,190 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% static "images" as baseUrl %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Apply Loan
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="../dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Apply Loan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                <div class="content">
+                    <section class="">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Apply Loan</h6>
+
+                                <div class="heading-elements">
+
+                                </div>
+                            </div>
+                            <form method="POST" action="" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
+                                id="loan_form">
+                                {% csrf_token %}
+                                <div class="panel-body">
+                                    <label for="">
+                                        <h5><strong>NYSC Details</strong></h5>
+                                    </label>
+                                    <div class="form-group">
+                                        <label for="statecode" class="col-sm-3 control-label">State Code</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="state_code"
+                                                type="text" value="" id="statecode">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Pls enter your state code. Its required."></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card" class="col-sm-3 control-label">Kindly Upload NYSC ID card</label>
+                                        <div class="col-sm-5">
+                                            <input src="{{baseUrl}}/{{stallion_allowee_loan.img}}" class="form-control" placeholder="" required="required" name="nysc_id"
+                                                type="file" value="upload">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Pls snap the front-face of your NYSC ID and upload.
+                                            Please make sure all the details are captured to aid your loan application"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exp" class="col-sm-3 control-label">Validity date on NYSC ID card</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="validity_date"
+                                                type="date" value="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Pls Enter validity date of your ID card"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lga" class="col-sm-3 control-label">Local Government Area</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="" name="lga">
+                                                <option value="1" selected="selected"></option>
+                                                <option value="3">north</option>
+                                                <option value="4">South</option>
+                                                <option value="5">East</option>
+                                                <option value="6">West</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please Select your Local Government Area"></i>
+                                        </div>
+                                    </div>
+                                    <label for="">
+                                        <h5><strong>Banking Details</strong></h5>
+                                    </label>
+                                    <div class="form-group">
+                                        <label for="bank" class="col-sm-3 control-label">NYSC BANK</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="" name="bank_name">
+                                                <option value="1" selected="selected"></option>
+                                                <option value="3">Zenith</option>
+                                                <option value="4">UBA</option>
+                                                <option value="5">Access</option>
+                                                <option value="6">Ecobank</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please Select your Bank"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="acnumber" class="col-sm-3 control-label">Kindly Enter Your NYSC
+                                            account number</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="account_number"
+                                                type="number" value="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Kindly Enter Your NYSC account number"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="acname" class="col-sm-3 control-label">Kindly Enter Your NYSC
+                                            account name</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="account_name"
+                                                type="text" value="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Kindly Enter Your NYSC account name"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bvn" class="col-sm-3 control-label">BVN</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="bvn"
+                                                type="number" value="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please enter your BVN"></i>
+                                        </div>
+                                    </div>
+                                    <label for="">
+                                        <h5><strong>Loan Details</strong></h5>
+                                    </label>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3 control-label">Loan Amount</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="" name="loan_amount">
+                                                <option value="1" selected="selected"></option>
+                                                <option value="5000">5,000 NGN</option>
+                                                <option value="10000">10,000 NGN</option>
+                                                <option value="15000">15,000 NGN</option>
+                                                <option value="20000">20,000 NGN</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3 control-label">Purpose For Loan</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="" name="purpose_of_loan">
+                                                <option value="1" selected="selected"></option>
+                                                <option value="3">Meet Personal needs</option>
+                                                <option value="4">Trainings/ Get a gadget</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-5">
+                                            <input class="form-control" name="allowee" type="hidden" value="19800" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-5">
+                                            <input type="hidden" id="package_list" name="package_list" value="Stallion Allowee">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- /.panel-body -->
+                                <div class="panel-footer">
+                                    <div class="heading-elements">
+                                        <button type="submit" class="btn btn-primary pull-right">Apply</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+
+                    </section>
+     {% endblock content %}

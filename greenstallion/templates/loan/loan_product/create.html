@@ -1,0 +1,556 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> -
+                                Add Loan Product
+</h4>
+                    </div>
+                    <div class="heading-elements">
+                        <div class="heading-btn-group">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                        <li><a href="../../dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                        <li class="active">    Add Loan Product
+</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+                <section class="">
+                                            <script>toastr.success('Successfully Deleted', 'Response Status')</script>
+                                                                                                        <div class="panel panel-white">
+        <div class="panel-heading">
+            <h6 class="panel-title">Add Loan Product</h6>
+
+            <div class="heading-elements">
+
+            </div>
+        </div>
+        <form method="post" action="http://ulm.webstudio.co.zw/loan/loan_product/store" class="form-horizontal">
+            <input type="hidden" name="_token" value="XMYfN77DELFCKQV0UnqaGEW5AFvH5dwyFfcW4eLQ">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="name">Name*</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="name" class="form-control"
+                               value="" id="name" required>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip" title="The name of your loan product"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="minimum_principal">Principal
+                        *</label>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="text" name="default_principal" class="form-control numeric"
+                                       value=""
+                                       placeholder="Default" id="default_principal"
+                                       required>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" name="minimum_principal" class="form-control numeric"
+                                       value=""
+                                       placeholder="Min" id="minimum_principal" required>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" name="maximum_principal" class="form-control numeric"
+                                       value=""
+                                       placeholder="Max" id="maximum_principal" required>
+                            </div>
+                            <div class="col-sm-3">
+                                <i class="icon-info3" data-toggle="tooltip"
+                                   title="The default principal is the amount automatically shown to users when creating a new loan. By setting a minimum and maximum amount, you give users flexibility in determining the loan size. No user will be able to disburse loans with a principal outside of the minimum and maximum amounts."></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="default_loan_duration">Loan Term
+                        *</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="default_loan_duration" class="form-control numeric"
+                               value=""
+                               placeholder="" id="default_loan_duration" required>
+                    </div>
+                    <div class="col-sm-3">
+                        <select class="form-control" name="default_loan_duration_type" id="default_loan_duration_type">
+                            <option value="day">Day(s)</option>
+                            <option value="week">Week(s)</option>
+                            <option value="month">Month(s)</option>
+                            <option value="year">Year(s)</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="The default loan term is the amount automatically shown to users when creating a new loan."></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="repayment_cycle">Repayment Cycle *</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="repayment_cycle" id="repayment_cycle">
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="bi_monthly">Bimonthly</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="semi_annual">Semi-Annual</option>
+                            <option value="annual">Annually</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="The frequency of loan instalments due on the loan"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="default_interest_rate">Interest Rate
+                        *</label>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="text" name="default_interest_rate" class="form-control numeric"
+                                       value=""
+                                       placeholder="Default" id="default_interest_rate"
+                                       required>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" name="minimum_interest_rate" class="form-control numeric"
+                                       value=""
+                                       placeholder="Min" id="minimum_interest_rate"
+                                       required>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" name="maximum_interest_rate" class="form-control numeric"
+                                       value=""
+                                       placeholder="Max" id="maximum_interest_rate"
+                                       required>
+                            </div>
+                            <div class="col-sm-3">
+                                <i class="icon-info3" data-toggle="tooltip"
+                                   title="The default interest rate is the amount automatically shown to users when creating a new loan. By setting a minimum and maximum rate, you give users flexibility in determining the interest charged. No user will be able to disburse loans with an interest outside of the minimum and maximum rates."></i>
+                                %
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="interest_period">Interest Period
+                        *</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="interest_period" id="interest_period">
+                            <option value="day">Per Day</option>
+                            <option value="week">Per Week</option>
+                            <option value="month">Per Month</option>
+                            <option value="year">Per Year</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="semi_annual">Semi-Annual</option>
+                            <option value="annual">Annually</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="Use this to specify  the interest rate set up"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="interest_method">Interest Method
+                        *</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="interest_method" id="interest_method">
+                            <option value="flat_rate">Flat Rate</option>
+                            <option value="declining_balance_equal_installments">Declining Balance-Equal Installments</option>
+                            <option value="declining_balance_equal_principal">Declining Balance-Equal principal</option>
+                            <option value="interest_only">Interest only</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="Flat Interest loans charge equal interest amounts on each loan instalment, based on the original loan principal. Declining Balance Loans calculate the interest amount on each instalment based upon the outstanding balance of the loan (therefore the interest amount charged each instalment reduces as the loan is repaid)."></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="override_interest">Override Interest</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="override_interest" id="override_interest">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="If you override interest figure, system will use this figure when calculating interest for the schedule"></i>
+                    </div>
+                </div>
+                <div class="form-group" id="overrideDiv">
+                    <label class="col-sm-3 control-label"
+                           for="override_interest_amount">Override Interest Amount
+                    </label>
+                    <div class="col-sm-5">
+                        <input type="text" name="override_interest_amount" class="form-control numeric"
+                               value="0"
+                               placeholder="" id="override_interest_amount" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="check_float">Check Float</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="check_float" id="check_float">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="Check float before disbursal"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="decimal_places">Decimal Places</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="decimal_places" id="decimal_places">
+                            <option value="round_off_to_two_decimal">round off to 2 decimal places</option>
+                            <option value="round_off_to_integer">Round off to integer</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="Enter the number of instalments you do not wish to charge or calculate any interest for"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"
+                           for="grace_on_interest_charged">Grace on interest charged</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" name="grace_on_interest_charged" type="number" value="0">
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="Number of periods before interest is charged."></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="late_repayment_penalty_grace_period" class="col-sm-3 control-label">Late repayment penalty grace period</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" name="late_repayment_penalty_grace_period" type="number" value="0" id="late_repayment_penalty_grace_period">
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="Number of days before penalty is applied"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="after_maturity_date_penalty_grace_period" class="col-sm-3 control-label">After maturity date penalty grace period</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" name="after_maturity_date_penalty_grace_period" type="number" value="0" id="after_maturity_date_penalty_grace_period">
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="Number of days before penalty is applied"></i>
+                    </div>
+                </div>
+                <script>
+                    function up() {
+                        var selectedOpts = $('#repayment_order option:selected');
+                        if (selectedOpts.length == 0) {
+
+                            alert("Select a column");
+
+                            e.preventDefault();
+
+                        }
+                        var selected = $("#repayment_order").find(":selected");
+                        var before = selected.prev();
+                        if (before.length > 0)
+                            selected.detach().insertBefore(before);
+                    }
+
+                    function down() {
+                        var selectedOpts = $('#repayment_order option:selected');
+                        if (selectedOpts.length == 0) {
+
+                            alert("Select a column");
+
+                            e.preventDefault();
+
+                        }
+                        var selected = $("#repayment_order").find(":selected");
+                        var next = selected.next();
+                        if (next.length > 0)
+                            selected.detach().insertAfter(next);
+                    }
+
+                    function selectAll() {
+                        var listbox = document.getElementById('repayment_order');
+                        for (var count = 0; count < listbox.options.length; count++) {
+                            listbox.options[count].selected = true;
+                        }
+                    }
+                </script>
+                <div class="form-group">
+                    <label for="inputLoanRepaymentOrder"
+                           class="col-md-3 control-label">Repayment Order
+                        *</label>
+
+                    <div class="col-md-6">
+                        <select class="form-control" required="required" multiple="" id="repayment_order" size="7" name="repayment_order[]"><option value="penalty" selected="selected">Penalty</option><option value="fees" selected="selected">Fees</option><option value="interest" selected="selected">Interest</option><option value="principal" selected="selected">Principal</option></select>
+                        <input type="button" value="Up" onclick="up()">
+                        <input type="button" value="Down" onclick="down()">
+                    </div>
+                    <div class="col-md-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="The Transaction Processing Strategy determines the order incoming payments are allocated between Interest, Principal, Penalties and Fees. the default setting is ‘Interest, Principal, Penalties, Fees’, which ensures that clients with an outstanding Penalty are still able to repay their full loan instalment. N.B. Make sure you select all options after you have done rearranging them. You can use Ctrl+Left Click"></i>
+                    </div>
+                </div>
+                <hr>
+                <p class="bg-navy color-palette">Accounting</p>
+                <div class="form-group">
+                    <label for="accounting_rule"
+                           class="control-label col-md-3">Accounting Rule</label>
+                    <div class="col-md-3">
+                        <select name="accounting_rule" class="form-control select2"
+                                id="accounting_rule" required>
+                            <option value="none">None</option>
+                            <option value="cash_based">Cash</option>
+                            <option value="accrual_periodic">Accrual periodic</option>
+                            <option value="accrual_upfront">Accrual Upfront</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="icon-info3" data-toggle="tooltip"
+                           title="The accounting rule to be used."></i>
+                    </div>
+                </div>
+                <div id="accounting">
+                    <h4>Assets</h4>
+                    <div class="form-group">
+                        <label for="chart_fund_source_id"
+                               class="control-label col-md-2">Fund Source
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="an Asset account(typically Bank or cash) that is debited during repayments/payments an credited using disbursals.."></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_fund_source_id" class="form-control select2"
+                                    id="chart_fund_source_id" required>
+                                <option></option>
+                                                                    <option value="2">Income</option>
+                                                                    <option value="7">Chuma Moto</option>
+                                                            </select>
+                        </div>
+                        <label for="chart_loan_portfolio_id"
+                               class="control-label col-md-2">Loan Portfolio
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="an Asset account that is debited during disbursement and credited during principal repayment/writeoff."></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_loan_portfolio_id" class="form-control select2"
+                                    id="chart_loan_portfolio_id" required>
+                                <option></option>
+                                                                    <option value="2">Income</option>
+                                                                    <option value="7">Chuma Moto</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div id="assets_accruals">
+                        <div class="form-group">
+                            <label for="chart_receivable_interest_id"
+                                   class="control-label col-md-2">Interest Receivable
+                                <i class="fa fa-question-circle" data-toggle="tooltip"
+                                   data-title="an Asset account that is used to accrue interest"></i>
+                            </label>
+                            <div class="col-md-3">
+                                <select name="chart_receivable_interest_id" class="form-control select2"
+                                        id="chart_receivable_interest_id" required>
+                                    <option></option>
+                                                                            <option value="2">Income</option>
+                                                                            <option value="7">Chuma Moto</option>
+                                                                    </select>
+                            </div>
+                            <label for="chart_receivable_fee_id"
+                                   class="control-label col-md-2">Fees Receivable
+                                <i class="fa fa-question-circle" data-toggle="tooltip"
+                                   data-title="an Asset account that is used to accrue fees"></i>
+                            </label>
+                            <div class="col-md-3">
+                                <select name="chart_receivable_fee_id" class="form-control select2"
+                                        id="chart_receivable_fee_id" required>
+                                    <option></option>
+                                                                            <option value="2">Income</option>
+                                                                            <option value="7">Chuma Moto</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="chart_receivable_penalty_id"
+                                   class="control-label col-md-2">Penalties Receivable
+                                <i class="fa fa-question-circle" data-toggle="tooltip"
+                                   data-title="an Asset account that is used to accrue penalties"></i>
+                            </label>
+                            <div class="col-md-3">
+                                <select name="chart_receivable_penalty_id" class="form-control select2"
+                                        id="chart_receivable_penalty_id" required>
+                                    <option></option>
+                                                                            <option value="2">Income</option>
+                                                                            <option value="7">Chuma Moto</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Liabilities</h4>
+                    <div class="form-group">
+                        <label for="chart_loan_over_payments_id"
+                               class="control-label col-md-2">Overpayments
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="an Liability account that is credited on overpayments and credited when refunds are made to client."></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_loan_over_payments_id" class="form-control select2"
+                                    id="chart_loan_over_payments_id" required>
+                                <option></option>
+                                                                    <option value="9">Taka Taka</option>
+                                                                    <option value="10">Taka Taka</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <h4>Income</h4>
+                    <div class="form-group">
+                        <label for="chart_income_interest_id"
+                               class="control-label col-md-2">Income From Interest
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="an Income account that is credited during interest payment."></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_income_interest_id" class="form-control select2"
+                                    id="chart_income_interest_id" required>
+                                <option></option>
+                                                                    <option value="1">SAvings</option>
+                                                                    <option value="3">Profit</option>
+                                                                    <option value="6">Yout Dem</option>
+                                                            </select>
+                        </div>
+                        <label for="chart_income_fee_id"
+                               class="control-label col-md-2">Income From Fees
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="When you write off a loan, the outstanding balance is booked into this account"></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_income_fee_id" class="form-control select2"
+                                    id="chart_income_fee_id" required>
+                                <option></option>
+                                                                    <option value="1">SAvings</option>
+                                                                    <option value="3">Profit</option>
+                                                                    <option value="6">Yout Dem</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="chart_income_penalty_id"
+                               class="control-label col-md-2">Income From Penalties
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="An Income account, which is credited when a penalty is paid by account holder on this account"></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_income_penalty_id" class="form-control select2"
+                                    id="chart_income_penalty_id" required>
+                                <option></option>
+                                                                    <option value="1">SAvings</option>
+                                                                    <option value="3">Profit</option>
+                                                                    <option value="6">Yout Dem</option>
+                                                            </select>
+                        </div>
+                        <label for="chart_income_recovery_id"
+                               class="control-label col-md-2">Income From Recovery
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="an Income account that is credited during Recovery Repayment."></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_income_recovery_id" class="form-control select2"
+                                    id="chart_income_recovery_id" required>
+                                <option></option>
+                                                                    <option value="1">SAvings</option>
+                                                                    <option value="3">Profit</option>
+                                                                    <option value="6">Yout Dem</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <h4>Expenses</h4>
+                    <div class="form-group">
+                        <label for="chart_loans_written_off_id"
+                               class="control-label col-md-2">Loss Written Off
+                            <i class="fa fa-question-circle" data-toggle="tooltip"
+                               data-title="An expense account that is debited on principal writeoff (also debited in the events of interest, fee and penalty written-off in case of accrual based accounting.)"></i>
+                        </label>
+                        <div class="col-md-3">
+                            <select name="chart_loans_written_off_id" class="form-control select2"
+                                    id="chart_loans_written_off_id" required>
+                                <option></option>
+                                                                    <option value="4">Salida</option>
+                                                                    <option value="5">Manyake</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <p class="bg-navy color-palette">Charges</p>
+                <div class="form-group">
+                    <label for="cha" class="col-sm-3 control-label">Charge String</label>
+                    <div class="col-sm-6">
+                        <select class="form-control select2" id="charges_dropdown" name="cha"><option selected="selected" value="">Select Charge</option><option value="1">Cupo Disponible</option><option value="2">Maintenance fee</option><option value="3">Penalty Charge</option></select>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" id="chargesAdd"
+                                class="btn btn-primary pull-right">Add</button>
+                    </div>
+                </div>
+                <div class="form-group" id="chargesDiv">
+                    <div style="display: none;" id="saved_charges">
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Collected On</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="charges_table">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+            <div class="panel-footer">
+                <div class="heading-elements">
+                    <button type="submit" class="btn btn-primary pull-right">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+
+                </section>
+{% endblock content %}

@@ -1,0 +1,345 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Add Loan
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'dashboard' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Add Loan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                    <section class="">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Add Loan</h6>
+
+                                <div class="heading-elements">
+
+                                </div>
+                            </div>
+                            <form method="POST" action="http://ulm.webstudio.co.zw/loan/store" accept-charset="UTF-8"
+                                class="form-horizontal" enctype="multipart/form-data" id="loan_form"><input name="_token"
+                                    type="hidden" value="XMYfN77DELFCKQV0UnqaGEW5AFvH5dwyFfcW4eLQ">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="borrower_id" class="col-sm-3 control-label">Borrower *</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="borrower_id"
+                                                name="borrower_id">
+                                                <option selected="selected" value="">Select</option>
+                                                <option value="49">Federico Romero()</option>
+                                                <option value="72">Jame Chan()</option>
+                                                <option value="77">Edgar Mligo(R004)</option>
+                                                <option value="78">Mwikya Mwikya(27974114)</option>
+                                                <option value="79">Ndgfgd fgdfgd(45645645)</option>
+                                                <option value="80">Onh N()</option>
+                                                <option value="81">Kwaku Annan()</option>
+                                                <option value="82">sudi pamba(27805624)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Select the borrower here"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loan_officer_id" class="col-sm-3 control-label">Loan Officer *</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="loan_officer_id"
+                                                name="loan_officer_id">
+                                                <option selected="selected" value="">Select</option>
+                                                <option value="1">Branch Manager</option>
+                                                <option value="2">Timothy Lamenya</option>
+                                                <option value="3">Alex Tan</option>
+                                                <option value="4">presh Salau</option>
+                                                <option value="5">Sudhakar Ambti</option>
+                                                <option value="6">rabindra kumar</option>
+                                                <option value="7">Luis Vegas</option>
+                                                <option value="8">Gabriel Showole</option>
+                                                <option value="9">zakima Masokwane</option>
+                                                <option value="10">ADEBOLA xxx</option>
+                                                <option value="11">Gabriel Showole</option>
+                                                <option value="12">Nelson Mwaniki</option>
+                                                <option value="13">Mulasa Ismail</option>
+                                                <option value="14">Adex Bello</option>
+                                                <option value="15">Mike Udensi</option>
+                                                <option value="16">Ken Cina</option>
+                                                <option value="17">Leah Sangwale</option>
+                                                <option value="18">Aziz Ayubu</option>
+                                                <option value="19">Barakaeli Nnko</option>
+                                                <option value="20">Bnnaa BabbB</option>
+                                                <option value="21">Test Testa</option>
+                                                <option value="22">Federico Jacobsen</option>
+                                                <option value="23">Leah Sangwale</option>
+                                                <option value="24">Gucci 1017</option>
+                                                <option value="25">dhruv pandya</option>
+                                                <option value="26">Paul Foh</option>
+                                                <option value="27">Meline Khachatryan</option>
+                                                <option value="28">swapnil Gaikwad</option>
+                                                <option value="29">Stass Grafix</option>
+                                                <option value="30">Waruna Gamage</option>
+                                                <option value="31">james makau</option>
+                                                <option value="32">Peter Faida</option>
+                                                <option value="33">honest Mungure</option>
+                                                <option value="34">Jong Li</option>
+                                                <option value="35">Ejalee Inc</option>
+                                                <option value="36">Josh Rev</option>
+                                                <option value="37">Beat rgff</option>
+                                                <option value="38">Ames Junith</option>
+                                                <option value="39">Goutam Rajak</option>
+                                                <option value="40">Stass Grafix</option>
+                                                <option value="41">Kemboi Kiptanui</option>
+                                                <option value="42">Binary Female</option>
+                                                <option value="43">Deva Siva</option>
+                                                <option value="44">Quadri Saludeen</option>
+                                                <option value="45">Test Test</option>
+                                                <option value="46">giga lola</option>
+                                                <option value="47">Drake Morgan</option>
+                                                <option value="48">Christiana Nkechukwu</option>
+                                                <option value="49">Y T</option>
+                                                <option value="50">Seun Bamishaye</option>
+                                                <option value="51">mart Young</option>
+                                                <option value="52">rajajack sri</option>
+                                                <option value="53">jaya raja</option>
+                                                <option value="54">Akibu Ismail</option>
+                                                <option value="55">Ershad Ali </option>
+                                                <option value="56">doni Pin</option>
+                                                <option value="57">akash pawar</option>
+                                                <option value="58">Sorethea OK</option>
+                                                <option value="59">Edgar Mligo</option>
+                                                <option value="60">Emmanuel Adusei</option>
+                                                <option value="61">yohan leonares dunker</option>
+                                                <option value="62">boss One</option>
+                                                <option value="63">Eslam Apdo</option>
+                                                <option value="64">Hagos michael</option>
+                                                <option value="65">rosy zaman</option>
+                                                <option value="66">Hagos michael</option>
+                                                <option value="67">test test</option>
+                                                <option value="68">Edgar Mligo</option>
+                                                <option value="69">Nelson Mboya</option>
+                                                <option value="70">Boss Hfj</option>
+                                                <option value="71">sudi pamba</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Select the officer in charge of the loan"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loan_product_id" class="col-sm-3 control-label">Loan Product *</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="loanProduct"
+                                                name="loan_product_id">
+                                                <option value="1" selected="selected">Sample Loan</option>
+                                                <option value="2">shop</option>
+                                                <option value="3">20Months</option>
+                                                <option value="4">Consumer Loan</option>
+                                                <option value="5">ChapChap Loan</option>
+                                                <option value="6">Group Loan</option>
+                                                <option value="7">mini shop loan </option>
+                                                <option value="8">Prueba dos uno cero</option>
+                                                <option value="9">20 package </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Select the loan product"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="principal" class="col-sm-3 control-label">Principal Amount *</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control numeric" placeholder="" required="required" name="principal"
+                                                type="text" value="1000.0000" id="principal">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Principal amount is the loan size. Its required."></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loan_duration" class="col-sm-3 control-label">Loan Duration *</label>
+                                        <div class="col-sm-2">
+                                            <input class="form-control" placeholder="5" required="required" id="loan_duration"
+                                                name="loan_duration" type="number" value="2">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <select class="form-control" id="loan_duration_type" required="required"
+                                                name="loan_duration_type">
+                                                <option value="day">Day(s)</option>
+                                                <option value="week">Week(s)</option>
+                                                <option value="month" selected="selected">Month(s)</option>
+                                                <option value="year">Year(s)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="repayment_cycle" class="col-sm-3 control-label">Repayment Cycle *</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" id="repayment_cycle" required="required" name="repayment_cycle">
+                                                <option value="daily">Daily</option>
+                                                <option value="weekly">Weekly</option>
+                                                <option value="monthly" selected="selected">Monthly</option>
+                                                <option value="bi_monthly">Bimonthly</option>
+                                                <option value="quarterly">Quarterly</option>
+                                                <option value="semi_annual">Semi-Annual</option>
+                                                <option value="annual">Annually</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="release_date" class="col-sm-3 control-label">Expected Disbursement
+                                            Date *</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control date-picker" placeholder="yyyy-mm-dd" required="required"
+                                                id="release_date" name="release_date" type="text" value="2019-06-13">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="first_payment_date" class="col-sm-3 control-label">First Payment
+                                            Date </label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control date-picker" placeholder="yyyy-mm-dd" id="first_payment_date"
+                                                name="first_payment_date" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="interest_method" class="col-sm-3 control-label">Interest Method *</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" required="required" id="interest_method" name="interest_method">
+                                                <option value="flat_rate">Flat Rate</option>
+                                                <option value="declining_balance_equal_installments">Declining
+                                                    Balance-Equal Installments</option>
+                                                <option value="declining_balance_equal_principal">Declining
+                                                    Balance-Equal principal</option>
+                                                <option value="interest_only" selected="selected">Interest only</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="interest_rate" class="col-sm-3 control-label">Loan Interest (%) *</label>
+                                        <div class="col-sm-2">
+                                            <input class="form-control numeric" placeholder="" required="required" name="interest_rate"
+                                                type="text" value="10.0000" id="interest_rate">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <select class="form-control" id="inputDefaultInterestPeriod" required="required"
+                                                name="interest_period">
+                                                <option value="day">Per Day</option>
+                                                <option value="week">Per Week</option>
+                                                <option value="month" selected="selected">Per Month</option>
+                                                <option value="year">Per Year</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="override_interest" class="col-sm-3 control-label">Override Interest</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" id="override_interest" name="override_interest">
+                                                <option value="0" selected="selected">No</option>
+                                                <option value="1">Yes</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="If you override interest figure, system will use this figure when calculating interest for the schedule"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="overrideDiv">
+                                        <label for="override_interest_amount" class="col-sm-3 control-label">Override
+                                            Interest %</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control numeric" id="override_interest_amount" name="override_interest_amount"
+                                                type="text" value="0">
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="grace_on_interest_charged" class="col-sm-3 control-label">Grace on
+                                            interest charged</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="2" name="grace_on_interest_charged"
+                                                type="number" value="0" id="grace_on_interest_charged">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Enter number of payments before interest is charged"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="decimal_places" class="col-sm-3 control-label">Decimal Places</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" id="" required="required" name="decimal_places">
+                                                <option value="round_off_to_two_decimal" selected="selected">round off
+                                                    to 2 decimal places</option>
+                                                <option value="round_off_to_integer">Round off to integer</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="The number of decimal places you wish each loan instalment to be rounded to"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description" class="col-sm-3 control-label">Description</label>
+                                        <div class="col-sm-5">
+                                            <textarea class="form-control" rows="3" name="description" cols="50" id="description"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="files" class="col-sm-3 control-label">Loan Files(doc, pdf, image)</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control file-styled" multiple="multiple" name="files[]"
+                                                type="file">
+                                        </div>
+                                        <div class="col-sm-9">
+                                        </div>
+                                    </div>
+                                    <p class="bg-navy color-palette">Charges</p>
+
+                                    <div class="form-group" id="chargesDiv">
+                                        <div style="display: none;" id="saved_charges">
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Amount</th>
+                                                    <th>Collected On</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="charges_table">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <p class="bg-navy disabled color-palette">Custom Fields</p>
+                                </div>
+                                <!-- /.panel-body -->
+                                <div class="panel-footer">
+                                    <div class="heading-elements">
+                                        <button type="submit" class="btn btn-primary pull-right">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+
+                    </section>
+     {% endblock content %}

@@ -1,0 +1,1816 @@
+ {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Add Role
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="../../dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Add Role
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                    <section class="">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Add Role</h6>
+
+                            </div>
+                            <form method="POST" action="http://ulm.webstudio.co.zw/user/role/store" accept-charset="UTF-8"
+                                class="" enctype="multipart/form-data"><input name="_token" type="hidden" value="XMYfN77DELFCKQV0UnqaGEW5AFvH5dwyFfcW4eLQ">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="Name" class="control-label">Name</label>
+                                                    <input class="form-control" name="name" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <hr>
+                                                <h4>Manage Permissions</h4>
+
+                                                <div class="col-md-6">
+                                                    <table class="table table-stripped table-hover">
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Borrowers</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Borrowers Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="borrowers" id="1" class="styled pcheck">
+                                                                <label class="" for="1">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View borrowers
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View borrowers"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="1" name="permission[]"
+                                                                    value="borrowers.view" id="2" class="styled pcheck">
+                                                                <label class="" for="2">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update borrowers
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Borrowers"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="1" name="permission[]"
+                                                                    value="borrowers.update" id="3" class="styled pcheck">
+                                                                <label class="" for="3">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete borrowers
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete borrowers"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="1" name="permission[]"
+                                                                    value="borrowers.delete" id="4" class="styled pcheck">
+                                                                <label class="" for="4">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create borrowers
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Add new borrower"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="1" name="permission[]"
+                                                                    value="borrowers.create" id="5" class="styled pcheck">
+                                                                <label class="" for="5">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Approve Borrowers
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Approve Borrowers"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="1" name="permission[]"
+                                                                    value="borrowers.approve" id="70" class="styled pcheck">
+                                                                <label class="" for="70">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Blacklist Borrower
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Blacklist borrower"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="1" name="permission[]"
+                                                                    value="borrowers.blacklist" id="102" class="styled pcheck">
+                                                                <label class="" for="102">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Manage Borrower Groups
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="1" name="permission[]"
+                                                                    value="borrowers.groups" id="103" class="styled pcheck">
+                                                                <label class="" for="103">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Loans</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Loans Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="loans" id="6" class="styled pcheck">
+                                                                <label class="" for="6">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Create Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.create" id="7" class="styled pcheck">
+                                                                <label class="" for="7">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.update" id="9" class="styled pcheck">
+                                                                <label class="" for="9">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.delete" id="10" class="styled pcheck">
+                                                                <label class="" for="10">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.view" id="11" class="styled pcheck">
+                                                                <label class="" for="11">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loan Products
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Manage Loan Products"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.products" id="12" class="styled pcheck">
+                                                                <label class="" for="12">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loan Fees
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Manage Loan Fees"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.fees" id="13" class="styled pcheck">
+                                                                <label class="" for="13">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loan Schedule
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Manage loan schedule, including sending loan schedule emails"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.schedule" id="14" class="styled pcheck">
+                                                                <label class="" for="14">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Approve Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Approve Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.approve" id="68" class="styled pcheck">
+                                                                <label class="" for="68">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Disburse Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Disburse Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.disburse" id="69" class="styled pcheck">
+                                                                <label class="" for="69">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Withdraw Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Withdraw Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.withdraw" id="71" class="styled pcheck">
+                                                                <label class="" for="71">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Write Off Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Write off Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.writeoff" id="72" class="styled pcheck">
+                                                                <label class="" for="72">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Reschedule Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Reschedule Loans"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.reschedule" id="73" class="styled pcheck">
+                                                                <label class="" for="73">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Guarantor
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.guarantor.create" id="88" class="styled pcheck">
+                                                                <label class="" for="88">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Guarantor
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.guarantor.update" id="89" class="styled pcheck">
+                                                                <label class="" for="89">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Guarantor
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.guarantor.delete" id="90" class="styled pcheck">
+                                                                <label class="" for="90">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Guarantor Savings
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.guarantor.savings" id="91" class="styled pcheck">
+                                                                <label class="" for="91">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Use Loan Calculator
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="6" name="permission[]"
+                                                                    value="loans.loan_calculator" id="104" class="styled pcheck">
+                                                                <label class="" for="104">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Repayments</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Repayments Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="repayments" id="15" class="styled pcheck">
+                                                                <label class="" for="15">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Repayments
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View All repayments"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="15" name="permission[]"
+                                                                    value="repayments.view" id="16" class="styled pcheck">
+                                                                <label class="" for="16">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Repayments
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Add Repayments"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="15" name="permission[]"
+                                                                    value="repayments.create" id="17" class="styled pcheck">
+                                                                <label class="" for="17">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Repayments
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Repayments"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="15" name="permission[]"
+                                                                    value="repayments.delete" id="18" class="styled pcheck">
+                                                                <label class="" for="18">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Repayments
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Repayments"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="15" name="permission[]"
+                                                                    value="repayments.update" id="19" class="styled pcheck">
+                                                                <label class="" for="19">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Payroll</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Payroll Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="payroll" id="20" class="styled pcheck">
+                                                                <label class="" for="20">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Payroll
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Payroll"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="20" name="permission[]"
+                                                                    value="payroll.view" id="21" class="styled pcheck">
+                                                                <label class="" for="21">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Payroll
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Payroll"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="20" name="permission[]"
+                                                                    value="payroll.update" id="22" class="styled pcheck">
+                                                                <label class="" for="22">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Payroll
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Payroll"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="20" name="permission[]"
+                                                                    value="payroll.delete" id="23" class="styled pcheck">
+                                                                <label class="" for="23">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Payroll
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Create Payroll"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="20" name="permission[]"
+                                                                    value="payroll.create" id="24" class="styled pcheck">
+                                                                <label class="" for="24">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Expenses</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Expenses Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="expenses" id="25" class="styled pcheck">
+                                                                <label class="" for="25">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Expenses
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Expenses"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="25" name="permission[]"
+                                                                    value="expenses.view" id="26" class="styled pcheck">
+                                                                <label class="" for="26">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Expenses
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Create Expenses"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="25" name="permission[]"
+                                                                    value="expenses.create" id="27" class="styled pcheck">
+                                                                <label class="" for="27">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Expenses
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Expenses"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="25" name="permission[]"
+                                                                    value="expenses.update" id="28" class="styled pcheck">
+                                                                <label class="" for="28">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Expenses
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Expenses"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="25" name="permission[]"
+                                                                    value="expenses.delete" id="29" class="styled pcheck">
+                                                                <label class="" for="29">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Other Income</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Other Income Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="other_income" id="30" class="styled pcheck">
+                                                                <label class="" for="30">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Other Income
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Other income"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="30" name="permission[]"
+                                                                    value="other_income.view" id="31" class="styled pcheck">
+                                                                <label class="" for="31">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Other Income
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Create other income"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="30" name="permission[]"
+                                                                    value="other_income.create" id="32" class="styled pcheck">
+                                                                <label class="" for="32">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Other Income
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Other Incom"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="30" name="permission[]"
+                                                                    value="other_income.update" id="33" class="styled pcheck">
+                                                                <label class="" for="33">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Other Income
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete other income"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="30" name="permission[]"
+                                                                    value="other_income.delete" id="34" class="styled pcheck">
+                                                                <label class="" for="34">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Collateral</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Collateral Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="collateral" id="35" class="styled pcheck">
+                                                                <label class="" for="35">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View collateral
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Collateral"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="35" name="permission[]"
+                                                                    value="collateral.view" id="36" class="styled pcheck">
+                                                                <label class="" for="36">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Collateral
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Collateral"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="35" name="permission[]"
+                                                                    value="collateral.update" id="37" class="styled pcheck">
+                                                                <label class="" for="37">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Collateral
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Create Collateral"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="35" name="permission[]"
+                                                                    value="collateral.create" id="38" class="styled pcheck">
+                                                                <label class="" for="38">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Collateral
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Collateral"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="35" name="permission[]"
+                                                                    value="collateral.delete" id="39" class="styled pcheck">
+                                                                <label class="" for="39">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Reports</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Reports Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="reports" id="40" class="styled pcheck">
+                                                                <label class="" for="40">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Communication</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Communication Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="communication" id="41" class="styled pcheck">
+                                                                <label class="" for="41">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Communication
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Send Emails &amp; SMS"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="41" name="permission[]"
+                                                                    value="communication.create" id="42" class="styled pcheck">
+                                                                <label class="" for="42">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Communication
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Communication"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="41" name="permission[]"
+                                                                    value="communication.delete" id="43" class="styled pcheck">
+                                                                <label class="" for="43">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Custom Fields</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Custom Fields Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="custom_fields" id="44" class="styled pcheck">
+                                                                <label class="" for="44">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Custom Fields
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Custom fields"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="44" name="permission[]"
+                                                                    value="custom_fields.view" id="45" class="styled pcheck">
+                                                                <label class="" for="45">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Custom Fields
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Create Custom Fields"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="44" name="permission[]"
+                                                                    value="custom_fields.create" id="46" class="styled pcheck">
+                                                                <label class="" for="46">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Custom Fields
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Custom Fields"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="44" name="permission[]"
+                                                                    value="custom_fields.update" id="47" class="styled pcheck">
+                                                                <label class="" for="47">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Custom Fields
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Custom Fields"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="44" name="permission[]"
+                                                                    value="custom_fields.delete" id="48" class="styled pcheck">
+                                                                <label class="" for="48">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Users</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Users Module"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="users" id="49" class="styled pcheck">
+                                                                <label class="" for="49">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Users
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="View Users "></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="49" name="permission[]"
+                                                                    value="users.view" id="50" class="styled pcheck">
+                                                                <label class="" for="50">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Users
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Create users"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="49" name="permission[]"
+                                                                    value="users.create" id="51" class="styled pcheck">
+                                                                <label class="" for="51">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Users
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Update Users"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="49" name="permission[]"
+                                                                    value="users.update" id="52" class="styled pcheck">
+                                                                <label class="" for="52">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Users
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Delete Users"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="49" name="permission[]"
+                                                                    value="users.delete" id="53" class="styled pcheck">
+                                                                <label class="" for="53">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Manage Roles
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Manage user roles"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="49" name="permission[]"
+                                                                    value="users.roles" id="54" class="styled pcheck">
+                                                                <label class="" for="54">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Settings</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Manage Settings"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="settings" id="55" class="styled pcheck">
+                                                                <label class="" for="55">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Audit Trail</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Audit Trail"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="audit_trail" id="56" class="styled pcheck">
+                                                                <label class="" for="56">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Savings</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Savings Menu"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="savings" id="57" class="styled pcheck">
+                                                                <label class="" for="57">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Savings
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.create" id="58" class="styled pcheck">
+                                                                <label class="" for="58">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Savings
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.update" id="59" class="styled pcheck">
+                                                                <label class="" for="59">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Savings
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.delete" id="60" class="styled pcheck">
+                                                                <label class="" for="60">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Savings Transaction
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.transactions.create" id="61" class="styled pcheck">
+                                                                <label class="" for="61">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Savings Transaction
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.transactions.update" id="62" class="styled pcheck">
+                                                                <label class="" for="62">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Savings Transaction
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.transactions.delete" id="63" class="styled pcheck">
+                                                                <label class="" for="63">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Savings
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.view" id="64" class="styled pcheck">
+                                                                <label class="" for="64">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Savings Transaction
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.transactions.view" id="65" class="styled pcheck">
+                                                                <label class="" for="65">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Manage Savings Products
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Manage Savings Products"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.products" id="66" class="styled pcheck">
+                                                                <label class="" for="66">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Manage Savings Fees
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="57" name="permission[]"
+                                                                    value="savings.fees" id="67" class="styled pcheck">
+                                                                <label class="" for="67">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Dashboard</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Dashboard"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="dashboard" id="74" class="styled pcheck">
+                                                                <label class="" for="74">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Released Monthly Graph
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Loans Released Monthly Graph"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_released_monthly_graph" id="75"
+                                                                    class="styled pcheck">
+                                                                <label class="" for="75">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Collected Monthly Graph
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Loans Collected Monthly Graph"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_collected_monthly_graph" id="76"
+                                                                    class="styled pcheck">
+                                                                <label class="" for="76">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Registered Borrowers
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Registered Borrowers Statistics"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.registered_borrowers" id="77"
+                                                                    class="styled pcheck">
+                                                                <label class="" for="77">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Total Loans Released
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Total Loans Released"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.total_loans_released" id="78"
+                                                                    class="styled pcheck">
+                                                                <label class="" for="78">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Total Collections
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Total Collections Statistics"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.total_collections" id="79" class="styled pcheck">
+                                                                <label class="" for="79">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Total Disbursed Loans
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Total Disbursed Loans Statistics"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_disbursed" id="80" class="styled pcheck">
+                                                                <label class="" for="80">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Total Loans Pending
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_pending" id="81" class="styled pcheck">
+                                                                <label class="" for="81">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Approved
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_approved" id="82" class="styled pcheck">
+                                                                <label class="" for="82">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Declined
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_declined" id="83" class="styled pcheck">
+                                                                <label class="" for="83">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Closed
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_closed" id="84" class="styled pcheck">
+                                                                <label class="" for="84">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Withdrawn
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_withdrawn" id="85" class="styled pcheck">
+                                                                <label class="" for="85">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Written Off
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_written_off" id="86" class="styled pcheck">
+                                                                <label class="" for="86">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Loans Rescheduled
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="74" name="permission[]"
+                                                                    value="dashboard.loans_rescheduled" id="87" class="styled pcheck">
+                                                                <label class="" for="87">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Capital</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Capital"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="capital" id="92" class="styled pcheck">
+                                                                <label class="" for="92">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Capital
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="92" name="permission[]"
+                                                                    value="capital.view" id="93" class="styled pcheck">
+                                                                <label class="" for="93">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Capital
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="92" name="permission[]"
+                                                                    value="capital.create" id="94" class="styled pcheck">
+                                                                <label class="" for="94">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Capital
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="92" name="permission[]"
+                                                                    value="capital.update" id="95" class="styled pcheck">
+                                                                <label class="" for="95">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Capital
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="92" name="permission[]"
+                                                                    value="capital.delete" id="96" class="styled pcheck">
+                                                                <label class="" for="96">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Assets</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Assets Menu"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="assets" id="97" class="styled pcheck">
+                                                                <label class="" for="97">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Assets
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="97" name="permission[]"
+                                                                    value="assets.create" id="98" class="styled pcheck">
+                                                                <label class="" for="98">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Assets
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="97" name="permission[]"
+                                                                    value="assets.view" id="99" class="styled pcheck">
+                                                                <label class="" for="99">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Assets
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="97" name="permission[]"
+                                                                    value="assets.update" id="100" class="styled pcheck">
+                                                                <label class="" for="100">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Assets
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="97" name="permission[]"
+                                                                    value="assets.delete" id="101" class="styled pcheck">
+                                                                <label class="" for="101">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Branches</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Branches menu"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="branches" id="105" class="styled pcheck">
+                                                                <label class="" for="105">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Branches
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="105" name="permission[]"
+                                                                    value="branches.view" id="106" class="styled pcheck">
+                                                                <label class="" for="106">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Create Branches
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="105" name="permission[]"
+                                                                    value="branches.create" id="107" class="styled pcheck">
+                                                                <label class="" for="107">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Branches
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="105" name="permission[]"
+                                                                    value="branches.update" id="108" class="styled pcheck">
+                                                                <label class="" for="108">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Branches
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="105" name="permission[]"
+                                                                    value="branches.delete" id="109" class="styled pcheck">
+                                                                <label class="" for="109">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Assign Users
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="105" name="permission[]"
+                                                                    value="branches.assign" id="110" class="styled pcheck">
+                                                                <label class="" for="110">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Stock</strong>
+                                                            </td>
+                                                            <td>
+                                                                <i class="fa fa-info" data-toggle="tooltip"
+                                                                    data-original-title="Access Stock Menu"></i>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="0" name="permission[]"
+                                                                    value="stock" id="111" class="styled pcheck">
+                                                                <label class="" for="111">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                View Stock
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="111" name="permission[]"
+                                                                    value="stock.view" id="112" class="styled pcheck">
+                                                                <label class="" for="112">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Add Stock
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="111" name="permission[]"
+                                                                    value="stock.create" id="113" class="styled pcheck">
+                                                                <label class="" for="113">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Update Stock
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="111" name="permission[]"
+                                                                    value="stock.update" id="114" class="styled pcheck">
+                                                                <label class="" for="114">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Delete Stock
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" data-parent="111" name="permission[]"
+                                                                    value="stock.delete" id="115" class="styled pcheck">
+                                                                <label class="" for="115">
+
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.panel-body -->
+                                <div class="panel-footer">
+                                    <div class="heading-elements">
+                                        <button type="submit" class="btn btn-primary pull-right">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+ {% endblock content %}

@@ -1,0 +1,199 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Apply Loan
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="../dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Apply Loan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                <div class="content">
+                    <section class="">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Apply Loan</h6>
+
+                                <div class="heading-elements">
+
+                                </div>
+                            </div>
+                            <form method="POST" action="" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
+                                id="loan_form">
+                                {% csrf_token %}
+                                <div class="panel-body">
+                                    <label for="">
+                                        <h5><strong>Employment Details</strong></h5>
+                                    </label>
+                                    <div class="form-group">
+                                        <label for="Occupation" class="col-sm-3 control-label">Occupation/profession</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="occupation"
+                                                type="text" value="" id="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please Tell us your Occupation."></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status" class="col-sm-3 control-label">Employment Status</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="" name="employment_status">
+                                                <option value="1" selected="selected"></option>
+                                                <option value="3">Permanent</option>
+                                                <option value="4">Contract</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please tell us your Employment status"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="empname" class="col-sm-3 control-label">Name of Current Employer</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="employer_name"
+                                                type="text" value="" id="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Where do you currently work"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="years" class="col-sm-3 control-label">Number of Year with Current
+                                            Employer</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="work_duration"
+                                                type="text" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="workaddrs" class="col-sm-3 control-label">Office Address </label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="office_address"
+                                                type="text" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-3 control-label">Official Email</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="official_email"
+                                                type="email" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="salaryF" class="col-sm-3 control-label">Monthly Salary in Figures</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="monthly_salary"
+                                                type="number" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="salaryW" class="col-sm-3 control-label">Monthly Salary in Words</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="montly_salary_words"
+                                                type="text" value="" id="">
+                                        </div>
+                                    </div>
+                                    <label for="">
+                                        <h5><strong>Banking Details</strong></h5>
+                                    </label>
+                                    <div class="form-group">
+                                        <label for="bank" class="col-sm-3 control-label">SELECT YOUR BANK</label>
+                                        <div class="col-sm-5">
+                                            <select class=" select2 form-control" required="required" id="" name="bank_name">
+                                                <option value="1" selected="selected"></option>
+                                                <option value="3">Zenith</option>
+                                                <option value="4">UBA</option>
+                                                <option value="5">Access</option>
+                                                <option value="6">Ecobank</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please Select your Bank"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="acnumber" class="col-sm-3 control-label">Kindly Enter Your account
+                                            number</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="account_number"
+                                                type="number" value="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Kindly Enter Your account number"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="acname" class="col-sm-3 control-label">Kindly Enter Your account
+                                            name</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="account_name"
+                                                type="text" value="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Kindly Enter Your account name"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bvn" class="col-sm-3 control-label">BVN</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control" placeholder="" required="required" name="bvn"
+                                                type="number" value="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please enter your BVN"></i>
+                                        </div>
+                                    </div>
+                                    <label for="">
+                                        <h5><strong>Loan Details</strong></h5>
+                                    </label>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3 control-label">Loan Amount *</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control numeric" placeholder="" required="required" name="loan_amount"
+                                                type="number" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description" class="col-sm-3 control-label">Purpose of Application</label>
+                                        <div class="col-sm-5">
+                                            <textarea class="form-control" rows="3" name="purpose_of_loan" cols="50" id="description"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-5">
+                                            <input type="hidden" id="package_list" name="package_list" value="Stallion Advance">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- /.panel-body -->
+                                <div class="panel-footer">
+                                    <div class="heading-elements">
+                                        <button type="submit" class="btn btn-primary pull-right">Apply</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+
+                    </section>
+     {% endblock content %}
