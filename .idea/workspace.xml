@@ -1,140 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e54b211-5ade-4bda-b89a-5b04523b6586" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assetss/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greenstallion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/greenstallion/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-grid.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap 4/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap 4/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery-3.2.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery-3.2.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery-slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery-slim.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery.min.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery.slim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery.slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery.slim.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/jquery/jquery.slim.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/jquery/jquery.slim.min.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/amcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/amcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/pie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/export.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/export.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/export.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/export.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/libs/FileSaver.js/FileSaver.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/libs/FileSaver.js/FileSaver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/libs/fabric.js/fabric.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/libs/fabric.js/fabric.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/libs/jszip/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/libs/jszip/jszip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/libs/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/libs/pdfmake/pdfmake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/libs/pdfmake/vfs_fonts.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/libs/pdfmake/vfs_fonts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/plugins/export/libs/xlsx/xlsx.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/plugins/export/libs/xlsx/xlsx.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/serial.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/serial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/amcharts/themes/light.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/amcharts/themes/light.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-toastr/toastr.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-toastr/toastr.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-toastr/toastr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-toastr/toastr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-touchspin/bootstrap.touchspin.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-touchspin/bootstrap.touchspin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/chartjs/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/chartjs/Chart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datatable/extensions/Buttons/js/buttons.colVis.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datatable/extensions/Buttons/js/buttons.colVis.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datatable/extensions/Buttons/js/buttons.html5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datatable/extensions/Buttons/js/buttons.html5.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datatable/extensions/Buttons/js/buttons.print.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datatable/extensions/Buttons/js/buttons.print.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datatable/extensions/Buttons/js/dataTables.buttons.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datatable/extensions/Buttons/js/dataTables.buttons.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datatable/extensions/Responsive/js/dataTables.responsive.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datatable/extensions/Responsive/js/dataTables.responsive.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datatable/media/js/dataTables.bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datatable/media/js/dataTables.bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datatable/media/js/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datatable/media/js/jquery.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datepicker/bootstrap-datepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datepicker/bootstrap-datepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/datepicker/bootstrap-datepicker3.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/datepicker/bootstrap-datepicker3.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/blank.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/blank.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/fancybox_loading.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/fancybox_loading.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/fancybox_loading@2x.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/fancybox_loading@2x.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/fancybox_overlay.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/fancybox_overlay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/fancybox_sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/fancybox_sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/fancybox_sprite@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/fancybox_sprite@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/jquery.fancybox.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/jquery.fancybox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fancybox/jquery.fancybox.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fancybox/jquery.fancybox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/font-awesome/fonts/fontawesome-webfont-.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/font-awesome/fonts/fontawesome-webfont-.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/font-awesome/fonts/fontawesome-webfont-v=4.7.0.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/fullcalendar/fullcalendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/fullcalendar/fullcalendar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/iCheck/square/blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/iCheck/square/blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/jQuery/jquery-2.2.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/jQuery/jquery-2.2.3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/jQuery/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/jQuery/jquery-3.4.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/jQueryUi/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/jQueryUi/jquery-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/jQueryUi/jquery-ui.min.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/jQueryUi/jquery-ui.min.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/jquery-validation/additional-methods.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/jquery-validation/additional-methods.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/jquery-validation/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/jquery-validation/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/jstree/themes/default/style.min.css.html" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/jstree/themes/default/style.min.css.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/moment/js/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/moment/js/moment.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/select2/select2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/select2/select2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/sweetalert2/sweetalert2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/sweetalert2/sweetalert2.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/sweetalert2/sweetalert2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/sweetalert2/sweetalert2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/plugins/tinymce/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/plugins/tinymce/tinymce.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/components.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/components.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/core.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular-.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular-.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/glyphicons/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/icomoon/fonts/icomoon-.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/icomoon/fonts/icomoon-.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/icomoon/fonts/icomoon-3p0rtw.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/icomoon/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/icomoon/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/summernote/summernote-.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/summernote/summernote-.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/summernote/summernote-ad8d7e2d177d2473aecd9b35d16211fb.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/summernote/summernote-ad8d7e2d177d2473aecd9b35d16211fb.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/summernote/summernote-ad8d7e2d177d2473aecd9b35d16211fb.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/summernote/summernote-ad8d7e2d177d2473aecd9b35d16211fb.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/css/icons/summernote/summernote-ad8d7e2d177d2473aecd9b35d16211fb.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/css/icons/summernote/summernote-ad8d7e2d177d2473aecd9b35d16211fb.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/1518004921-81-green-stallion-ltd.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/1518004921-81-green-stallion-ltd.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/backgrounds/boxed_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/backgrounds/boxed_bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/backgrounds/boxed_bg_retina.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/backgrounds/boxed_bg_retina.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/backgrounds/panel_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/backgrounds/panel_bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/backgrounds/seamless.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/backgrounds/seamless.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/backgrounds/user_bg4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/backgrounds/user_bg4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/brands/amazon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/brands/amazon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/brands/bing.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/brands/bing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/brands/spotify.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/brands/spotify.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/brands/twitter.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/brands/twitter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/brands/youtube.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/brands/youtube.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/login_cover.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/login_cover.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/images/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/images/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/js/core/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/js/core/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/js/plugins/forms/styling/uniform.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/js/plugins/forms/styling/uniform.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/js/plugins/loaders/blockui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/js/plugins/loaders/blockui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/js/plugins/loaders/pace.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/js/plugins/loaders/pace.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/js/plugins/tables/datatables/datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/js/plugins/tables/datatables/datatables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/themes/limitless/js/plugins/ui/ripple.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assetss/themes/limitless/js/plugins/ui/ripple.min.js" afterDir="false" />
-    </list>
+    <list default="true" id="1e54b211-5ade-4bda-b89a-5b04523b6586" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,13 +37,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/greenstallion/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
               <caret line="128" column="35" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/assetss/admin/js/admin/DateTimeShortcuts.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -311,10 +183,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="x" value="142" />
+    <option name="y" value="21" />
+    <option name="width" value="1600" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -331,7 +203,37 @@
             <path>
               <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
               <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="assetss" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assetss" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assetss" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assetss" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -356,11 +258,11 @@
       <recent name="$PROJECT_DIR$/greenstallion/greenstallion/templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\static" />
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\assetss" />
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion" />
       <recent name="$PROJECT_DIR$/greenstallion/repayment" />
       <recent name="$PROJECT_DIR$/greenstallion/loans" />
-      <recent name="$PROJECT_DIR$/greenstallion/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -386,15 +288,16 @@
       <option name="presentableId" value="Default" />
       <updated>1562648984054</updated>
       <workItem from="1567912126171" duration="3087000" />
-      <workItem from="1567918372461" duration="4633000" />
+      <workItem from="1567918372461" duration="5073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7720000" />
+    <option name="totallyTimeSpent" value="8160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17234726" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -407,7 +310,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30962342" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.42398885" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -434,7 +337,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/greenstallion/templates/user/role/data.html" />
     <entry file="file://$PROJECT_DIR$/greenstallion/templates/user/role/create.html" />
     <entry file="file://$PROJECT_DIR$/greenstallion/templates/borrower/create.html" />
     <entry file="file://$PROJECT_DIR$/greenstallion/templates/borrower/data-active=0.html" />
@@ -522,6 +424,9 @@
           <caret line="128" column="35" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assetss/admin/js/admin/DateTimeShortcuts.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
