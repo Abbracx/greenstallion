@@ -924,18 +924,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\assetss" />
-      <recent name="$PROJECT_DIR$/greenstallion/templates/loan" />
-      <recent name="$PROJECT_DIR$/greenstallion/templates" />
-      <recent name="$PROJECT_DIR$/greenstallion/greenstallion/templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\static" />
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\assetss" />
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion" />
       <recent name="$PROJECT_DIR$/greenstallion/repayment" />
       <recent name="$PROJECT_DIR$/greenstallion/loans" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\assetss" />
+      <recent name="$PROJECT_DIR$/greenstallion/templates/loan" />
+      <recent name="$PROJECT_DIR$/greenstallion/templates" />
+      <recent name="$PROJECT_DIR$/greenstallion/greenstallion/templates" />
     </key>
   </component>
   <component name="RunDashboard">

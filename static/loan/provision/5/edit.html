@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>     Edit Provision Rate
+</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="../../../assets/themes/limitless/css/icons/icomoon/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../../assets/themes/limitless/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../assets/themes/limitless/css/core.css">
+    <link rel="stylesheet" href="../../../assets/themes/limitless/css/components.css">
+    <link rel="stylesheet" href="../../../assets/themes/limitless/css/colors.css">
+    <link href="../../../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../assets/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../assets/plugins/bootstrap-touchspin/bootstrap.touchspin.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../../../assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../assets/plugins/fancybox/jquery.fancybox.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="../../../assets/plugins/amcharts/plugins/export/export.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="../../../assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="../../../assets/plugins/datepicker/bootstrap-datepicker3.min.css" rel="stylesheet"
+          type="text/css"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery 2.2.3 -->
+    <script src="../../../assets/plugins/jquery/jquery-2.2.3.min.js"></script>
+
+    <script src="../../../assets/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+    <script src="../../../assets/plugins/jqueryui/jquery-ui.min.js" type="text/javascript"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../assets/plugins/datepicker/bootstrap-datepicker.min.js"
+            type="text/javascript"></script>
+    
+        
+</head>
+<body class="">
+<!-- Main navbar -->
+<div class="navbar navbar-inverse bg-indigo">
+    <div class="navbar-header">
+        <a class="navbar-brand"
+           href="../../../dashboard.html">LUPONDE SACCOS LTD</a>
+
+        <ul class="nav navbar-nav visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav">
+            <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
+            </li>
+        </ul>
+
+        <div class="navbar-right">
+            <p class="navbar-text">Hello, Branch Manager</p>
+            <p class="navbar-text"><span class="label bg-success-400">Online</span></p>
+        </div>
+    </div>
+</div>
+<!-- Page container -->
+<div class="page-container">
+    <div class="page-content">
+                    <div class="sidebar sidebar-main sidebar-default">
+    <div class="sidebar-content">
+
+        <!-- User menu -->
+        <div class="sidebar-user-material">
+            <div class="category-content">
+                <div class="sidebar-user-material-content">
+                    <a href="edit.html#"><img src="../../../assets/themes/limitless/images/user.png"
+                                     class="img-circle img-responsive" alt=""></a>
+                    <h6>Branch Manager</h6>
+                    <span class="text-size-small"></span>
+                </div>
+
+                <div class="sidebar-user-material-menu">
+                    <a href="edit.html#user-nav" data-toggle="collapse"><span>My account</span> <i class="caret"></i></a>
+                </div>
+            </div>
+
+            <div class="navigation-wrapper collapse" id="user-nav">
+                <ul class="navigation">
+                    <li><a href="../../../user/profile.html"><i class="icon-user-plus"></i>
+                            <span>My profile</span></a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://ulm.webstudio.co.zw/logout"><i class="icon-switch2"></i> <span>Logout</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /user menu -->
+        <!-- Main navigation -->
+        <div class="sidebar-category sidebar-category-visible">
+            <div class="category-content no-padding">
+                <ul class="navigation navigation-main navigation-accordion">
+                                            <li class=" ">
+                            <a href="../../../branch/change.html" title="Click to change Branch">
+                                <i class="fa fa-check"></i> <span
+                                        style="text-transform: uppercase">Head Office</span>
+                            </a>
+                        </li>
+                                        <li class="">
+                        <a href="../../../dashboard.html">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                                            <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-briefcase"></i> <span>Branches</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../branch/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Branches
+                                        </a></li>
+                                                                                                    <li><a href="../../../branch/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Branch
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-users"></i> <span>Borrowers</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../borrower/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Borrowers
+                                        </a></li>
+                                    <li>
+                                        <a href="../../../borrower/data-active=0.html"><i
+                                                    class="fa fa-circle-o"></i> Borrowers Pending
+                                            <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">0</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                                                                                    <li><a href="../../../borrower/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Borrower
+                                        </a></li>
+                                                                                                    <li><a href="../../../borrower/group/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Borrower Groups
+                                        </a></li>
+                                                                                                    <li><a href="../../../borrower/group/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Borrower Group
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview
+                 active                                                         ">
+                            <a href="edit.html#">
+                                <i class="fa fa-money"></i> <span>Loans</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../data.html"><i
+                                                    class="fa fa-circle-o"></i> View All Loans
+                                            <span class="pull-right-container">
+                                        <span class="label label-info pull-right">13</span>
+                                    </span>
+                                        </a></li>
+                                    <li>
+                                        <a href="../../data-status=pending.html"><i
+                                                    class="fa fa-circle-o"></i> Pending Approval
+                                            <span class="pull-right-container">
+                                        <span class="label label-warning pull-right">10</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../data-status=approved.html"><i
+                                                    class="fa fa-circle-o"></i> Awaiting Disbursement
+                                            <span class="pull-right-container">
+                                        <span class="label label-success pull-right">1</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../data-status=declined.html"><i
+                                                    class="fa fa-circle-o"></i> Loans Declined
+                                            <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">0</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../data-status=withdrawn.html"><i
+                                                    class="fa fa-circle-o"></i> Loans Withdrawn
+                                            <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">0</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../data-status=written_off.html"><i
+                                                    class="fa fa-circle-o"></i> Loans Written Off
+                                            <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">0</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../data-status=closed.html"><i
+                                                    class="fa fa-circle-o"></i> Loans Closed
+                                            <span class="pull-right-container">
+                                        <span class="label label-success pull-right">1</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../data-status=rescheduled.html"><i
+                                                    class="fa fa-circle-o"></i> Rescheduled
+                                            <span class="pull-right-container">
+                                        <span class="label label-warning pull-right">0</span>
+                                    </span>
+                                        </a>
+                                    </li>
+                                                                                                    <li><a href="../../create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Loan
+                                        </a></li>
+                                                                                                    <li><a href="../../loan_application/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Applications
+                                        </a></li>
+                                                                                                    <li><a href="../../loan_product/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Loan Products
+                                        </a></li>                                                                    <li><a href="../../../charge/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage  Charges
+                                        </a></li>
+                                                                                                    <li><a href="../../loan_disbursed_by/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Disbursed By
+                                        </a></li>
+                                                                                                    <li><a href="../../loan_repayment_method/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Repayment Methods
+                                        </a></li>
+                                                                                                    <li><a href="../data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Provision Rates
+                                        </a></li>
+                                                                                                    <li><a href="../../loan_calculator/create.html"><i
+                                                    class="fa fa-circle-o"></i> Loan Calculator
+                                        </a></li>
+                                                                                                    <li><a href="../../../guarantor/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Guarantors
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-dollar"></i> <span>Repayments</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../repayment/data.html"><i
+                                                    class="fa fa-circle-o"></i> Repayments
+                                        </a></li>
+                                                                                                    <li><a href="../../../repayment/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Repayment
+                                        </a></li>
+                                
+                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-bank"></i> <span>Savings</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../saving/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Savings Accounts
+                                        </a></li>
+                                                                                                    <li><a href="../../../saving/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Savings Account
+                                        </a></li>
+                                                                                                    <li><a href="../../../saving/savings_transaction/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Savings Transactions
+                                        </a></li>
+                                                                                                    <li><a href="../../../saving/savings_product/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Savings Products
+                                        </a></li>
+                                
+
+                            </ul>
+                        </li>
+                                        
+                                            <li class="treeview
+                                                                                                                                                                        ">
+                            <a href="edit.html#">
+                                <i class="fa fa-cubes"></i> <span>Stock</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../product/data.html"><i
+                                                    class="fa fa-circle-o"></i> Products
+                                        </a></li>
+                                                                                                    <li><a href="../../../supplier/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Suppliers
+                                        </a></li>
+                                                                                                    <li><a href="../../../warehouse/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Warehouses
+                                        </a></li>
+                                                                                                    <li><a href="../../../product/category/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Categories
+                                        </a></li>
+                                                                                                    <li><a href="../../../check_in/data.html"><i
+                                                    class="fa fa-circle-o"></i> Check In
+                                        </a></li>
+                                                                                                    <li><a href="../../../check_out/data.html"><i
+                                                    class="fa fa-circle-o"></i> Check Out
+                                        </a></li>
+                                                                                                    <li><a href="../../../check_out/overview.html"><i
+                                                    class="fa fa-circle-o"></i> Overview
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-paypal"></i> <span>Payroll</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../payroll/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Payroll
+                                        </a></li>
+                                                                                                    <li><a href="../../../payroll/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Payroll
+                                        </a></li>
+                                                                                                    <li><a href="../../../payroll/template.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Payroll Templates
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-share"></i> <span>Expenses</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../expense/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Expenses
+                                        </a></li>
+                                                                                                    <li><a href="../../../expense/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Expense
+                                        </a></li>
+                                                                                                    <li><a href="../../../expense/type/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Expense Types
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                                    <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-list"></i> <span>Collateral</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../collateral/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Collateral Register
+                                        </a></li>
+                                                                                                    <li><a href="../../../collateral/type/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage Collateral Types
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-bar-chart"></i> <span>Reports</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../../../report/borrower_report.html"><i
+                                                class="fa fa-circle-o"></i> Borrower Reports
+                                    </a></li>
+                                <li><a href="../../../report/loan_report.html"><i
+                                                class="fa fa-circle-o"></i> Loan Reports
+                                    </a></li>
+                                <li><a href="../../../report/financial_report.html"><i
+                                                class="fa fa-circle-o"></i> Financial Reports
+                                    </a></li>
+                                <li><a href="../../../report/company_report.html"><i
+                                                class="fa fa-circle-o"></i> Organisation Reports
+                                    </a></li>
+                                <li><a href="../../../report/savings_report.html"><i
+                                                class="fa fa-circle-o"></i> Savings Reports
+                                    </a></li>
+
+                            </ul>
+                        </li>
+                                                                <li class="treeview
+                                            ">
+                            <a href="edit.html#">
+                                <i class="fa fa-credit-card"></i> <span>Accounting</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../chart_of_account/data.html"><i
+                                                    class="fa fa-circle-o"></i> Chart of Accounts
+                                        </a></li>
+                                                                                                    <li><a href="../../../accounting/journal.html"><i
+                                                    class="fa fa-circle-o"></i> Journal
+                                        </a></li>
+                                                                                                    <li><a href="../../../accounting/ledger.html"><i
+                                                    class="fa fa-circle-o"></i> Ledger
+                                        </a></li>
+                                                                                                    <li><a href="../../../accounting/manual_entry/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Journal Manual Entry
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-briefcase"></i> <span>Assets</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../../../asset/data.html"><i
+                                                class="fa fa-circle-o"></i> View Assets
+                                    </a></li>
+                                <li><a href="../../../asset/create.html"><i
+                                                class="fa fa-circle-o"></i> Add Asset
+                                    </a></li>
+                                <li><a href="../../../asset/type/data.html"><i
+                                                class="fa fa-circle-o"></i> Manage Asset Types
+                                    </a></li>
+                            </ul>
+                        </li>
+                                                                <li class="treeview                                                         ">
+                            <a href="edit.html#">
+                                <i class="fa fa-envelope"></i> <span>Communication </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../../../communication/email.html"><i
+                                                class="fa fa-circle-o"></i> Email
+                                    </a></li>
+                                <li><a href="../../../communication/sms.html"><i
+                                                class="fa fa-circle-o"></i> SMS
+                                    </a></li>
+                                                                    <li><a href="../../../sms_gateway/data.html"><i
+                                                    class="fa fa-circle-o"></i> Manage SMS Gateways
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="edit.html#">
+                                <i class="fa fa-users"></i> <span>Custom Fields</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../custom_field/data.html"><i
+                                                    class="fa fa-circle-o"></i> View Custom Fields
+                                        </a></li>
+                                                                                                    <li><a href="../../../custom_field/create.html"><i
+                                                    class="fa fa-circle-o"></i> Add Custom Field
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="treeview ">
+                            <a href="../../../user/data.html">
+                                <i class="fa fa-users"></i> <span>Users</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                                                    <li><a href="../../../user/data.html">
+                                            <i class="fa fa-circle-o"></i>
+                                            <span>View Users</span>
+                                        </a></li>
+                                                                                                    <li><a href="../../../user/role/data.html"><i
+                                                    class="fa fa-circle-o"></i>Manage Roles
+                                        </a></li>
+                                                                                                    <li><a href="../../../user/create.html"><i
+                                                    class="fa fa-circle-o"></i>Add Users
+                                        </a></li>
+                                                            </ul>
+                        </li>
+                                                                <li class="">
+                            <a href="../../../audit_trail/data.html">
+                                <i class="fa fa-area-chart"></i> <span>Audit Trail</span>
+                            </a>
+                        </li>
+                                                                <li class="">
+                            <a href="../../../setting/data.html">
+                                <i class="fa fa-cog"></i> <span>Settings</span>
+                            </a>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="content-wrapper">
+            <div class="page-header page-header-default">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> -
+                                Edit Provision Rate
+</h4>
+                    </div>
+                    <div class="heading-elements">
+                        <div class="heading-btn-group">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                        <li><a href="../../../dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                        <li class="active">    Edit Provision Rate
+</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+            <div class="content">
+                <section class="">
+                                                                                                        <div class="panel panel-white">
+        <div class="panel-heading">
+            <h6 class="panel-title">Edit Provision Rate</h6>
+
+            <div class="heading-elements">
+
+            </div>
+        </div>
+        <form method="POST" action="http://ulm.webstudio.co.zw/loan/provision/5/update" accept-charset="UTF-8" class="form-horizontal"><input name="_token" type="hidden" value="XMYfN77DELFCKQV0UnqaGEW5AFvH5dwyFfcW4eLQ">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="rate" class="col-sm-2 control-label">Rate</label>
+                <div class="col-sm-10">
+                    <input class="form-control touchspin" placeholder="" required="required" name="rate" type="text" value="100" id="rate">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.panel-body -->
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-primary pull-right">Save</button>
+        </div>
+        </form>
+    </div>
+    <!-- /.box -->
+                </section>
+                <!-- /.content -->
+                <!-- Footer -->
+                <div class="footer text-muted">
+                    Copyright &copy; 2019 by <a
+                            href="OBC.com.html"
+                            target="_blank">LUPONDE SACCOS LTD</a>
+                </div>
+                <!-- /footer -->
+            </div>
+        </div>
+        <!-- /content area -->
+    </div>
+    <!-- /page content -->
+</div>
+<!-- /page container -->
+<script src="../../../assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="../../../assets/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js"
+        type="text/javascript"></script>
+<script src="../../../assets/plugins/jquery-validation/jquery.validate.min.js"
+        type="text/javascript"></script>
+<script src="../../../assets/plugins/jquery-validation/additional-methods.min.js"
+        type="text/javascript"></script>
+<script>
+    jQuery.validator.setDefaults({
+        // Different components require proper error label placement
+        ignore: 'input[type=hidden], .select2-search__field', // ignore hidden fields
+        errorClass: 'validation-error-label',
+        successClass: 'validation-valid-label',
+        highlight: function (element, errorClass) {
+            $(element).removeClass(errorClass);
+        },
+        unhighlight: function (element, errorClass) {
+            $(element).removeClass(errorClass);
+        },
+        errorPlacement: function (error, element) {
+
+            // Styled checkboxes, radios, bootstrap switch
+            if (element.parents('div').hasClass("checker") || element.parents('div').hasClass("choice") || element.parent().hasClass('bootstrap-switch-container')) {
+                if (element.parents('label').hasClass('checkbox-inline') || element.parents('label').hasClass('radio-inline')) {
+                    error.appendTo(element.parent().parent().parent().parent());
+                }
+                else {
+                    error.appendTo(element.parent().parent().parent().parent().parent());
+                }
+            }
+
+            // Unstyled checkboxes, radios
+            else if (element.parents('div').hasClass('checkbox') || element.parents('div').hasClass('radio')) {
+                error.appendTo(element.parent().parent().parent());
+            }
+
+            // Input with icons and Select2
+            else if (element.parents('div').hasClass('has-feedback') || element.hasClass('select2-hidden-accessible')) {
+                error.appendTo(element.parent());
+            }
+
+            // Inline checkboxes, radios
+            else if (element.parents('label').hasClass('checkbox-inline') || element.parents('label').hasClass('radio-inline')) {
+                error.appendTo(element.parent().parent());
+            }
+
+            // Input group, styled file input
+            else if (element.parent().hasClass('uploader') || element.parents().hasClass('input-group')) {
+                error.appendTo(element.parent().parent());
+            }
+
+            else {
+                error.insertAfter(element);
+            }
+        }
+    });
+</script>
+<script src="../../../assets/plugins/moment/js/moment.min.js"
+        type="text/javascript"></script>
+<script src="../../../assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"
+        type="text/javascript"></script>
+<script src="../../../assets/plugins/bootstrap-touchspin/bootstrap.touchspin.min.js"
+        type="text/javascript"></script>
+<script src="../../../assets/plugins/tinymce/tinymce.min.js"
+        type="text/javascript"></script>
+<script src="../../../assets/plugins/fancybox/jquery.fancybox.js"
+        type="text/javascript"></script>
+<script src="../../../assets/plugins/jquery.numeric.js"></script>
+
+<script src="../../../assets/themes/limitless/js/plugins/loaders/pace.min.js"></script>
+<script src="../../../assets/themes/limitless/js/plugins/loaders/blockui.min.js"></script>
+<script src="../../../assets/themes/limitless/js/core/app.js"></script>
+<script src="../../../assets/themes/limitless/js/plugins/ui/ripple.min.js"></script>
+<script src="../../../assets/themes/limitless/js/plugins/forms/styling/uniform.min.js"></script>
+<script src="../../../assets/plugins/select2/select2.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="../../../assets/themes/limitless/js/plugins/tables/datatables/datatables.min.js"></script>
+
+<!-- ChartJS 1.0.1 -->
+<script src="../../../assets/themes/limitless/js/custom.js"></script>
+
+</body>
+</html>
