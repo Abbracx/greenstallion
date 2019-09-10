@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e54b211-5ade-4bda-b89a-5b04523b6586" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="1e54b211-5ade-4bda-b89a-5b04523b6586" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="54" column="113" selection-start-line="54" selection-start-column="113" selection-end-line="54" selection-end-column="113" />
+            <state relative-caret-position="420">
+              <caret line="464" lean-forward="true" selection-start-line="464" selection-end-line="464" />
             </state>
           </provider>
         </entry>
@@ -227,40 +225,6 @@
               <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
               <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="datepicker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="greenstallion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="greenstallion" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="jQuery" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -314,18 +278,17 @@
       <updated>1562648984054</updated>
       <workItem from="1567912126171" duration="3087000" />
       <workItem from="1567918372461" duration="7781000" />
-      <workItem from="1568033818448" duration="5997000" />
+      <workItem from="1568033818448" duration="6285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16865000" />
+    <option name="totallyTimeSpent" value="17153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="191" y="10" width="1600" height="860" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17608836" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17608836" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -336,7 +299,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27960056" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.16119829" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -475,8 +438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="54" column="113" selection-start-line="54" selection-start-column="113" selection-end-line="54" selection-end-column="113" />
+        <state relative-caret-position="420">
+          <caret line="464" lean-forward="true" selection-start-line="464" selection-end-line="464" />
         </state>
       </provider>
     </entry>
