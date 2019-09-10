@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'greenstallion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd57l08c1vc27rf',
-        'USER': 'bqiaaixqejskyn',
-        'PASSWORD': '60920db45707a16ca26cd16b81b3ffd7d3f767dc9c00f876599893e76f24a453',
-        'HOST': 'ec2-23-21-156-171.compute-1.amazonaws.com',
+        'NAME': 'dcvh9ji9q2jmcp',
+        'USER': 'kqnkvycdruioxb',
+        'PASSWORD': 'db208549f8f135525a45ba6e2dc9c2c034a3caefc72848ab3ca340c2d9dbcecf',
+        'HOST': 'ec2-107-20-167-241.compute-1.amazonaws.com',
         'PORT':'5432'
     }
 }
