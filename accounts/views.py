@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import auth
 from .models import User
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Register
+from .models import Profile
 from .models import user_create
 
 
@@ -17,7 +17,11 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
-def accounts(request):
+def client(request):
+    context = {'message':"Hello client"} 
+    render(request,'client.html', context)
+
+def register(request):
     if request.method == "POST":
         title = request.POST.get('title', "")
         first_name = request.POST.get('first_name', "")
@@ -47,17 +51,19 @@ def accounts(request):
                 messages.info(request, 'Email Taken')
                 return redirect('accounts')
             else:
-                user = Register.objects.create(title=title, first_name =first_name, last_name=last_name, gender=gender, email=email, address=address, city=city, phone=phone, status=status, dob=dob, identification=identification,
-                                category=category, username=username, password1=password1, password2=password2, checkbox =checkbox)
-                user = User.objects.create_user(username=username, password=password1, first_name=first_name, last_name=last_name, email=email, category= category, role = role)
+                user_obj = User.objects.create_user(username=username, password=password1, first_name=first_name, 
+                last_name=last_name, email=email, birth_date = dob,  category= category, role = role)
+                
+                user = Profile.objects.create(title=title, user = user_obj, gender=gender, address=address, city=city, phone=phone, status=status,
+                identification=identification, password2=password2, checkbox =checkbox)
                 user.save();
                 print('user created')
                 return redirect('/')
 
         else:
             messages.info(request, 'Password not matching...')
-            return redirect('accounts')
-        return render(request, 'dashboard.html')
+            return redirect('register')
+        #return render(request, 'client.html')
     else:
         return render(request, 'accounts.html')
 

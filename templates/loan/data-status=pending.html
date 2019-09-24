@@ -50,50 +50,48 @@
                                             <th>Income</th>
                                             <th>Action</th>
                                         </tr>
-                                    </thead>
+                        </thead>
+                        
+                                
+                                <tbody>
+                                <tr>
+                                {% if pending %}
                                     {% for loan in pending %}
-                                    {% if loan.loan_approval == null %}
-                                    <tbody>
-                                    <tr>
-                                        <form action = '' method = 'POST'>
-                                     {% csrf_token %}
-                                        <td></td>
-                        <td>{{loan.first_name}} {{loan.last_name}}</td>
-                        <td>{{loan.loan_amount}}</td>
-                        <td>{{loan.bank_statement}}</td>
-                        <td>{{loan.user_category}}</td>
-                        <td>{{loan.package_list}}</td>
-                        <td>{% if loan.user_category == CO %}
-                                {{loan.allowee}}
-                            {% elif loan.user_category == SAE %}
-                                {{loan.monthly_salary}}
-                            {% else %}
-                                {{loan.monthly_turnover}}
-                            {% endif %}
-                        </td>
-                        <td class="col-sm-2">
+                                    
+
+                        <form action = "{% url 'loan_pending' %}" method = 'POST'>
+                            {% csrf_token %}
+                                    <td></td>
+                            <td>{{loan.user.first_name}} {{loan.user.last_name}}</td>
+                            <td>{{loan.loan_amount}}</td>
+                            <td>{{loan.bank_statement}}</td>
+                            <td>{{loan.user_category}}</td>
+                            <td>{{loan.package_list}}</td>
+                            <td>{{loan.monthly_income}}</td>
+                            <input type="hidden" id="username" name="username" value="{{loan.user.username}}">
+                            <td class="col-sm-2">
                                             <select required="required" id="action"
                                                 name="action">
                                                 <option value="#" selected="selected">Select</option>
                                                 <option value="AP">Approve</option>
                                                 <option value="DE">Decline</option>
                                             </select>
-                                        </td>
+                            </td>
 
-                                     <td>
-                                            <button type="submit" class="btn bg-success btn-block" id="action">Submit
-                            <i class="icon-arrow-right14 position-right"></i></button>
-                                        </td>
-                                            <input type="hidden" id="package_list" name="pk" value="{{loan.pk}}">
-                                            </form>
+                            <td>
+                                <button type="submit" class="btn bg-success btn-block" id="action">Submit<i class="icon-arrow-right14 position-right"></i></button>
+                            </td>
+                                           
+                        </form>
                     </tr>
-                                </tbody>
+                    </tbody>
+                                {% endfor %}
+            
                   {% endif %}
-                  {% endfor %}
+                  
                                 </table>
                                 <div class="form-group">
-                        <button type="submit" class="btn bg-success btn-block" id="action">Submit
-                            <i class="icon-arrow-right14 position-right"></i></button>
+                        
                     </div>
                             </div>
                             <!-- /.panel-body -->

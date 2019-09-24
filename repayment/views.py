@@ -1,32 +1,44 @@
 from django.shortcuts import render
-from .models import RepaymentManagement
+from .models import RepaymentAccount
+from loans.models import LoanAccount
+from accounts.models import User
+from django.shortcuts import render, redirect, get_object_or_404
+from datetime import date, timedelta
+from django.http import HttpResponse
 
 # Create your views here.
 
-def AllLoansConfiguration(request):
-    if request.method == 'POST':
-        max_tenure = request.POST.get('max_tenure',"")
-        loan_interest = request.POST.get('loan_interest',"")
-        loan_half_interest = request.POST.get('loan_half_interest',"")
-        category = request.Category.category
-        package_list = request.Category.package_list
-        lateness_fee = request.POST.get('lateness_fee',"")
-        repayment_date = request.POST.get('repayment_date',"")
-        processing_fee = request.POST.get('processing_fee',"")
+def create_payment_process(request, id):
 
-        if loan_interest:
-            loan_interest = loan_interest * 0.01
+    user_loan_details = get_object_or_404(LoanAccount, user__id=id)
 
-        if loan_half_interest:
-            loan_half_interest = loan_interest/2
+    if user_loan_details.loan_approval==True and user_loan_details.loan_disbursement==True:
+        obj = RepaymentAccount.objects.filter(user_loan=user_loan_details.id)
+        if obj:
+            return redirect('make_payment', id)
+        else:
+            obj = RepaymentAccount.objects.create(loan_applied=True, loan_disbursed=user_loan_details.loan_disbursement, user_loan=user_loan_details)
+            if user_loan_details.disbursement_date.day <= 15:
+                obj.repayment_date = user_loan_details.disbursement_date
+                obj.loan_owed = user_loan_details.loan_amount
+                obj.save()
+            else:
+                obj.repayment_date = user_loan_details.disbursement_date + timedelta(30)
+                obj.loan_owed = user_loan_details.loan_amount
+                obj.save()
+        return redirect('make_payment', id)   
+    
+    user_loan_details = None
+    return render(request,'loan_status.html',{'user_loan_details':user_loan_details})
 
-        if lateness_fee:
-            lateness_fee = lateness_fee * 0.01
 
-        if processing_fee:
-            processing_fee = processing_fee * 0.01
+def make_payment(request, id): 
+    user_loan_details = get_object_or_404(LoanAccount, user__id=id)
+    obj = RepaymentAccount.objects.filter(user_loan=user_loan_details.id)
+    return render(request,'payment.html',{'repayment_details':obj})
 
-
+    
+'''
 def loan_disbursement_loan(request):
     loan_calculator = request.POST.get('loan_calculator',"")
     loan_eligible = request.POST.get('loan_eligible',"")
@@ -109,3 +121,4 @@ def LoanRepayment(request):
         next_due = total_payable - paid
     else:
         next_due =
+'''

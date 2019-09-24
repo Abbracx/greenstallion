@@ -74,11 +74,13 @@
 
 <body class=" pace-done">
     <div class="pace  pace-inactive">
-        <div class="pace-progress" data-progress-text="100%" data-progress="99"
-            style="transform: translate3d(100%, 0px, 0px);">
-            <div class="pace-progress-inner"></div>
-        </div>
+
+            <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+                <div class="pace-progress-inner"></div>
+            </div>
+
         <div class="pace-activity"></div>
+
     </div>
     <!-- Main navbar -->
     <div class="navbar navbar-inverse bg-success">
@@ -144,223 +146,16 @@
                     </div>
                     <!-- /user menu -->
                     <!-- Main navigation -->
-                    <div class="sidebar-category sidebar-category-visible">
-                        <div class="category-content no-padding">
-                            <ul class="navigation navigation-main navigation-accordion">
-                                <li class=" active ">
-                                    <a href="{% url 'dashboard' %}" class="legitRipple">
-                                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                                    </a>
-                                </li>
-                                <li class="treeview ">
-                                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
-                                        <i class="fa fa-users"></i> <span>Borrowers</span>
-                                    </a>
-                                    <ul class="treeview-menu hidden-ul">
-                                        <li><a href="{% url 'borrower_data' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> View Borrowers
-                                            </a></li>
-                                        <!--<li>
-                                            <a href="{% url 'borrower_pending' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Borrowers Pending
-                                                <span class="pull-right-container">
-                                                    <span class="label label-danger pull-right">0</span>
-                                                </span>
-                                            </a>
-                                        </li>-->
-                                        <li><a href="{% url 'borrower_create' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Add Borrower
-                                            </a></li>
-                                        <!--<li><a href="{% url 'borrower_group_data' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> View Borrower Groups
-                                            </a></li>
-                                        <li><a href="{% url 'borrower_group_create' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Add Borrower Group
-                                            </a></li>-->
-                                    </ul>
-                                </li>
-                                <li class="treeview
-                                                                        ">
-                                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
-                                        <i class="fa fa-money"></i> <span>Loans</span>
-                                    </a>
-                                    <ul class="treeview-menu hidden-ul">
-                                        <li><a href="{% url 'loan_applications' %}" class="legitRipple"><i class="fa fa-circle-o"></i>
-                                                View All Loans
-                                                <span class="pull-right-container">
-                                                    <span class="label label-info pull-right">13</span>
-                                                </span>
-                                            </a></li>
-                                        <li>
-                                            <a href="{% url 'loan_pending' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Pending Approval
-                                                <span class="pull-right-container">
-                                                    <span class="label label-warning pull-right">10</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{% url 'loan_approved' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Awaiting Disbursement
-                                                <span class="pull-right-container">
-                                                    <span class="label label-success pull-right">1</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{% url 'loan_disbursed' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Loans Disbursed
-                                                <span class="pull-right-container">
-                                                    <span class="label label-success pull-right">1</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{% url 'loan_declined' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Loans Declined
-                                                <span class="pull-right-container">
-                                                    <span class="label label-danger pull-right">0</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <!--<li>
-                                            <a href="{% url 'loan_withdrawn' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Loans Withdrawn
-                                                <span class="pull-right-container">
-                                                    <span class="label label-danger pull-right">0</span>
-                                                </span>
-                                            </a>
-                                        </li>-->
-                                        <!--<li>
-                                            <a href="{% url 'loan_writtenoff' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Loans Written Off
-                                                <span class="pull-right-container">
-                                                    <span class="label label-danger pull-right">0</span>
-                                                </span>
-                                            </a>
-                                        </li>-->
-                                        <li>
-                                            <a href="{% url 'loan_closed' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Loans Closed
-                                                <span class="pull-right-container">
-                                                    <span class="label label-success pull-right">1</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            {% if request.user.category == "SAE" %}
-                                            <a href="{% url 'apply_loan' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i>
-                                                {% elif request.user.category == "CO" or request.user.category == 'corper' %}
-                                                <a href="{% url 'stallion_allowee_loan' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i>
-                                                {% else %}
-                                                <a href="{% url 'stallion_support_loan' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i>
-                                                    {% endif %}
-                                                Apply Loan
-                                                <span class="pull-right-container">
-                                                    <span class="label label-warning pull-right">0</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li><a href="{% url 'loan_create' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Add Loan
-                                            </a></li>
-                                        <!--<li><a href="{% url 'loan_applications' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> View Applications
-                                            </a></li>-->
-                                        <li><a href="{% url 'loan_products' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Manage Loan Products
-                                            </a></li>
-                                        <!--<li><a href="{% url 'loan_charges' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Manage Charges
-                                            </a></li>
-                                        <li><a href="l{% url 'loan_disbursedby' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Manage Disbursed By
-                                            </a></li>
-                                        <li><a href="{% url 'loan_repayment_method' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Manage Repayment Methods
-                                            </a></li>
-                                        <li><a href="{% url 'loan_provision_rate' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Manage Provision Rates
-                                            </a></li>
-                                        <li><a href="{% url 'loan_calculator' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Loan Calculator
-                                            </a></li>
-                                        <li><a href="{% url 'loan_guarantors' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> View Guarantors-->
-                                            </a></li>
-                                    </ul>
-                                </li>
-                                <li class="treeview ">
-                                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
-                                        <i class="fa fa-dollar"></i> <span>Repayments</span>
-                                    </a>
-                                    <ul class="treeview-menu hidden-ul">
-                                        <<li><a href="#" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Repayments
-                                            </a></li>
-                                        <li><a href="#" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Add Repayment
-                                            </a></li>
 
-                                    </ul>
-                                </li>
-                                <li class="treeview ">
-                                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
-                                        <i class="fa fa-list"></i> <span>Collateral</span>
-                                    </a>
-                                    <ul class="treeview-menu hidden-ul">
-                                        <li><a href="{% url 'view_collaterals' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> View Collateral Register
-                                            </a></li>
-                                        <li><a href="{% url 'collateral_types' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Manage Collateral Types
-                                            </a></li>
-                                    </ul>
-                                </li>
-                                <li class="treeview ">
-                                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
-                                        <i class="fa fa-bar-chart"></i> <span>Reports</span>
-                                    </a>
-                                    <ul class="treeview-menu hidden-ul">
-                                        <li><a href="{% url 'report_borrower' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Borrower Reports
-                                            </a></li>
-                                        <li><a href="{% url 'report_loan' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i> Loan Reports
-                                            </a></li>
+                    {% if user.is_staff  %}
+                        {% include 'admin.html' %}
+                    {% else %}
+                        {% include 'client.html' %}
+                    {% endif %}
 
-                                    </ul>
-                                </li>
-                                <li class="treeview ">
-                                    <a href="{% url 'dashboard' %}tml" class="has-ul legitRipple">
-                                        <i class="fa fa-users"></i> <span>Users</span>
-                                    </a>
-                                    <ul class="treeview-menu hidden-ul">
-                                        <li><a href="{% url 'view_users' %}" class="legitRipple">
-                                                <i class="fa fa-circle-o"></i>
-                                                <span>View Users</span>
-                                            </a></li>
-                                        <!--<li><a href="{% url 'manage_user_roles' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i>Manage Roles-->
-                                            </a></li>
-                                        <li><a href="{% url 'user_creation' %}" class="legitRipple"><i
-                                                    class="fa fa-circle-o"></i>Add Users
-                                            </a></li>
-                                    </ul>
-                                </li>
-                                <li class="">
-                                    <a href="{% url 'settings' %}" class="legitRipple">
-                                        <i class="fa fa-cog"></i> <span>Settings</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
+
             <div class="content-wrapper">
                 <div>
                     {% for message in messages %}

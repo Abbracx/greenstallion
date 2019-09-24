@@ -1,0 +1,89 @@
+<div class="sidebar-category sidebar-category-visible">
+        <div class="category-content no-padding">
+            <ul class="navigation navigation-main navigation-accordion">
+                <li class=" active ">
+                    <a href="{% url 'dashboard' %}" class="legitRipple">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                
+                <li class="treeview">
+                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
+                        <i class="fa fa-money"></i> <span>Loans</span>
+                    </a>
+                    <ul class="treeview-menu hidden-ul">
+                        
+
+                        <li> 
+                            <a href="{% url 'apply_loan' user.id %}" class="legitRipple">
+                                <i class="fa fa-circle-o"></i>
+                                Apply Loan
+                                <span class="pull-right-container">
+                                    <span class="label label-warning pull-right">0</span>
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li> 
+                            <a href="{% url 'loan_detail' user.id  %}" class="legitRipple">
+                                <i class="fa fa-circle-o"></i>
+                                View Loan Details
+                                <span class="pull-right-container">
+                                    <span class="label label-warning pull-right">0</span>
+                                </span>
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                <li class="treeview ">
+                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
+                        <i class="fa fa-dollar"></i> <span>Repayments</span>
+                    </a>
+                    <ul class="treeview-menu hidden-ul">
+                        <<li><a href="#" class="legitRipple"><i
+                                    class="fa fa-circle-o"></i> Repayments
+                            </a></li>
+                        <li><a href="#" class="legitRipple"><i
+                                    class="fa fa-circle-o"></i> Add Repayment
+                            </a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview ">
+                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
+                        <i class="fa fa-list"></i> <span>Collateral</span>
+                    </a>
+                    <ul class="treeview-menu hidden-ul">
+                        <li><a href="{% url 'view_collaterals' %}" class="legitRipple"><i
+                                    class="fa fa-circle-o"></i> View Collateral Register
+                            </a></li>
+                        <li><a href="{% url 'collateral_types' %}" class="legitRipple"><i
+                                    class="fa fa-circle-o"></i> Manage Collateral Types
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="treeview ">
+                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
+                        <i class="fa fa-bar-chart"></i> <span>Reports</span>
+                    </a>
+                    <ul class="treeview-menu hidden-ul">
+                        <li><a href="{% url 'report_borrower' %}" class="legitRipple"><i
+                                    class="fa fa-circle-o"></i> Borrower Reports
+                            </a></li>
+                        <li><a href="{% url 'report_loan' %}" class="legitRipple"><i
+                                    class="fa fa-circle-o"></i> Loan Reports
+                            </a></li>
+
+                    </ul>
+                </li>
+               
+                <li class="">
+                    <a href="{% url 'settings' %}" class="legitRipple">
+                        <i class="fa fa-cog"></i> <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>

@@ -16,11 +16,12 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+#app_name = "accounts"
 urlpatterns = [
 
-    path('accounts', views.accounts, name = 'accounts'),
+    path('register/', views.register, name = 'register'),
     path('dashboard', views.dashboard, name ='dashboard'),
-    path('',views.login, name = 'login'),
+    path('', views.login, name = 'login'),
     path('logout', views.logout, name='logout'),
     path('user/profile', views.profile, name = 'profile'),
 

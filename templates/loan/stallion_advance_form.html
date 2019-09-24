@@ -35,7 +35,7 @@
 
                                 </div>
                             </div>
-                            <form method="POST" action="" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
+                            <form method="POST" action="{% url 'stallion_advance_loan' user_obj.id %}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
                                 id="loan_form">
                                 {% csrf_token %}
                                 <div class="panel-body">

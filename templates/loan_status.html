@@ -42,49 +42,49 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Borrower</th>
+                                            <th>Disbursable Date</th>
                                             <th>Principal</th>
-                                            <th>Bank Statement</th>
-                                            <th>Category</th>
-                                            <th>Loan Package</th>
+                                            
+                                            <th>Your Category</th>
+    
                                             <th>Income</th>
-                                            <th>Action</th>
+                                            <th>Loan Status</th>
                                         </tr>
                                     </thead>
-                                    {% if awaiting_disbursement %}
-                                    {% for loan_details in awaiting_disbursement %}
+                                    
                                     
                                     <tbody>
                                     <tr>
-                                    <form action = "{% url 'loan_approved' %}" method = 'POST'>
-                                     {% csrf_token %}
-                                        <td></td>
-                        <td>{{loan_details.user.first_name}} {{loan_details.user.last_name}}</td>
-                        <td>{{loan_details.loan_amount}}</td>
-                        <td>{{loan_details.bank_statement}}</td>
-                        <td>{{loan_details.user_category}}</td>
-                        <td>{{loan_details.package_list}}</td>
-                        <td>{{loan_details.monthly_income}}</td>
-                        <input type="hidden" id="username" name="username" value="{{loan_details.user.username}}">
-                        <td class="col-sm-2">
-                            <select required="required" id="action" name="action">
-                                    <option value="#" selected="selected">Select</option>
-                                    <option value="AP">Approve</option>
-                                    <option value="DE">Decline</option>
-                            </select>
-                        </td>
-
+                        <form action = "{% url 'create_payment_process' user.id %}" method = 'POST'>
+                            {% csrf_token %}
+                        <td></td>
+                        <td>{{user_loan_details.disbursement_date}}</td>
+                        <td>{{user_loan_details.loan_amount}}</td>
+                        <td>{{user_loan_details.user_category}}</td>
+                        <td>{{user_loan_details.monthly_income}}</td>
+                        
+                        <input type="hidden" id="username" name="username" value="{{user_loan_details.user.username}}">
+                        
+                        <td >{{user_status.status}}</td>
+                        
+                        {% if user_status.status == 'Disbursed' %}
                         <td>
-                                <button type="submit" class="btn bg-success btn-block" id="action">Submit
+                                <button type="submit" class="btn bg-success btn-block" id="action">Make Payment
                                 <i class="icon-arrow-right14 position-right"></i></button>
                         </td>
+                        {%else%}
+                        <td>
+                            <button type="submit" class="btn bg-success btn-block" id="action" disabled>Make Payment
+                            <i class="icon-arrow-right14 position-right"></i></button>
+                        </td>
+                        {%endif%}
+                            
                                             
                     </form>
                     </tr>
                     </tbody>
                   
-                  {% endfor %}
-                  {% endif %}
+                  
                                 </table>
                                 <div class="form-group">
                        

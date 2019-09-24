@@ -52,27 +52,27 @@ class User(AbstractUser):
     birth_date = models.DateField(null=True, blank=True)
     role = models.CharField(max_length=30, choices = ROLES, blank=True)
     category = models.CharField(max_length=50, choices = CATERGORIES, blank=True)
+
+    def __str__(self):
+        return self.first_name +''+self.last_name
 # Create your models here.
 
-class Register(models.Model):
+class Profile(models.Model):
 
     title = models.CharField(max_length=100)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    user = models.OneToOneField(User, on_delete = models.CASCADE)
     gender = models.CharField(max_length=10)
-    email = models.EmailField()
     address = models.CharField(max_length=300)
     city = models.CharField(max_length=300)
     phone = models.CharField(max_length=15)
     status = models.CharField(max_length=100)
-    dob = models.CharField(max_length=100)
     identification = models.CharField(max_length=500)
-    category = models.CharField(max_length=200)
-    username = models.CharField(max_length=100)
-    password1 = models.CharField(max_length=100)
     password2 = models.CharField(max_length=100)
     checkbox = models.BooleanField(default=False)
     #is_verified = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.user.email
 
 class user_create(models.Model):
 

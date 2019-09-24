@@ -51,8 +51,9 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    {% for loan in declined %}
-                                    {% if loan.loan_approval == False or loan.loan_disbursement == False %}
+                                    {% if declined_loans %}
+                                    {% for loan in declined_loans %}
+                                   
                                     <tbody>
                                     <tr>
                                         <form action = '' method = 'POST'>
@@ -63,14 +64,8 @@
                         <td>{{loan.bank_statement}}</td>
                         <td>{{loan.user_category}}</td>
                         <td>{{loan.package_list}}</td>
-                        {% if user_category == SAE %}
-                        <td>{{loan.monthly_salary}}
-                        {% elif user_category == BO %}
-                            {{loan.monthly_turnover}}
-                         {% else %}
-                            <li>19800</li>
-                            {% endif %}
-                        </td>
+                        
+                        <td>{{loan.monthly_income}}</td>
                         <td class="col-sm-2">
                                             <select required="required" id="action"
                                                 name="action">
@@ -84,12 +79,12 @@
                                             <button type="submit" class="btn bg-success btn-block" id="action">Submit
                             <i class="icon-arrow-right14 position-right"></i></button>
                                         </td>
-                                            <input type="hidden" id="package_list" name="pk" value="{{loan.pk}}">
-                                            </form>
+                                           
                     </tr>
                                 </tbody>
-                  {% endif %}
+                  
                   {% endfor %}
+                  {% endif %}
                                 </table>
                                 <div class="form-group">
                         <button type="submit" class="btn bg-success btn-block" id="action">Submit
