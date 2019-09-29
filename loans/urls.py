@@ -27,6 +27,7 @@ urlpatterns = [
 
     #loan starts here
     path('loan/apply_loan/<int:id>', views.apply_loan, name = 'apply_loan'),
+    path('loan/income-details/<int:id>', views.process_eligible_loan, name = 'process_eligible_loan'),
     path('loan/data', views.loan_data, name = 'loan_data'),
     path('loan/data-status=pending/', views.loan_pending, name = 'loan_pending'),
     path('loan/data-status=approved/', views.loan_approved, name = 'loan_approved'),

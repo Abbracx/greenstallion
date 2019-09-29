@@ -37,34 +37,6 @@ def processing_fee(loan_amount, fee = 0):
     if fee > 0:
         return loan_amount * (fee * 0.01)
 
-def loan_Disbursement(income,loan_amount,rate,cat):
-    
-    result = {}
-    total_payable = loan_amount + get_loan_interest_amount(loan_amount,rate)
-    total_disbursable = loan_amount - processing_fee(loan_amount,3)
-    disbursable_date = date.today() + timedelta(days =10)
-    
-    if cat in categories.keys():
-        if disbursable_date.day in range(1,16):
-            
-            result['eligible'] =  loan_eligible(income, cat)
-            result['total_payable'] = total_payable
-            result['repayment'] = date(year=disbursable_date.year,month=disbursable_date.month,day=28)
-            result['total_disbursable'] = total_disbursable 
-            return result
-        else:
-            
-            result['eligible'] =  loan_eligible(income, cat)
-            result['total_payable'] = total_payable
-            result['repayment'] = date(year=disbursable_date.year,month=disbursable_date.month,day=28) + timedelta(days = 30)
-            result['total_disbursable'] = total_disbursable - get_loan_halve_interest_amount(loan_amount,rate)
-            return result
-        
-    result['eligible'] =  None
-    result['total_payable'] = None
-    result['repayment'] = None
-    return result
-
 def loanRepayment():
     LOAN_REPAID = False
     MONTHLY_REPAID = False

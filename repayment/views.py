@@ -17,14 +17,16 @@ def create_payment_process(request, id):
         if obj:
             return redirect('make_payment', id)
         else:
-            obj = RepaymentAccount.objects.create(loan_applied=True, loan_disbursed=user_loan_details.loan_disbursement, user_loan=user_loan_details)
+            obj = RepaymentAccount.objects.create(applied=True, loan_disbursed=user_loan_details.loan_disbursement, user_loan=user_loan_details)
             if user_loan_details.disbursement_date.day <= 15:
                 obj.repayment_date = user_loan_details.disbursement_date
-                obj.loan_owed = user_loan_details.loan_amount
+                obj.loan_owed = user_loan_details.total_payable
+                obj.set_monthly_payment()
                 obj.save()
             else:
-                obj.repayment_date = user_loan_details.disbursement_date + timedelta(30)
-                obj.loan_owed = user_loan_details.loan_amount
+                obj.repayment_date = user_loan_details.disbursement_date + timedelta(30) 
+                obj.loan_owed = user_loan_details.total_payable
+                obj.set_monthly_payment()
                 obj.save()
         return redirect('make_payment', id)   
     
@@ -33,10 +35,48 @@ def create_payment_process(request, id):
 
 
 def make_payment(request, id): 
-    user_loan_details = get_object_or_404(LoanAccount, user__id=id)
-    obj = RepaymentAccount.objects.filter(user_loan=user_loan_details.id)
-    return render(request,'payment.html',{'repayment_details':obj})
 
+    user_loan_details = get_object_or_404(LoanAccount, user__id=id)
+    obj = RepaymentAccount.objects.get(user_loan=user_loan_details.id)
+    
+    if request.method == "POST":
+        paid_amount = request.POST.get('amount')
+        obj.paid_amount = paid_amount
+        obj.loan_owed = float( obj.loan_owed) - float(paid_amount)
+        obj.paid_amount = float( obj.paid_amount) - float(paid_amount)
+        obj.save()
+
+    
+        '''
+        if obj.loan_owed is > 0:
+            if not obj.monthly_repaid and date.today() >= obj.lateness_date:
+                obj.lateness_days += 1
+                obj.save()
+        
+                user_loan_details.total_payable = user_loan_details.total_payable + latenessInterest(per_monthly_payment,rate)   
+                    
+            if obj.monthly_repaid and date.today() < obj.lateness_date:
+                user_loan_details.total_payable = user_loan_details.total_payable - payment
+                
+            NEXT_PAYMENT_DATE = NEXT_PAYMENT_DATE + timedelta(days = 30)
+        else:
+            LOAN_REPAID = True
+
+    def get_monthly_amount(per_monthly_amount):
+        paid = False
+        amount = 0
+        if amount_from_gateway == per_monthly_amount:
+            paid = True
+            amount = amount_from_gateway
+            return {'paid': True, 'amount': amount}
+    return {'paid':paid, 'amount':amount}
+                
+        
+    def latenessInterest(monthly_repayment,rate):
+        return monthly_repayment * (rate/100)
+
+'''
+    return render(request,'payment.html',{'repayment_details':obj})
     
 '''
 def loan_disbursement_loan(request):

@@ -35,6 +35,7 @@ def register(request):
         dob = request.POST.get('dob',)
         identification = request.POST.get('identification', "")
         category = request.POST.get('category', "")
+        
         username = request.POST.get('username', "")
         password1 = request.POST.get('password1', "")
         password2 = request.POST.get('password2', "")

@@ -44,9 +44,7 @@
                                             <th>#</th>
                                             <th>Disbursable Date</th>
                                             <th>Principal</th>
-                                            
                                             <th>Your Category</th>
-    
                                             <th>Income</th>
                                             <th>Loan Status</th>
                                         </tr>
@@ -61,7 +59,7 @@
                         <td>{{user_loan_details.disbursement_date}}</td>
                         <td>{{user_loan_details.loan_amount}}</td>
                         <td>{{user_loan_details.user_category}}</td>
-                        <td>{{user_loan_details.monthly_income}}</td>
+                        <td>{{cat_details.monthly_salary}}</td>
                         
                         <input type="hidden" id="username" name="username" value="{{user_loan_details.user.username}}">
                         

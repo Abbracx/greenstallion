@@ -15,7 +15,7 @@
                         
 
                         <li> 
-                            <a href="{% url 'apply_loan' user.id %}" class="legitRipple">
+                            <a href="{% url 'process_eligible_loan' user.id %}" class="legitRipple">
                                 <i class="fa fa-circle-o"></i>
                                 Apply Loan
                                 <span class="pull-right-container">
@@ -47,33 +47,6 @@
                             </a></li>
                         <li><a href="#" class="legitRipple"><i
                                     class="fa fa-circle-o"></i> Add Repayment
-                            </a></li>
-
-                    </ul>
-                </li>
-                <li class="treeview ">
-                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
-                        <i class="fa fa-list"></i> <span>Collateral</span>
-                    </a>
-                    <ul class="treeview-menu hidden-ul">
-                        <li><a href="{% url 'view_collaterals' %}" class="legitRipple"><i
-                                    class="fa fa-circle-o"></i> View Collateral Register
-                            </a></li>
-                        <li><a href="{% url 'collateral_types' %}" class="legitRipple"><i
-                                    class="fa fa-circle-o"></i> Manage Collateral Types
-                            </a></li>
-                    </ul>
-                </li>
-                <li class="treeview ">
-                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
-                        <i class="fa fa-bar-chart"></i> <span>Reports</span>
-                    </a>
-                    <ul class="treeview-menu hidden-ul">
-                        <li><a href="{% url 'report_borrower' %}" class="legitRipple"><i
-                                    class="fa fa-circle-o"></i> Borrower Reports
-                            </a></li>
-                        <li><a href="{% url 'report_loan' %}" class="legitRipple"><i
-                                    class="fa fa-circle-o"></i> Loan Reports
                             </a></li>
 
                     </ul>
