@@ -49,7 +49,7 @@ def make_payment(request, id):
     
         '''
         if obj.loan_owed is > 0:
-            if not obj.monthly_repaid and date.today() >= obj.lateness_date:
+            if not obj:
                 obj.lateness_days += 1
                 obj.save()
         
