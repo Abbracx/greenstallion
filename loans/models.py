@@ -18,9 +18,9 @@ class SalaryEarners(models.Model):
     monthly_salary      = models.IntegerField(default=0)
     monthly_salary_word = models.TextField(max_length=300, null=True)
     bank_name           = models.CharField(max_length=100)  
-    account_number      = models.IntegerField()
+    account_number      = models.IntegerField(null=True)
     account_name        = models.CharField(max_length=100)
-    bvn                 = models.IntegerField()
+    bvn                 = models.IntegerField(null=True)
     loan_eligible       = models.IntegerField(null=True)
     category_max_tenure = models.PositiveSmallIntegerField(default=6)
 
