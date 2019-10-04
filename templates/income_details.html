@@ -1,0 +1,69 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Apply Loan
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="../dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Apply Loan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                <div class="content">
+                    <section class="">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Apply Loan</h6>
+
+                                <div class="heading-elements">
+
+                                </div>
+                            </div>
+
+                            <form method="POST" action="{% url 'process_eligible_loan' user.id %}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
+                                id="loan_form">
+                                {% csrf_token %}
+                                <div class="panel-body">
+                                    <label for="">
+                                        <h5><strong> Salary Details </strong></h5>
+                                    </label>
+                                    <div class="form-group">
+                                        <label for="monthly_income" class="col-sm-3 control-label"><strong>Please enter salary/income:</strong></label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" placeholder="enter monthly income" required="required" name="monthly_income"
+                                                type="text" value="" id="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <i class="icon-info3" data-toggle="tooltip" title="Please tell us how much you earn monthly."></i>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <!-- /.panel-body -->
+                                <div class="panel-footer">
+                                    <div class="heading-elements">
+                                        <button type="submit" class="btn btn-primary pull-right">Next</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+
+                    </section>
+     {% endblock content %}
