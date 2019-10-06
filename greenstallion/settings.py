@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Example',
     'repayment',
     'loans.apps.LoansConfig',
     'accounts.apps.AccountsConfig',
