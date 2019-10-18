@@ -365,7 +365,7 @@ def stallion_allowee_loan(request, id):
             co_info.save()
             StallionAllowee.objects.create(corper=co_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
-            if int(loan_amount) <= co.loan_eligible:
+            if int(loan_amount) <= co_info.loan_eligible:
                 LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
