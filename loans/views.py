@@ -365,7 +365,7 @@ def stallion_allowee_loan(request, id):
             co_info.save()
             StallionAllowee.objects.create(corper=co_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
-            if int(loan_amount) <= co.loan_eligible:
+            if int(loan_amount) <= co_info.loan_eligible:
                 LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
@@ -382,24 +382,24 @@ def stallion_support_loan(request, id):
 
     if request.method == "POST":
         
-        company_name     = request.POST.get('company_name', "")
-        cac_number       = request.POST.get('cac_number', "")
-        official_email   = request.POST.get('official_email', "")
-        bank_name        = request.POST.get('bank_name', "")
-        account_number   = request.POST.get('account_number', "")
-        account_name     = request.POST.get('account_name', "")
-        bvn              = request.POST.get('bvn', "")
-        name_of_director = request.POST.get('name_of_director', "")
-        director_address = request.POST.get('director_address', "")
-        means_of_identification = request.POST.get('means_of_identification', "")
-        business_type    = request.POST.get('business_type', "")
-        source_of_funds  = request.POST.get('source_of_funds', "")
-        years_in_business= request.POST.get('years_in_business', "")
-        monthly_turnover_words = request.POST.get('monthly_turnover_words', "")
-        purpose_of_loan  = request.POST.get('purpose_of_loan', "")
-        loan_amount      = request.POST.get('loan_amount', "")
-        loan_tenure      = int(request.POST.get('loan_tenure', ""))
-        package_list     = request.POST.get('package_list', "")
+        company_name     = request.POST.get('company_name')
+        cac_number       = request.POST.get('cac_number')
+        official_email   = request.POST.get('official_email')
+        bank_name        = request.POST.get('bank_name')
+        account_number   = request.POST.get('account_number')
+        account_name     = request.POST.get('account_name')
+        bvn              = request.POST.get('bvn')
+        name_of_director = request.POST.get('name_of_director')
+        director_address = request.POST.get('director_address')
+        means_of_identification = request.POST.get('means_of_identification')
+        business_type    = request.POST.get('business_type')
+        source_of_funds  = request.POST.get('source_of_funds')
+        years_in_business= request.POST.get('years_in_business')
+        monthly_turnover_words = request.POST.get('monthly_turnover_words')
+        purpose_of_loan  = request.POST.get('purpose_of_loan')
+        loan_amount      = request.POST.get('loan_amount')
+        loan_tenure      = int(request.POST.get('loan_tenure'))
+        package_list     = request.POST.get('package_list')
 
         try:
             bo_info = BusinessOwners.objects.get(user = user_obj)
@@ -452,7 +452,7 @@ def stallion_fees_loan(request, id):
         education_level = request.POST.get('educational_level')
         fees_amount     = request.POST.get('fees_amount')
         loan_amount     = request.POST.get('loan_amount')
-        loan_tenure      = request.POST.get('loan_tenure', "")
+        loan_tenure      = request.POST.get('loan_tenure')
         purpose_of_loan = request.POST.get('purpose_of_loan')
         package_list    = request.POST.get('package_list')
 
@@ -505,7 +505,7 @@ def stallion_loans_loan(request, id):
         account_name = request.POST.get('account_name')
         bvn = request.POST.get('bvn')
         loan_amount = request.POST.get('loan_amount')
-        loan_tenure      = request.POST.get('loan_tenure', "")
+        loan_tenure      = request.POST.get('loan_tenure')
         purpose_of_loan = request.POST.get('purpose_of_loan')
         package_list = request.POST.get('package_list')
 

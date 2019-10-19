@@ -147,7 +147,7 @@
                     <!-- /user menu -->
                     <!-- Main navigation -->
 
-                    {% if user.is_staff  %}
+                    {% if user.is_staff and user.is_superuser %}
                         {% include 'admin.html' %}
                     {% else %}
                         {% include 'client.html' %}

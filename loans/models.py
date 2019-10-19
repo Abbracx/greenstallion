@@ -109,32 +109,32 @@ class StallionSmart(models.Model):
     type_of_asset   = models.CharField(max_length=100)
     asset_name      = models.CharField(max_length=100)
     vendor_name     = models.CharField(max_length=100)
-    invoice_value   = models.IntegerField()
-    loan_amount     = models.IntegerField()
+    invoice_value   = models.IntegerField(null=True)
+    loan_amount     = models.IntegerField(null=True)
     purpose_of_loan = models.TextField(null=True)
 
 
 class StallionLoans(models.Model):
     salary_earner            = models.ForeignKey(SalaryEarners, on_delete=models.CASCADE)
-    loan_amount     = models.IntegerField()
+    loan_amount     = models.IntegerField(null=True)
     purpose_of_loan = models.TextField(null=True)
 
 class StallionAdvance(models.Model):
     salary_earner   = models.ForeignKey(SalaryEarners, on_delete = models.CASCADE)
-    loan_amount     = models.IntegerField()
+    loan_amount     = models.IntegerField(null=True)
     purpose_of_loan = models.TextField(null=True)
 
 class StallionFees(models.Model):
     salary_earner   = models.ForeignKey(SalaryEarners, on_delete=models.CASCADE)
     school_name     = models.CharField(max_length=100)
     education_level = models.CharField(max_length=100)
-    fees_amount     = models.IntegerField()
-    loan_amount     = models.IntegerField()
+    fees_amount     = models.IntegerField(null=True)
+    loan_amount     = models.IntegerField(null=True)
     purpose_of_loan = models.TextField(null=True)
 
 class StallionAllowee(models.Model):
     corper          = models.ForeignKey(Corpers, on_delete=models.CASCADE)
-    loan_amount     = models.IntegerField()
+    loan_amount     = models.IntegerField(null=True)
     purpose_of_loan = models.CharField(max_length=100)
    
 
@@ -144,7 +144,7 @@ class StallionSupport(models.Model):
     source_of_funds     = models.CharField(max_length=100)
     years_in_business   = models.CharField(max_length=100)
     monthly_turnover_words = models.CharField(max_length=300)
-    loan_amount         = models.IntegerField()
+    loan_amount         = models.IntegerField(null=True)
     purpose_of_loan     = models.TextField(null=True)
 
    
@@ -160,7 +160,7 @@ class LoanAccount (models.Model):
     loan_tenure         = models.CharField(max_length=100, null=True)
     charged_loan_interest= models.DecimalField(max_digits=15, decimal_places=3, default=0)
     package_list        = models.CharField(max_length=200, null=True)
-    loan_approval       = models.BooleanField(default=None, null=True)
+    loan_approval       = models.BooleanField(default=None)
     loan_disbursement   = models.NullBooleanField()
     loan_repayment      = models.BooleanField(default=False)
     disbursement_date   = models.DateField(null=True)

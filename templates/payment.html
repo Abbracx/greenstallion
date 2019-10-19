@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% extends 'paystack.js' %}
 {% load static %}
 {% block content %}
 {% static "images" as baseUrl %}
@@ -43,7 +44,7 @@
                                             <th>Repayment Date</th>
                                             <th>Loan Owing</th>
                                             <th>Monthly Payment</th>
-                                            <th>Loan paid</th>
+                                            
                                     
                                         </tr>
                                     </thead>
@@ -56,7 +57,7 @@
                         <td>{{repayment_details.repayment_date}}</td>
                         <td>{{repayment_details.loan_owed}}</td>
                         <td>{{repayment_details.per_monthly_payment}}</td>
-                        <td>{{repayment_details.repaid}}</td>
+                       
 
                         
                     </tr>
@@ -66,22 +67,34 @@
                                 </table>
                                 <br>
                                 <br>
-                                <form action = "" method = 'POST'>
+                                <form   method='POST'  action="#" id="paymentForm">
                                     {% csrf_token %}
-                                    <div class="form-group has-feedback has-feedback-left">
-                                        <input type="text" name="amount" class="form-control" placeholder="enter total or monthly amount only" value="" required>
-                                        <div class="form-control-feedback">
-                                            <i class="icon-envelop text-muted mb-3"></i>
-                                        </div>
+                                    <div class="form-group">
+                                      <label for="email">Email Address</label>
+                                      <input type="email" id="email-address" required />
+                                      <br>
+                                    </div>  
+                                    <div class="form-group">
+                                      <label for="amount">Amount</label>
+                                      <input type="tel" id="amount" required />
+                                      <br>
+                                    </div>  
+                                    <div class="form-group">
+                                      <label for="first-name">First Name</label>
+                                      <input type="text" id="first-name" />
+                                      <br>
+                                    </div>  
+                                    <div class="form-group">
+                                      <label for="last-name">Last Name</label>
+                                      <input type="text" id="last-name" />
+                                      <br>
+                                    </div>  
+                                    <div class="form-submit">
+                                      <button type="submit" onclick="payWithPaystack()"> Pay </button> 
                                     </div>
-                                    <input type="hidden" id="username" name="username" value="{{user_loan_details.user.username}}">
-                                    
-                                    <td>
-                                        <button type="submit" class="btn bg-success btn-block" id="action" enable> Submit
-                                        <i class="icon-arrow-right14 position-right"></i></button>
-                                    </td>      
-                                                        
-                                    </form>
+                                  </form>
+                                  
+                                  <script src="https://js.paystack.co/v2/popup.js"></script>
                             </div>
                             <!-- /.panel-body -->
                         </div>
