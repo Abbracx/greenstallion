@@ -21,7 +21,7 @@ class RepaymentAccount(models.Model):
     monthly_repaid      = models.BooleanField(default=False)
     lateness            = models.BooleanField(default=False)
     loan_owed           = models.DecimalField(max_digits=15, decimal_places=3,null=True)
-    paid_amount         = models.DecimalField(max_digits=15, decimal_places=3,null=True)
+    paid_amount         = models.DecimalField(max_digits=15, decimal_places=3,default=0)
     per_monthly_payment = models.DecimalField(max_digits=15, decimal_places=3,null=True)
     lateness_fee        = models.DecimalField(max_digits=15, decimal_places=3,null=True)
     max_loan_tenure     = models.PositiveSmallIntegerField(null=True)

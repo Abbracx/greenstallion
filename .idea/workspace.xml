@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e54b211-5ade-4bda-b89a-5b04523b6586" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/repayment/client_data.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/loans/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/loans/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/loans/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repayment/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repayment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repayment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repayment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/loan/data-status=approved.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loan/data-status=approved.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/loan_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loan_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/repayment/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/repayment/data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loan/data-status=loan_disbursed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loan/data-status=loan_disbursed.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
