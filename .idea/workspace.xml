@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e54b211-5ade-4bda-b89a-5b04523b6586" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/greenstallion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/greenstallion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/repayment/client_data.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/loans/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/loans/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/loans/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repayment/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repayment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repayment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repayment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loan/data-status=approved.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loan/data-status=approved.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loan_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loan_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/repayment/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/repayment/data.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,44 +33,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>&lt;form</find>
-      <find>headewr</find>
-      <find>class=&quot;content&quot;</find>
-      <find>user</find>
-      <find>add loan</find>
-      <find>principal</find>
-      <find>official_email</find>
-      <find>monthly_salary_wor</find>
-      <find>monthly_sa</find>
-      <find>monthly_salary</find>
-      <find>name=&quot;</find>
-      <find>name=&quot;monthly_sala</find>
-      <find>name=&quot;monthly_turnover</find>
-      <find>loan</find>
-      <find>loan_amount</find>
-      <find>bvn</find>
-      <find>class=&quot;content</find>
-      <find>role</find>
-      <find>disbursedby</find>
-      <find>#</find>
-      <find>if</find>
-      <find>email</find>
-      <find>cate</find>
-      <find>apply</find>
-      <find>borrower</find>
-      <find>apply_loan</find>
-      <find>pending</find>
-      <find>approved</find>
-      <find>declined</find>
-      <find>repayment</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>{% static '</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -68,22 +41,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/repayment" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion" />
-      <recent name="$PROJECT_DIR$/greenstallion/repayment" />
-      <recent name="$PROJECT_DIR$/greenstallion/loans" />
-      <recent name="$PROJECT_DIR$/greenstallion/templates" />
-      <recent name="$PROJECT_DIR$/greenstallion" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/greenstallion/templates/loan" />
       <recent name="$PROJECT_DIR$/greenstallion/templates" />
       <recent name="$PROJECT_DIR$/greenstallion/greenstallion/templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ifeanyiejindu\PycharmProjects\greenstallion\templates\repayment" />
+      <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion" />
+      <recent name="$PROJECT_DIR$/greenstallion/repayment" />
+      <recent name="$PROJECT_DIR$/greenstallion/loans" />
+      <recent name="$PROJECT_DIR$/greenstallion/templates" />
     </key>
   </component>
   <component name="RunDashboard">

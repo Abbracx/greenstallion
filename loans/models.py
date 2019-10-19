@@ -160,7 +160,7 @@ class LoanAccount (models.Model):
     loan_tenure         = models.CharField(max_length=100, null=True)
     charged_loan_interest= models.DecimalField(max_digits=15, decimal_places=3, default=0)
     package_list        = models.CharField(max_length=200, null=True)
-    loan_approval       = models.BooleanField(default=None)
+    loan_approval       = models.BooleanField(null =True)
     loan_disbursement   = models.NullBooleanField()
     loan_repayment      = models.BooleanField(default=False)
     disbursement_date   = models.DateField(null=True)

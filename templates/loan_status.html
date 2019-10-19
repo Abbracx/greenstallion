@@ -53,7 +53,7 @@
                                     
                                     <tbody>
                                     <tr>
-                        <form action = "{% url 'create_payment_process' user.id %}" method = 'POST'>
+                        <form action = "{% url 'make_payment' user.id %}" method = 'POST'>
                             {% csrf_token %}
                         <td></td>
                         <td>{{user_loan_details.disbursement_date}}</td>

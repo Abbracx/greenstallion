@@ -48,6 +48,7 @@
                                             <th>Category</th>
                                             <th>Loan Package</th>
                                             <th>Income</th>
+                                            <th>Repayment Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -56,15 +57,23 @@
                                     
                                     <tbody>
                                     <tr>
-                                    <form action = "{% url 'loan_approved' %}" method = 'POST'>
-                                     {% csrf_token %}
-                                        <td></td>
+                        <form action = "{% url 'loan_approved' %}" method = 'POST'>
+                             {% csrf_token %}
+                        <td></td>
                         <td>{{loan_details.user.first_name}} {{loan_details.user.last_name}}</td>
                         <td>{{loan_details.loan_amount}}</td>
                         <td>{{loan_details.bank_statement}}</td>
                         <td>{{loan_details.user_category}}</td>
                         <td>{{loan_details.package_list}}</td>
                         <td>{{loan_details.monthly_income}}</td>
+                        <td>
+                            <div class="form-group has-feedback has-feedback-left">
+                                <label for="repayment_date"></label>
+                                    <input type="text" name="repayment_date" class="form-control" id="repayment_date" required />
+                            <div class="form-control-feedback">
+                                <i class="icon-envelop text-muted mb-3"></i>
+                            </div>
+                        </td>
                         <input type="hidden" id="username" name="username" value="{{loan_details.user.username}}">
                         <td class="col-sm-2">
                             <select required="required" id="action" name="action">

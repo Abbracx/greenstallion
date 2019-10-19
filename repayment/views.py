@@ -4,46 +4,28 @@ from loans.models import LoanAccount
 from accounts.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from datetime import date, timedelta
+from django.db.models import Q
 from django.http import HttpResponse
 
 # Create your views here.
+def repayment (request):
+    outstanding = RepaymentAccount.objects.filter(Q(repaid=False) & Q(user_loan__loan_disbursement=True)).select_related('user_loan')
+    return render(request, 'repayment/data.html', {'outstanding': outstanding})
 
-def create_payment_process(request, id):
+def client_repayment_history(request, id):
 
-    user_loan_details = get_object_or_404(LoanAccount, user__id=id)
+    history = RepaymentAccount.objects.select_related('user_loan').get(user_loan__user=id)
 
-    if user_loan_details.loan_approval==True and user_loan_details.loan_disbursement==True:
-        obj = RepaymentAccount.objects.filter(user_loan=user_loan_details.id)
-        if obj:
-            return redirect('make_payment', id)
-        else:
-            obj = RepaymentAccount.objects.create(applied=True, loan_disbursed=user_loan_details.loan_disbursement, user_loan=user_loan_details)
-            if user_loan_details.disbursement_date.day <= 15:
-                obj.repayment_date = user_loan_details.disbursement_date
-                obj.loan_owed = user_loan_details.total_payable
-                obj.set_monthly_payment()
-                obj.save()
-            else:
-                obj.repayment_date = user_loan_details.disbursement_date + timedelta(30) 
-                obj.loan_owed = user_loan_details.total_payable
-                obj.set_monthly_payment()
-                obj.save()
-        return redirect('make_payment', id)   
-    
-    user_loan_details = None
-    return render(request,'loan_status.html',{'user_loan_details':user_loan_details})
+    return render(request, 'repayment/client_data.html', {'history': history})
 
 
-def make_payment(request, id): 
-
-    user_loan_details = get_object_or_404(LoanAccount, user__id=id)
-    obj = RepaymentAccount.objects.get(user_loan=user_loan_details.id)
+def make_payment(request, id):
+    obj = RepaymentAccount.objects.get(user_loan__user = id)
     
     if request.method == "POST":
         paid_amount = request.POST.get('amount')
-        obj.paid_amount = paid_amount
-        obj.loan_owed = float( obj.loan_owed) - float(paid_amount)
-        obj.paid_amount = float( obj.paid_amount) - float(paid_amount)
+        obj.loan_owed = float(obj.loan_owed) - float(paid_amount)
+        obj.paid_amount = float(obj.paid_amount) - float(paid_amount)
         obj.save()
 
     

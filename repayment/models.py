@@ -30,9 +30,8 @@ class RepaymentAccount(models.Model):
     lateness_date       = models.DateField(null=True)
     repayment_date      = models.DateField(null=True)
     loan_interest       = models.IntegerField(null=True)
-    loan_disbursed      = models.BooleanField()
+    loan_disbursed      = models.BooleanField(default=False)
     user_loan           = models.ForeignKey(LoanAccount, on_delete= models.CASCADE)
-
 
     def set_monthly_payment(self):
         self.per_monthly_payment = float(self.loan_owed) / float(self.user_loan.loan_tenure)
@@ -43,6 +42,8 @@ class RepaymentAccount(models.Model):
                 self.lateness_fee = self.user_loan.loan_amount * self.get_lateness_rate()
                 self.lateness = True
                 super(RepaymentAccount,self).save()
+
+
 
     def get_lateness_rate(self, rate=None):
         DEFAULT_RATE = 2

@@ -200,7 +200,11 @@ def loan_approved(request):
     if request.method == 'POST':
         admin_decision = request.POST.get('action')
         username = request.POST.get('username')
+        client_payment_date = request.POST.get('repayment_date')
         user_loan_details = LoanAccount.objects.get(user__username=username)
+        obj = RepaymentAccount.objects.create(applied=True, repayment_date=client_payment_date, user_loan=user_loan_details)
+        obj.loan_owed = user_loan_details.total_payable
+        obj.set_monthly_payment()
 
         if admin_decision == 'AP':
             user_loan_details.loan_disbursement = True
@@ -208,6 +212,11 @@ def loan_approved(request):
             user_loan_details.set_disbursable_amount()
             user_loan_details.set_totalpayable_amount()
             user_loan_details.save()
+
+            obj.loan_owed = user_loan_details.total_payable
+            obj.set_monthly_payment()
+            obj.save()
+
             return redirect('loan_approved')
         elif admin_decision== 'DE':
             user_loan_details.loan_disbursement = False
@@ -425,6 +434,7 @@ def stallion_support_loan(request, id):
             if int(loan_amount) <= bo_info.loan_eligible:
                 LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount, loan_tenure=loan_tenure,purpose_of_loan=purpose_of_loan)
+
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
 

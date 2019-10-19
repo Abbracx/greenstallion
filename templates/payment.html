@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% extends 'paystack.js' %}
 {% load static %}
 {% block content %}
 {% static "images" as baseUrl %}
@@ -67,30 +66,23 @@
                                 </table>
                                 <br>
                                 <br>
-                                <form   method='POST'  action="#" id="paymentForm">
+                                <form   method='POST'  action="{% url 'make_payment' user.id %}" id="paymentForm">
                                     {% csrf_token %}
-                                    <div class="form-group">
-                                      <label for="email">Email Address</label>
-                                      <input type="email" id="email-address" required />
-                                      <br>
-                                    </div>  
-                                    <div class="form-group">
+
+                                    <div class="form-group has-feedback has-feedback-left">
                                       <label for="amount">Amount</label>
-                                      <input type="tel" id="amount" required />
+                                      <input type="text" name="amount" class="form-control" id="amount" required />
+                                        <div class="form-control-feedback">
+                                            <i class="icon-envelop text-muted mb-3"></i>
+                                        </div>
                                       <br>
-                                    </div>  
-                                    <div class="form-group">
-                                      <label for="first-name">First Name</label>
-                                      <input type="text" id="first-name" />
-                                      <br>
-                                    </div>  
-                                    <div class="form-group">
-                                      <label for="last-name">Last Name</label>
-                                      <input type="text" id="last-name" />
-                                      <br>
-                                    </div>  
+                                    </div>
+
+
+
+
                                     <div class="form-submit">
-                                      <button type="submit" onclick="payWithPaystack()"> Pay </button> 
+                                      <button type="submit" > Pay </button>
                                     </div>
                                   </form>
                                   
