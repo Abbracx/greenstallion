@@ -19,24 +19,25 @@ from . import views
 urlpatterns = [
 
     #borrower starts here
-    path('borrower/data', views.borrower_data, name = 'borrower_data'),
+    path('loan-details/data/<int:id>', views.loan_detail, name = 'loan_detail'),
     path('borrower/data-active=0', views.borrower_pending, name = 'borrower_pending'),
     path('borrower/create', views.borrower_create, name = 'borrower_create'),
     path('borrower/group/data', views.borrower_group_data, name = 'borrower_group_data'),
     path('borrower/group/create', views.borrower_group_create, name = 'borrower_group_create'),
 
     #loan starts here
-    path('loan/apply_loan', views.apply_loan, name = 'apply_loan'),
+    path('loan/apply_loan/<int:id>', views.apply_loan, name = 'apply_loan'),
+    path('loan/income-details/<int:id>', views.process_eligible_loan, name = 'process_eligible_loan'),
     path('loan/data', views.loan_data, name = 'loan_data'),
-    path('loan/data-status=pending', views.loan_pending, name = 'loan_pending'),
-    path('loan/data-status=approved', views.loan_approved, name = 'loan_approved'),
-    path('loan/data-status=declined', views.loan_declined, name = 'loan_declined'),
+    path('loan/data-status=pending/', views.loan_pending, name = 'loan_pending'),
+    path('loan/data-status=approved/', views.loan_approved, name = 'loan_approved'),
+    path('loan/data-status=declined/', views.loan_declined, name = 'loan_declined'),
     path('loan/data-status=withdrawn', views.loan_withdrawn, name = 'loan_withdrawn'),
     path('loan/data-status=written_off', views.loan_writtenoff, name = 'loan_writtenoff'),
-    path('loan/data-status=closed', views.loan_closed, name = 'loan_closed'),
-    path('loan/data-status=loan_disbursed', views.loan_disbursed, name = 'loan_disbursed'),
+    path('loan/data-status=closed/', views.loan_closed, name = 'loan_closed'),
+    path('loan/data-status=loan_disbursed/', views.loan_disbursed, name = 'loan_disbursed'),
     path('loan/create', views.loan_create, name = 'loan_create'),
-    path('loan/loan_application/data', views.loan_applications, name = 'loan_applications'),
+    path('loan/loan_application/data/', views.loan_applications, name = 'loan_applications'),
     path('loan/loan_product/data', views.loan_products, name = 'loan_products'),
     path('charge/data', views.loan_charges, name = 'loan_charges'),
     path('loan/loan_disbursed_by/data', views.loan_disbursedby, name = 'loan_disbursedby'),
@@ -51,11 +52,11 @@ urlpatterns = [
     path('collateral/type/data', views.collateral_types, name = 'collateral_types'),
 
 # stallion loan packages are here
-    path('loan/stallion_smart_form', views.stallion_smart_loan, name = 'stallion_smart_loan'),
-    path('loan/stallion_fees_form', views.stallion_fees_loan, name = 'stallion_fees_loan'),
-    path('loan/stallion_allowee_form', views.stallion_allowee_loan, name = 'stallion_allowee_loan'),
-    path('loan/stallion_support_form', views.stallion_support_loan, name = 'stallion_support_loan'),
-    path('loan/stallion_advance_form', views.stallion_advance_loan, name = 'stallion_advance_loan'),
-    path('loan/stallion_loans_form', views.stallion_loans_loan, name = 'stallion_loans_loan'),
+    path('loan/stallion_smart_form/<int:id>', views.stallion_smart_loan, name = 'stallion_smart_loan'),
+    path('loan/stallion_fees_form/<int:id>', views.stallion_fees_loan, name = 'stallion_fees_loan'),
+    path('loan/stallion_allowee_form/<int:id>', views.stallion_allowee_loan, name = 'stallion_allowee_loan'),
+    path('loan/stallion_support_form/<int:id>', views.stallion_support_loan, name = 'stallion_support_loan'),
+    path('loan/stallion_advance_form/<int:id>', views.stallion_advance_loan, name = 'stallion_advance_loan'),
+    path('loan/stallion_loans_form/<int:id>', views.stallion_loans_loan, name = 'stallion_loans_loan'),
 
     ]

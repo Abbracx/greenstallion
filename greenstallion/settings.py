@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Example',
+    'repayment',
     'loans.apps.LoansConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'greenstallion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd57l08c1vc27rf',
@@ -86,6 +86,8 @@ DATABASES = {
         'PORT':'5432'
     }
 }
+'''
+DATABASES = { 'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'db.sqlite3', } }
 
 
 # Password validation

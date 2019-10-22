@@ -1,32 +1,66 @@
 from django.shortcuts import render
-from .models import RepaymentManagement
+from .models import RepaymentAccount
+from loans.models import LoanAccount
+from accounts.models import User
+from django.shortcuts import render, redirect, get_object_or_404
+from datetime import date, timedelta
+from django.db.models import Q
+from django.http import HttpResponse
 
 # Create your views here.
+def repayment (request):
+    outstanding = RepaymentAccount.objects.filter(Q(repaid=False) & Q(user_loan__loan_disbursement=True)).select_related('user_loan')
+    return render(request, 'repayment/data.html', {'outstanding': outstanding})
 
-def AllLoansConfiguration(request):
-    if request.method == 'POST':
-        max_tenure = request.POST.get('max_tenure',"")
-        loan_interest = request.POST.get('loan_interest',"")
-        loan_half_interest = request.POST.get('loan_half_interest',"")
-        category = request.Category.category
-        package_list = request.Category.package_list
-        lateness_fee = request.POST.get('lateness_fee',"")
-        repayment_date = request.POST.get('repayment_date',"")
-        processing_fee = request.POST.get('processing_fee',"")
+def client_repayment_history(request, id):
 
-        if loan_interest:
-            loan_interest = loan_interest * 0.01
+    history = RepaymentAccount.objects.select_related('user_loan').get(user_loan__user=id)
 
-        if loan_half_interest:
-            loan_half_interest = loan_interest/2
-
-        if lateness_fee:
-            lateness_fee = lateness_fee * 0.01
-
-        if processing_fee:
-            processing_fee = processing_fee * 0.01
+    return render(request, 'repayment/client_data.html', {'history': history})
 
 
+def make_payment(request, id):
+    obj = RepaymentAccount.objects.get(user_loan__user = id)
+    
+    if request.method == "POST":
+        paid_amount = request.POST.get('amount')
+        obj.loan_owed = float(obj.loan_owed) - float(paid_amount)
+        obj.paid_amount = float(obj.paid_amount) - float(paid_amount)
+        obj.save()
+
+    
+        '''
+        if obj.loan_owed is > 0:
+            if not obj:
+                obj.lateness_days += 1
+                obj.save()
+        
+                user_loan_details.total_payable = user_loan_details.total_payable + latenessInterest(per_monthly_payment,rate)   
+                    
+            if obj.monthly_repaid and date.today() < obj.lateness_date:
+                user_loan_details.total_payable = user_loan_details.total_payable - payment
+                
+            NEXT_PAYMENT_DATE = NEXT_PAYMENT_DATE + timedelta(days = 30)
+        else:
+            LOAN_REPAID = True
+
+    def get_monthly_amount(per_monthly_amount):
+        paid = False
+        amount = 0
+        if amount_from_gateway == per_monthly_amount:
+            paid = True
+            amount = amount_from_gateway
+            return {'paid': True, 'amount': amount}
+    return {'paid':paid, 'amount':amount}
+                
+        
+    def latenessInterest(monthly_repayment,rate):
+        return monthly_repayment * (rate/100)
+
+'''
+    return render(request,'payment.html',{'repayment_details':obj})
+    
+'''
 def loan_disbursement_loan(request):
     loan_calculator = request.POST.get('loan_calculator',"")
     loan_eligible = request.POST.get('loan_eligible',"")
@@ -109,3 +143,4 @@ def LoanRepayment(request):
         next_due = total_payable - paid
     else:
         next_due =
+'''

@@ -48,21 +48,25 @@
                                             <th>BVN</th>
                                         </tr>
                                     </thead>
-                                    {% for loan in full_details %}
+                        {% for loan in full_details %}
                                     <tbody>
                                         <tr>
                                 <form action = '' method = 'POST'>
                                      {% csrf_token %}
                                         <td></td>
-                        <td>{{loan.first_name}} {{loan.last_name}}</td>
+                        <td>{{loan.user.first_name}} {{loan.user.last_name}}</td>
                         <td>{{loan.package_list}}</td>
                         <td>{{loan.loan_amount}}</td>
                         <td>{% if loan.loan_approval == null %}
                             <span class="label label-warning">Pending</span>
-                            {% elif loan.loan_approval == False or loan.loan_disbursement == False %}
-                            <span class="label label-danger">Declined</span>
-    
-                            {% else %}
+                            {% endif %}
+                            {%if loan.loan_approval == True and loan.loan_disbursement == null %}
+                            <span class="label label-danger">Awaiting Disbursement</span>
+                            {% endif %}
+                            {%if loan.loan_approval == True and loan.loan_disbursement == False %}
+                            <span class="label label-danger">Declinedt</span>
+                            {% endif %}
+                            {%if loan.loan_approval == True and loan.loan_disbursement == True %}
                             <span class="label label-success">Approved</span>
                             {% endif %}
                         </td>
@@ -74,7 +78,7 @@
                                             </form>
                                         </tr>
                                     </tbody>
-                                    {% endfor %}
+                        {% endfor %}
                                 </table>
                             </div>
                             <!-- /.panel-body -->

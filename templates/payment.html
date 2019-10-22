@@ -30,56 +30,63 @@
                             <div class="panel-heading">
                                 <h6 class="panel-title">
 
-                                    Loans Disbursed
+                                    Loans Payment
                                 </h6>
 
-                                <div class="heading-elements">
-                                    <a href="create.html" class="btn btn-info btn-sm">Add Loan</a>
-                                </div>
+                                
                             </div>
                             <div class="panel-body table-responsive">
                                 <table id="data-table" class="table table-striped table-condensed table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Borrower</th>
-                                            <th>Principal</th>
-                                            <th>Date of Disbursement</th>
-                                            <th>Category</th>
-                                            <th>Loan Package</th>
-                                            <th>Income</th>
-                                            <th>Bank Name</th>
-                                            <th>BVN</th>
+                                            <th>Repayment Date</th>
+                                            <th>Loan Owing</th>
+                                            <th>Monthly Payment</th>
+                                            
+                                    
                                         </tr>
                                     </thead>
-                                    {% if disbursed_loans %}
-                                    {% for loan in disbursed_loans %}
+                                    
                                     
                                     <tbody>
                                     <tr>
-                                        <form action = '' method = 'POST'>
-                                     {% csrf_token %}
-                                        <td></td>
-                        <td>{{loan.user.first_name}} {{loan.user.last_name}}</td>
-                        <td>{{loan.loan_amount}}</td>
-                        <td>{{loan.disbursement_date}}</td>
-                        <td>{{loan.user_category}}</td>
-                        <td>{{loan.package_list}}</td>
-                        <td>{{ loan.monthly_salary }}</td>
-                        <td>{{loan.bank_name}}</td>
-                        <td>{{loan.bvn}}</td>
-                                            <input type="hidden" id="package_list" name="pk" value="{{loan.pk}}">
-                        </form>
+                        
+                        <td></td>
+                        <td>{{repayment_details.repayment_date}}</td>
+                        <td>{{repayment_details.loan_owed}}</td>
+                        <td>{{repayment_details.per_monthly_payment}}</td>
+                       
+
+                        
                     </tr>
-                                </tbody>
+                    </tbody>
                   
-                  {% endfor %}
-                  {% endif %}
+                  
                                 </table>
-                                <div class="form-group">
-                        <button type="submit" class="btn bg-success btn-block" id="action">Submit
-                            <i class="icon-arrow-right14 position-right"></i></button>
-                    </div>
+                                <br>
+                                <br>
+                                <form   method='POST'  action="{% url 'make_payment' user.id %}" id="paymentForm">
+                                    {% csrf_token %}
+
+                                    <div class="form-group has-feedback has-feedback-left">
+                                      <label for="amount">Amount</label>
+                                      <input type="text" name="amount" class="form-control" id="amount" required />
+                                        <div class="form-control-feedback">
+                                            <i class="icon-envelop text-muted mb-3"></i>
+                                        </div>
+                                      <br>
+                                    </div>
+
+
+
+
+                                    <div class="form-submit">
+                                      <button type="submit" > Pay </button>
+                                    </div>
+                                  </form>
+                                  
+                                  <script src="https://js.paystack.co/v2/popup.js"></script>
                             </div>
                             <!-- /.panel-body -->
                         </div>

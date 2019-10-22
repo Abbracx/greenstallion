@@ -19,7 +19,8 @@ from . import views
 urlpatterns = [
 
 #repayment part starts here
-    path('repayment/data', views.repayments, name = 'repayments'),
-    path('repayment/create', views.repayment_create, name = 'repayment_create'),
-
+    path('make-payment/<int:id>', views.make_payment, name = 'make_payment'),
+    #path('create-payment/<int:id>', views.create_payment_process, name = 'create_payment_process'),
+    path('repayment/data', views.repayment, name = 'repayment'),
+    path('repayment/client_data/<int:id>', views.client_repayment_history, name = 'client_repayment_history')
     ]

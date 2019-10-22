@@ -1,41 +1,65 @@
 import datetime
-from datetime import date
+from datetime import date,timedelta
 
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from loans.models import LoanAccount
+from accounts.models import User, Profile
+from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import get_object_or_404
+
 
 
 
 # Create your models here.
 
 
-class RepaymentManagement(models.Model):
-    max_tenure = models.IntegerField()
-    loan_interest = models.IntegerField()
-    category = models.ForeignKey()
-    package_list = models.ForeignKey()
-    lateness_fee = models.IntegerField()
-    repayment_date =models.DateTimeField()
-    loan_calculator = models.IntegerField()
-    loan_eligibility = models.IntegerField()
-    loan_tenure= models.ForeignKey()
-    loan_amount = models.ForeignKey()
-    total_payable = models.IntegerField()
-    monthly_payment = models.IntegerField()
-    total_disbursable = models.IntegerField()
-    total_lateness_fee = models.IntegerField()
-    monthly_due = models.IntegerField()
-    total_due = models.IntegerField()
-    loan_half_interest = models.IntegerField()
-    loan_half_interest_amount = models.IntegerField()
-    loan_interest_amount = models.IntegerField()
-    loan_disbursement_date = models.ForeignKey()
-    processing_fee=models.IntegerField()
-    processing_fee_deduction= models.IntegerField()
-    loan_repayment = models.ForeignKey()
-    number_lateness_days = models.IntegerField()
-    lateness_fee_amount = models.IntegerField()
-    payment = models.BooleanField()
-    next_payment = models.IntegerField()
-    paid = models.IntegerField()
+class RepaymentAccount(models.Model):
+    applied          = models.BooleanField(default=False)
+    repaid           = models.BooleanField(default=False)
+    monthly_repaid      = models.BooleanField(default=False)
+    lateness            = models.BooleanField(default=False)
+    loan_owed           = models.DecimalField(max_digits=15, decimal_places=3,null=True)
+    paid_amount         = models.DecimalField(max_digits=15, decimal_places=3,default=0)
+    per_monthly_payment = models.DecimalField(max_digits=15, decimal_places=3,null=True)
+    lateness_fee        = models.DecimalField(max_digits=15, decimal_places=3,null=True)
+    max_loan_tenure     = models.PositiveSmallIntegerField(null=True)
+    user_loan_tenure    = models.PositiveSmallIntegerField(null=True)
+    next_payment_date   = models.DateField(null=True)
+    lateness_date       = models.DateField(null=True)
+    repayment_date      = models.DateField(null=True)
+    loan_interest       = models.IntegerField(null=True)
+    loan_disbursed      = models.BooleanField(default=False)
+    user_loan           = models.ForeignKey(LoanAccount, on_delete= models.CASCADE)
+
+    def set_monthly_payment(self):
+        self.per_monthly_payment = float(self.loan_owed) / float(self.user_loan.loan_tenure)
+    
+    def check_for_lateness(self, today): 
+        if not self.is_monthly_repaid():
+            if today > self.lateness_date:
+                self.lateness_fee = self.user_loan.loan_amount * self.get_lateness_rate()
+                self.lateness = True
+                super(RepaymentAccount,self).save()
+
+
+
+    def get_lateness_rate(self, rate=None):
+        DEFAULT_RATE = 2
+        if rate is not None:
+            return rate * 0.01
+        return DEFAULT_RATE * 0.01
+
+    
+    def is_applied(self):
+        return self.applied
+    
+    def is_repaid(self):
+        return self.repaid
+    
+    def is_monthly_repaid(self):
+        return self.monthly_repaid
+    
+    def is_lateness(self):
+        return self.lateness

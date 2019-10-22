@@ -34,7 +34,7 @@
 
                                 </div>
                             </div>
-                            <form method="POST" action="" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
+                            <form method="POST" action="{% url 'apply_loan' user.id %}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"
                                 id="loan_form">
                                 {% csrf_token %}
                                 <div class="panel-body">
@@ -42,7 +42,7 @@
                                         <label for="loan_product_id" class="col-sm-3 control-label">Loan Product *</label>
                                         <div class="col-sm-5">
                                             <select class=" select2 form-control" required="required" id="loanProduct"
-                                                name="loan_product_id">
+                                                name="loan_product">
                                                 <option value="stallion_smart" selected="selected">Stallion Smart</option>
                                                 <option value="stallion_loans">Stallion Loans</option>
                                                 <option value="stallion_advance">Stallion Advance</option>

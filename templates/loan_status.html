@@ -30,7 +30,7 @@
                             <div class="panel-heading">
                                 <h6 class="panel-title">
 
-                                    Loans Pending Approval
+                                    Loans Pending Disbursement
                                 </h6>
 
                                 <div class="heading-elements">
@@ -42,53 +42,50 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Borrower</th>
+                                            <th>Disbursement Date</th>
                                             <th>Principal</th>
-                                            <th>Bank Statement</th>
-                                            <th>Category</th>
-                                            <th>Loan Package</th>
+                                            <th>Your Category</th>
                                             <th>Income</th>
-                                            <th>Action</th>
+                                            <th>Loan Status</th>
                                         </tr>
                                     </thead>
-                                    {% if declined_loans %}
-                                    {% for loan in declined_loans %}
-                                   
+                                    
+                                    
                                     <tbody>
                                     <tr>
-                                        <form action = '' method = 'POST'>
-                                     {% csrf_token %}
-                                        <td></td>
-                        <td>{{loan.first_name}} {{loan.last_name}}</td>
-                        <td>{{loan.loan_amount}}</td>
-                        <td>{{loan.bank_statement}}</td>
-                        <td>{{loan.user_category}}</td>
-                        <td>{{loan.package_list}}</td>
+                        <form action = "{% url 'make_payment' user.id %}" method = 'POST'>
+                            {% csrf_token %}
+                        <td></td>
+                        <td>{{user_loan_details.disbursement_date}}</td>
+                        <td>{{user_loan_details.loan_amount}}</td>
+                        <td>{{user_loan_details.user_category}}</td>
+                        <td>{{cat_details.monthly_salary}}</td>
                         
-                        <td>{{loan.monthly_income}}</td>
-                        <td class="col-sm-2">
-                                            <select required="required" id="action"
-                                                name="action">
-                                                <option value="#" selected="selected">Select</option>
-                                                <option value="AP">Approve</option>
-                                                <option value="DE">Decline</option>
-                                            </select>
-                                        </td>
-
-                                     <td>
-                                            <button type="submit" class="btn bg-success btn-block" id="action">Submit
+                        <input type="hidden" id="username" name="username" value="{{user_loan_details.user.username}}">
+                        
+                        <td >{{user_status.status}}</td>
+                        
+                        {% if user_status.status == 'Disbursed' %}
+                        <td>
+                                <button type="submit" class="btn bg-success btn-block" id="action">Make Payment
+                                <i class="icon-arrow-right14 position-right"></i></button>
+                        </td>
+                        {%else%}
+                        <td>
+                            <button type="submit" class="btn bg-success btn-block" id="action" disabled>Make Payment
                             <i class="icon-arrow-right14 position-right"></i></button>
-                                        </td>
-                                           
+                        </td>
+                        {%endif%}
+                            
+                                            
+                    </form>
                     </tr>
-                                </tbody>
+                    </tbody>
                   
-                  {% endfor %}
-                  {% endif %}
+                  
                                 </table>
                                 <div class="form-group">
-                        <button type="submit" class="btn bg-success btn-block" id="action">Submit
-                            <i class="icon-arrow-right14 position-right"></i></button>
+                       
                     </div>
                             </div>
                             <!-- /.panel-body -->
