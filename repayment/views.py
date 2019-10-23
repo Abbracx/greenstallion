@@ -5,7 +5,10 @@ from accounts.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from datetime import date, timedelta
 from django.db.models import Q
-from django.http import HttpResponse
+from django.http import 
+from paystackapi.transaction import Transaction
+import string
+import random
 
 # Create your views here.
 def repayment (request):
@@ -21,9 +24,11 @@ def client_repayment_history(request, id):
 
 def make_payment(request, id):
     obj = RepaymentAccount.objects.get(user_loan__user = id)
+    user = 
     
     if request.method == "POST":
         paid_amount = request.POST.get('amount')
+        
         obj.loan_owed = float(obj.loan_owed) - float(paid_amount)
         obj.paid_amount = float(obj.paid_amount) - float(paid_amount)
         obj.save()
