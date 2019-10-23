@@ -5,7 +5,11 @@ from accounts.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from datetime import date, timedelta
 from django.db.models import Q
+<<<<<<< HEAD
 from django.http import HttpResponse
+=======
+from django.http import 
+>>>>>>> master
 from paystackapi.transaction import Transaction
 import string
 import random
@@ -37,6 +41,7 @@ def success_payment(request):
 
 def make_payment(request, id):
     obj = RepaymentAccount.objects.get(user_loan__user = id)
+
     user = get_object_or_404(User, pk=id)
     response = None
     verify = None
