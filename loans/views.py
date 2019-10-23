@@ -202,9 +202,6 @@ def loan_approved(request):
         username = request.POST.get('username')
         client_payment_date = request.POST.get('repayment_date')
         user_loan_details = LoanAccount.objects.get(user__username=username)
-        obj = RepaymentAccount.objects.create(applied=True, repayment_date=client_payment_date, user_loan=user_loan_details)
-        obj.loan_owed = user_loan_details.total_payable
-        obj.set_monthly_payment()
 
         if admin_decision == 'AP':
             user_loan_details.loan_disbursement = True
@@ -213,6 +210,7 @@ def loan_approved(request):
             user_loan_details.set_totalpayable_amount()
             user_loan_details.save()
 
+            obj = RepaymentAccount.objects.create(applied=True, repayment_date=client_payment_date, user_loan=user_loan_details)
             obj.loan_owed = user_loan_details.total_payable
             obj.set_monthly_payment()
             obj.save()
@@ -315,6 +313,7 @@ def stallion_advance_loan(request, id):
         except ObjectDoesNotExist:
             return HttpResponse('Oops, You didn\'t specify any Income')
         else:
+
             sa_info.occupation       = occupation
             sa_info.employment_status= employment_status
             sa_info.employer_name    = employer_name

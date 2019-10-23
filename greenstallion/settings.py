@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'repayment',
     'loans.apps.LoansConfig',
+    'paystackapi',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -137,3 +138,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_URL = '/'
+
+PAYSTACK_SECRET_KEY ='sk_test_62906e39de1aa16ec336defee95c5f397d782334' 
