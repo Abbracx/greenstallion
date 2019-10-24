@@ -61,17 +61,19 @@
                                                 </th>
                                             </tr>
                                         </thead>
-                                        {% for info in outstanding %}
+
 
                                         <tbody>
                                     <tr>
-                        <td>{{info.user_loan.user.first_name}}, {{info.user_loan.user.last_name}}</td>
-                        <td>{{info.user_loan.loan_amount}}</td>
-                        <td>{{info.repaid}}</td>
-                        <td>{{info.loan_owed}}</td>
-                        <td>{{info.user_loan.package_list}}</td>
-                        <td>{{info.user_loan.disbursement_date}}</td>
-                        <td>{{info.repayment_date}}</td>
+                                        <td>{{history.user_loan.user.username}}</td>
+                                        <td>{{history.user_loan.loan_amount}}</td>
+                                        <td>{{history.repaid}}</td>
+                                        <td>{{history.loan_owed}}</td>
+                                        <td>{{history.user_loan.package_list}}</td>
+                                        <td>{{history.user_loan.disbursement_date}}</td>
+                                        <td>{{history.next_payment_date}}</td>
+
+
                         <td class="text-center">
                             <ul class="icons-list">
                                 <li class="dropdown">
@@ -93,7 +95,7 @@
                         </td>
                     </tr>
                                 </tbody>
-                                    {% endfor %}
+
                                     </table>
                                 </div>
                             </div>

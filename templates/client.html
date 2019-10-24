@@ -1,0 +1,59 @@
+<div class="sidebar-category sidebar-category-visible">
+        <div class="category-content no-padding">
+            <ul class="navigation navigation-main navigation-accordion">
+                <li class=" active ">
+                    <a href="{% url 'dashboard' %}" class="legitRipple">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                
+                <li class="treeview">
+                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
+                        <i class="fa fa-money"></i> <span>Loans</span>
+                    </a>
+                    <ul class="treeview-menu hidden-ul">
+                        
+
+                        <li> 
+                            <a href="{% url 'process_eligible_loan' user.id %}" class="legitRipple">
+                                <i class="fa fa-circle-o"></i>
+                                Apply Loan
+                                <span class="pull-right-container">
+                                    <span class="label label-warning pull-right">0</span>
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li> 
+                            <a href="{% url 'loan_detail' user.id  %}" class="legitRipple">
+                                <i class="fa fa-circle-o"></i>
+                                View Loan Details
+                                <span class="pull-right-container">
+                                    <span class="label label-warning pull-right">0</span>
+                                </span>
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                <li class="treeview ">
+                    <a href="{% url 'dashboard' %}" class="has-ul legitRipple">
+                        <i class="fa fa-dollar"></i> <span>Repayments</span>
+                    </a>
+                    <ul class="treeview-menu hidden-ul">
+                        <<li><a href="{% url 'client_repayment_history' user.id %}" class="legitRipple"><i
+                                    class="fa fa-circle-o"></i> Repayments
+                            </a></li>
+
+                    </ul>
+                </li>
+               
+                <li class="">
+                    <a href="#" class="legitRipple">
+                        <i class="fa fa-cog"></i> <span>Contact Us</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>

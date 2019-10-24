@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1e54b211-5ade-4bda-b89a-5b04523b6586" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repayment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/repayment/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loan/data-status=loan_disbursed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loan/data-status=loan_disbursed.html" afterDir="false" />
+>>>>>>> 93feeefe8120567ba1751917ece29ce9bbd86a78
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,6 +16,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -102,6 +109,8 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> 93feeefe8120567ba1751917ece29ce9bbd86a78
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -110,6 +119,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="FindInProjectRecents">
     <findStrings>
       <find>user</find>
@@ -233,16 +243,32 @@
       </pane>
     </panes>
   </component>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1SPbioPWn6Bzkq6HMMBrezq2dRg" />
+>>>>>>> 93feeefe8120567ba1751917ece29ce9bbd86a78
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/repayment" />
+>>>>>>> 93feeefe8120567ba1751917ece29ce9bbd86a78
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/greenstallion/templates/loan" />
+      <recent name="$PROJECT_DIR$/greenstallion/templates" />
+      <recent name="$PROJECT_DIR$/greenstallion/greenstallion/templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\static" />
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion\assetss" />
       <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion" />
@@ -254,6 +280,13 @@
       <recent name="$PROJECT_DIR$/greenstallion/templates/loan" />
       <recent name="$PROJECT_DIR$/greenstallion/templates" />
       <recent name="$PROJECT_DIR$/greenstallion/greenstallion/templates" />
+=======
+      <recent name="C:\Users\Ifeanyiejindu\PycharmProjects\greenstallion\templates\repayment" />
+      <recent name="C:\Users\KELECHI\PycharmProjects\greenstallion" />
+      <recent name="$PROJECT_DIR$/greenstallion/repayment" />
+      <recent name="$PROJECT_DIR$/greenstallion/loans" />
+      <recent name="$PROJECT_DIR$/greenstallion/templates" />
+>>>>>>> 93feeefe8120567ba1751917ece29ce9bbd86a78
     </key>
   </component>
   <component name="RunDashboard">
@@ -292,6 +325,7 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="24897000" />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="-5" y="37" width="1600" height="860" extended-state="1" />
     <layout>
@@ -318,6 +352,8 @@
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
   </component>
+=======
+>>>>>>> 93feeefe8120567ba1751917ece29ce9bbd86a78
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
@@ -333,6 +369,19 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -344,6 +393,7 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/greenstallion/templates/charge/create.html" />
     <entry file="file://$PROJECT_DIR$/greenstallion/templates/collateral/data.html" />
@@ -457,4 +507,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> 93feeefe8120567ba1751917ece29ce9bbd86a78
 </project>

@@ -48,52 +48,55 @@
                                             <th>Category</th>
                                             <th>Loan Package</th>
                                             <th>Income</th>
+                                            <th>Repayment Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    {% for payment in disbursement %}
-                                    {% if payment.loan_approval == True and payment.loan_disbursement == null%}
+                                    {% if awaiting_disbursement %}
+                                    {% for loan_details in awaiting_disbursement %}
+                                    
                                     <tbody>
                                     <tr>
-                                        <form action = '' method = 'POST'>
-                                     {% csrf_token %}
-                                        <td></td>
-                        <td>{{payment.first_name}} {{payment.last_name}}</td>
-                        <td>{{payment.loan_amount}}</td>
-                        <td>{{payment.bank_statement}}</td>
-                        <td>{{payment.user_category}}</td>
-                        <td>{{payment.package_list}}</td>
-                        <td>{% if user_category == SAE %}
-                        {{payment.monthly_salary}}
-                        {% elif user_category == BO %}
-                            {{payment.monthly_turnover}}
-                         {% else %}
-                            <span>{{payment_allowee}}</span>
-                            {% endif %}
+                        <form action = "{% url 'loan_approved' %}" method = 'POST'>
+                             {% csrf_token %}
+                        <td></td>
+                        <td>{{loan_details.user.first_name}} {{loan_details.user.last_name}}</td>
+                        <td>{{loan_details.loan_amount}}</td>
+                        <td>{{loan_details.bank_statement}}</td>
+                        <td>{{loan_details.user_category}}</td>
+                        <td>{{loan_details.package_list}}</td>
+                        <td>{{loan_details.monthly_income}}</td>
+                        <td>
+                            <div class="form-group has-feedback has-feedback-left">
+                                <label for="repayment_date"></label>
+                                    <input type="text" name="repayment_date" class="form-control" id="repayment_date" required />
+                            <div class="form-control-feedback">
+                                <i class="icon-envelop text-muted mb-3"></i>
+                            </div>
                         </td>
+                        <input type="hidden" id="username" name="username" value="{{loan_details.user.username}}">
                         <td class="col-sm-2">
-                                            <select required="required" id="action"
-                                                name="action">
-                                                <option value="#" selected="selected">Select</option>
-                                                <option value="AP">Approve</option>
-                                                <option value="DE">Decline</option>
-                                            </select>
-                                        </td>
+                            <select required="required" id="action" name="action">
+                                    <option value="#" selected="selected">Select</option>
+                                    <option value="AP">Approve</option>
+                                    <option value="DE">Decline</option>
+                            </select>
+                        </td>
 
-                                     <td>
-                                            <button type="submit" class="btn bg-success btn-block" id="action">Submit
-                            <i class="icon-arrow-right14 position-right"></i></button>
-                                        </td>
-                                            <input type="hidden" id="package_list" name="pk" value="{{payment.pk}}">
-                                            </form>
+                        <td>
+                                <button type="submit" class="btn bg-success btn-block" id="action">Submit
+                                <i class="icon-arrow-right14 position-right"></i></button>
+                        </td>
+                                            
+                    </form>
                     </tr>
-                                </tbody>
-                  {% endif %}
+                    </tbody>
+                  
                   {% endfor %}
+                  {% endif %}
                                 </table>
                                 <div class="form-group">
-                        <button type="submit" class="btn bg-success btn-block" id="action">Submit
-                            <i class="icon-arrow-right14 position-right"></i></button>
+                       
                     </div>
                             </div>
                             <!-- /.panel-body -->
