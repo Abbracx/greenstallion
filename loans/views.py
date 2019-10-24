@@ -19,6 +19,9 @@ from .models import LoanAccount
 from .models import Approval
 from django.core.exceptions import ObjectDoesNotExist
 from repayment.models import RepaymentAccount
+from paystack.api import Transaction
+import string
+import random
 #from accounts.models import User
 
 # Create your views here.
@@ -310,6 +313,8 @@ def stallion_advance_loan(request, id):
         purpose_of_loan   = request.POST.get('purpose_of_loan')
         package_list      = request.POST.get('package_list')
 
+
+
         try:
             sa_info = SalaryEarners.objects.get(user = user_obj)
         except ObjectDoesNotExist:
@@ -333,6 +338,8 @@ def stallion_advance_loan(request, id):
                                             loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+            
+            response = Transaction.initialize()
 
         print('Loan Application Successful')
         return redirect('stallion_advance_loan', id=id)
