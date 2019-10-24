@@ -5,11 +5,7 @@ from accounts.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from datetime import date, timedelta
 from django.db.models import Q
-<<<<<<< HEAD
 from django.http import HttpResponse
-=======
-from django.http import 
->>>>>>> master
 from paystackapi.transaction import Transaction
 import string
 import random
@@ -25,18 +21,32 @@ def client_repayment_history(request, id):
 
     return render(request, 'repayment/client_data.html', {'history': history})
 
+def verify_card_deatils(request, id):
+
+    user = get_object_or_404(User, pk=id)
+    response = None
+    VERIFICATION_AMOUNT = 1000
+    REF_LENGTH = 16
+
+    if user.is_active:
+        ref = ''.join([random.choice(string.ascii_lowercase + string.digits) 
+                        for _ in range(REF_LENGTH)])
+        response = Transaction.initialize(reference=ref, amount=VERIFICATION_AMOUNT, email=user.email, callback_url='http://127.0.0.1:8000/repayment/success')
+            if response:
+                return redirect(response['data'].get('authorization_url'))
+            else:
+                return HttpResponse('Oops! Something bad happened.')
+    
+        
+
 def success_payment(request):
-    trxref = request.GET['trxref']
+    
     reference = request.GET['reference']
     verify = Transaction.verify(reference=reference)
-    #import pdb; pdb.set_trace()
+    
     if verify['data']['authorization'].get('reusable') == True:
-        auth_code = verify['data']['authorization'].get('authorization_code')
-        REF_LENGTH = 10
-        ref = ''.join([random.choice(string.ascii_lowercase + string.digits) for _ in range(REF_LENGTH)])
-        charge = Transaction.charge(reference=ref, authorization_code=auth_code, amount=1000, email='tankoraphael@gmail.com')
-        import pdb; pdb.set_trace()
-        return HttpResponse('charged successfully')
+        return redirect()
+        
 
 
 def make_payment(request, id):
