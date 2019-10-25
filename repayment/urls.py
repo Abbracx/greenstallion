@@ -23,5 +23,6 @@ urlpatterns = [
     #path('create-payment/<int:id>', views.create_payment_process, name = 'create_payment_process'),
     path('data/', views.repayment, name = 'repayment'),
     path('client_data/<int:id>', views.client_repayment_history, name = 'client_repayment_history'),
-    path('success', views.success_payment, name = 'success_payment')
+    path('card-details/<int:id>', views.initiate_card_first_transaction, name ='initiate_card_first_transaction'),
+    path('card-verified', views.verify_card_payment, name = 'verify_card_payment')
     ]

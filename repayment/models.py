@@ -13,6 +13,10 @@ from django.shortcuts import get_object_or_404
 
 
 # Create your models here.
+class PayStackDetails(models.Model):
+        auth_code           = models.CharField(max_length=50, null=True)
+        signature_code      = models.CharField(max_length=50, null=True)
+        user                = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
 
 
 class RepaymentAccount(models.Model):
@@ -32,6 +36,7 @@ class RepaymentAccount(models.Model):
     loan_interest       = models.IntegerField(null=True)
     loan_disbursed      = models.BooleanField(default=False)
     user_loan           = models.ForeignKey(LoanAccount, on_delete= models.CASCADE)
+
 
     def set_monthly_payment(self):
         self.per_monthly_payment = float(self.loan_owed) / float(self.user_loan.loan_tenure)

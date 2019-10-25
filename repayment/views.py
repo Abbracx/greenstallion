@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import RepaymentAccount
+from .models import PayStackDetails
 from loans.models import LoanAccount
 from accounts.models import User
 from django.shortcuts import render, redirect, get_object_or_404
@@ -21,7 +22,7 @@ def client_repayment_history(request, id):
 
     return render(request, 'repayment/client_data.html', {'history': history})
 
-def verify_card_deatils(request, id):
+def initiate_card_first_transaction(request, id):
 
     user = get_object_or_404(User, pk=id)
     response = None
@@ -31,36 +32,41 @@ def verify_card_deatils(request, id):
     if user.is_active:
         ref = ''.join([random.choice(string.ascii_lowercase + string.digits) 
                         for _ in range(REF_LENGTH)])
-        response = Transaction.initialize(reference=ref, amount=VERIFICATION_AMOUNT, email=user.email, callback_url='http://127.0.0.1:8000/repayment/success')
-            if response:
-                return redirect(response['data'].get('authorization_url'))
-            else:
-                return HttpResponse('Oops! Something bad happened.')
+        response = Transaction.initialize(reference=ref, amount=VERIFICATION_AMOUNT, email=user.email, callback_url='http://127.0.0.1:8000/repayment/card-verified')
+        if response:
+            return redirect(response['data'].get('authorization_url'))
+        else:
+            return HttpResponse('Oops! Something bad happened.')
     
         
+def verify_card_payment(request):
+    
+    reference  = request.GET['reference']
+    
+    verify_transaction = Transaction.verify(reference=reference)
+    auth_code          = verify_transaction['data']['authorization'].get('authorization_code')
+    signature_code     = verify_transaction['data']['authorization'].get('signature')
+    is_reusable        = verify_transaction['data']['authorization'].get('reusable')
 
-def success_payment(request):
-    
-    reference = request.GET['reference']
-    verify = Transaction.verify(reference=reference)
-    
-    if verify['data']['authorization'].get('reusable') == True:
-        return redirect()
+    if is_reusable:
+        PayStackDetails.objects.create(auth_code= auth_code, 
+                                       signature_code= signature_code,
+                                       user= request.user)
+        return redirect('user_bank_statement', request.user.id)
+    return redirect('apply_loan', request.user.id)
         
 
 
 def make_payment(request, id):
     obj = RepaymentAccount.objects.get(user_loan__user = id)
-
     user = get_object_or_404(User, pk=id)
     response = None
-    verify = None
 
     if request.method == "POST":
         paid_amount = request.POST.get('amount')
         if paid_amount:
             #create ref code
-            REF_LENGTH = 10
+            REF_LENGTH = 16
             ref = ''.join([random.choice(string.ascii_lowercase + string.digits) for _ in range(REF_LENGTH)])
             response = Transaction.initialize(reference=ref, amount=paid_amount, email=user.email, callback_url = 'http://127.0.0.1:8000/repayment/success')
             if response:

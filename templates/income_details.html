@@ -7,7 +7,7 @@
                         <div class="page-title">
                             <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
                                 -
-                                Loans
+                                Monthly-Income
                             </h4>
                         </div>
                         <div class="heading-elements">
@@ -19,7 +19,7 @@
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
                             <li><a href="{% url 'dashboard' %}"><i class="icon-home2 position-left"></i> Home</a></li>
-                            <li class="active">Loans
+                            <li class="active">monthly_income
                             </li>
                         </ul>
                     </div>
@@ -35,28 +35,28 @@
 
                                 
                             </div>
-                            
-                                
+   
                                 <br>
                                 <br>
-
                                 <form action = "{% url 'process_eligible_loan' user.id %}" method = 'POST'>
                                     {% csrf_token %}
                                     <div class="form-group has-feedback has-feedback-left">
-                                        <input type="text" name="monthly_income" class="form-control" placeholder="Enter your income or monthly turnover or salary" value="" required>
+                                        <input type="text" name="monthly_income" class="form-control" placeholder=" Enter your income or monthly turnover or salary" value="" required>
                                         <div class="form-control-feedback">
                                             <i class="icon-envelop text-muted mb-3"></i>
                                         </div>
                                     </div>
-                                    <input type="hidden" id="username" name="username" value="{{user_loan_details.user.username}}">
-                                    
-                                 
-                                        <button type="submit" class="btn bg-success btn-block" id="action" enable> Next
+                                    <input type="hidden" id="username" name="username" value="{{user_loan_details.user.username}}">    
+                                    <button type="submit" class="btn btn-primary" > Next
                                         <i class="icon-arrow-right14 position-right"></i></button>
-                                        
-                                                        
                                 </form>
                             <!-- /.panel-body -->
+                            <div class="panel-footer">
+                                <div class="heading-elements">
+                        
+                                    
+                                </div>
+                        </div>
                         </div>
                         <!-- /.box -->
                     </section>

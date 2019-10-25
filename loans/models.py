@@ -164,7 +164,8 @@ class LoanAccount (models.Model):
     loan_disbursement   = models.NullBooleanField()
     loan_repayment      = models.BooleanField(default=False)
     disbursement_date   = models.DateField(null=True)
-    
+    bank_statement      = models.FileField('upload a valid bank statement',upload_to='documents/', null=True)
+
 
     def __str__(self):
         return "Name: {0} {1}\nCategory: {2}\nPakage: {3}".format(self.user.first_name,self.user.last_name,self.user_category,self.package_list,)

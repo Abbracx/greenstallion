@@ -19,6 +19,7 @@ from .models import LoanAccount
 from .models import Approval
 from django.core.exceptions import ObjectDoesNotExist
 from repayment.models import RepaymentAccount
+from .forms import BankStatementForm
 #from accounts.models import User
 
 # Create your views here.
@@ -57,7 +58,19 @@ def borrower_group_data(request):
 def borrower_group_create(request):
     return render(request, 'borrower/group/create.html')
 
+
 #the loan part starts here for client
+def user_bank_statement(request, id):
+    if request.method == 'POST':
+        form = BankStatementForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your bank statement was uploaded succesfully.')
+            return redirect('loan_detail', id)
+    form = BankStatementForm()
+    return render(request,'repayment/user_bank_details.html',{'form': form})
+
+
 def loan_detail(request, id):
     
     user_loan_details = None
@@ -290,6 +303,12 @@ def collateral_types(request):
 def stallion_advance_loan(request, id):
 
     user_obj = get_object_or_404(User, pk=id)
+    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+    
+    if user_loan_obj.exists():
+        messages.info(request, 'you\'re still having a pending loan')
+        return redirect('stallion_advance_loan', id=id)
+ 
 
     if request.method == "POST": 
         occupation        = request.POST.get('occupation')
@@ -327,6 +346,9 @@ def stallion_advance_loan(request, id):
             sa_info.bvn              = bvn
             sa_info.save()
             StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
+
+           
+                
             if int(loan_amount) <= sa_info.loan_eligible:
                 LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
                                             loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
@@ -334,116 +356,133 @@ def stallion_advance_loan(request, id):
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
 
         print('Loan Application Successful')
-        return redirect('stallion_advance_loan', id=id)
+        return redirect('initiate_card_first_transaction', id=id)
     return render(request, 'loan/stallion_advance_form.html',{'user_obj':user_obj})
 
 @login_required
 def stallion_allowee_loan(request, id):
 
     user_obj = get_object_or_404(User, pk=id)
+    user_loan_obj = LoanAccount.objects.filter(pk=id)
 
-    if request.method == "POST":
+    if user_loan_obj.exists():
         
-        state_code      = request.POST.get('state_code')
-        nysc_id         = request.POST.get('nysc_id', "")
-        validity_date   = request.POST.get('validity_date')
-        lga             = request.POST.get('lga', "")
-        bank_name       = request.POST.get('bank_name')
-        account_number  = request.POST.get('account_number')
-        account_name    = request.POST.get('account_name')
-        bvn             = request.POST.get('bvn')
-        loan_amount     = request.POST.get('loan_amount')
-        loan_tenure      = request.POST.get('loan_tenure', "")
-        purpose_of_loan = request.POST.get('purpose_of_loan')
-        package_list    = request.POST.get('package_list')
+        return HttpResponse('sorry you have pending loans not paid')
+    else:
+        if request.method == "POST":
+            
+            state_code      = request.POST.get('state_code')
+            nysc_id         = request.POST.get('nysc_id', "")
+            validity_date   = request.POST.get('validity_date')
+            lga             = request.POST.get('lga', "")
+            bank_name       = request.POST.get('bank_name')
+            account_number  = request.POST.get('account_number')
+            account_name    = request.POST.get('account_name')
+            bvn             = request.POST.get('bvn')
+            loan_amount     = request.POST.get('loan_amount')
+            loan_tenure      = request.POST.get('loan_tenure', "")
+            purpose_of_loan = request.POST.get('purpose_of_loan')
+            package_list    = request.POST.get('package_list')
 
-        try:
-            co_info = Corpers.objects.get(user = user_obj)
-        except ObjectDoesNotExist:
-            return HttpResponse('Oops, You didn\'t specify any Income')
-        else:
-            co_info.state_code    = state_code
-            co_info.nysc_id       = nysc_id
-            co_info.validity_date = validity_date
-            co_info.lga           = lga
-            co_info.bank_name     = bank_name
-            co_info.account_number= account_number
-            co_info.account_name  = account_name
-            co_info.bvn           = bvn 
-            co_info.save()
-            StallionAllowee.objects.create(corper=co_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
-
-            if int(loan_amount) <= co_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
-                                        loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
+            try:
+                co_info = Corpers.objects.get(user = user_obj)
+            except ObjectDoesNotExist:
+                return HttpResponse('Oops, You didn\'t specify any Income')
             else:
-                return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+                co_info.state_code    = state_code
+                co_info.nysc_id       = nysc_id
+                co_info.validity_date = validity_date
+                co_info.lga           = lga
+                co_info.bank_name     = bank_name
+                co_info.account_number= account_number
+                co_info.account_name  = account_name
+                co_info.bvn           = bvn 
+                co_info.save()
+                StallionAllowee.objects.create(corper=co_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
-        print('Loan Application Successful')
-        return redirect('stallion_allowee_loan', id=id)
+                if int(loan_amount) <= co_info.loan_eligible:
+                    LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                                            loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
+                else:
+                    return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+
+            print('Loan Application Successful')
+            return redirect('initiate_card_first_transaction', id=id)
     return render(request, 'loan/stallion_allowee_form.html')
 
 @login_required
 def stallion_support_loan(request, id):
 
     user_obj = get_object_or_404(User, pk=id)
+    user_loan_obj = LoanAccount.objects.filter(user_id=id)
 
-    if request.method == "POST":
-        
-        company_name     = request.POST.get('company_name')
-        cac_number       = request.POST.get('cac_number')
-        official_email   = request.POST.get('official_email')
-        bank_name        = request.POST.get('bank_name')
-        account_number   = request.POST.get('account_number')
-        account_name     = request.POST.get('account_name')
-        bvn              = request.POST.get('bvn')
-        name_of_director = request.POST.get('name_of_director')
-        director_address = request.POST.get('director_address')
-        means_of_identification = request.POST.get('means_of_identification')
-        business_type    = request.POST.get('business_type')
-        source_of_funds  = request.POST.get('source_of_funds')
-        years_in_business= request.POST.get('years_in_business')
-        monthly_turnover_words = request.POST.get('monthly_turnover_words')
-        purpose_of_loan  = request.POST.get('purpose_of_loan')
-        loan_amount      = request.POST.get('loan_amount')
-        loan_tenure      = int(request.POST.get('loan_tenure'))
-        package_list     = request.POST.get('package_list')
+    if user_loan_obj.exists():
+        messages.info(request, 'you\'re still having a pending loan')
+        return redirect('stallion_support_loan', id=id)
+    else:
 
-        try:
-            bo_info = BusinessOwners.objects.get(user = user_obj)
-        except ObjectDoesNotExist:
-            return HttpResponse('Oops, You didn\'t specify any Income')
-        else:
-            bo_info.company_name           = company_name
-            bo_info.cac_number             = cac_number
-            bo_info.official_email         = official_email
-            bo_info.bank_name              = bank_name
-            bo_info.account_number         = account_number
-            bo_info.account_name           = account_name
-            bo_info.bvn                    = bvn
-            bo_info.name_of_director       = name_of_director
-            bo_info.director_address       = director_address
-            bo_info.means_of_identification= means_of_identification
-            bo_info.business_type          = business_type
-            bo_info.source_of_funds        = source_of_funds
-            bo_info.years_in_business      = years_in_business
-            bo_info.save()
-            StallionSupport.objects.create(business_owner=bo_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
+        if request.method == "POST":
+            
+            company_name     = request.POST.get('company_name')
+            cac_number       = request.POST.get('cac_number')
+            official_email   = request.POST.get('official_email')
+            bank_name        = request.POST.get('bank_name')
+            account_number   = request.POST.get('account_number')
+            account_name     = request.POST.get('account_name')
+            bvn              = request.POST.get('bvn')
+            name_of_director = request.POST.get('name_of_director')
+            director_address = request.POST.get('director_address')
+            means_of_identification = request.POST.get('means_of_identification')
+            business_type    = request.POST.get('business_type')
+            source_of_funds  = request.POST.get('source_of_funds')
+            years_in_business= request.POST.get('years_in_business')
+            monthly_turnover_words = request.POST.get('monthly_turnover_words')
+            purpose_of_loan  = request.POST.get('purpose_of_loan')
+            loan_amount      = request.POST.get('loan_amount')
+            loan_tenure      = int(request.POST.get('loan_tenure'))
+            package_list     = request.POST.get('package_list')
 
-            if int(loan_amount) <= bo_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
-                                        loan_amount=loan_amount, loan_tenure=loan_tenure,purpose_of_loan=purpose_of_loan)
-
+            try:
+                bo_info = BusinessOwners.objects.get(user = user_obj)
+            except ObjectDoesNotExist:
+                return HttpResponse('Oops, You didn\'t specify any Income')
             else:
-                return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+                bo_info.company_name           = company_name
+                bo_info.cac_number             = cac_number
+                bo_info.official_email         = official_email
+                bo_info.bank_name              = bank_name
+                bo_info.account_number         = account_number
+                bo_info.account_name           = account_name
+                bo_info.bvn                    = bvn
+                bo_info.name_of_director       = name_of_director
+                bo_info.director_address       = director_address
+                bo_info.means_of_identification= means_of_identification
+                bo_info.business_type          = business_type
+                bo_info.source_of_funds        = source_of_funds
+                bo_info.years_in_business      = years_in_business
+                bo_info.save()
+                StallionSupport.objects.create(business_owner=bo_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
-        print('Loan Application Successful')
-        return redirect('stallion_support_loan',id=id)
+                if int(loan_amount) <= bo_info.loan_eligible:
+                    LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                                            loan_amount=loan_amount, loan_tenure=loan_tenure,purpose_of_loan=purpose_of_loan)
+
+                else:
+                    return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+
+            print('Loan Application Successful')
+            return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_support_form.html')
 
 @login_required
 def stallion_fees_loan(request, id):
     user_obj = get_object_or_404(User, pk=id)
+    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+
+    if user_loan_obj.exists():
+        messages.info(request, 'you\'re still having a pending loan')
+        return redirect('stallion_fees_loan', id=id)
+ 
 
     if request.method == "POST": 
         occupation      = request.POST.get('occupation')
@@ -494,12 +533,18 @@ def stallion_fees_loan(request, id):
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
 
         print('Loan Application Successful')
-        return redirect('stallion_fees_loan',id=id)
+        return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_fees_form.html')
 
 @login_required
 def stallion_loans_loan(request, id):
     user_obj = get_object_or_404(User, pk=id)
+    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+
+    if user_loan_obj.exists():
+        messages.info(request, 'you\'re still having a pending loan')
+        return redirect('stallion_loans_loan', id=id)
+ 
 
     if request.method == "POST": 
         occupation = request.POST.get('occupation')
@@ -543,12 +588,18 @@ def stallion_loans_loan(request, id):
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
         print('Loan Application Successful')
-        return redirect('stallion_loans_loan',id=id)
+        return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_loans_form.html')
 
 @login_required
 def stallion_smart_loan(request, id):
     user_obj = get_object_or_404(User, pk=id)
+    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+
+    if user_loan_obj.exists():
+        messages.info(request, 'you\'re still having a pending loan')
+        return redirect('stallion_smart_loan', id=id)
+ 
 
     if request.method == "POST": 
         occupation = request.POST.get('occupation')
@@ -593,7 +644,7 @@ def stallion_smart_loan(request, id):
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
 
         print('Loan Application Successful')
-        return redirect('stallion_smart_loan',id=id)
+        return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_smart_form.html')
 
 
