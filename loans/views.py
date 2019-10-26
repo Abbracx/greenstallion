@@ -312,8 +312,8 @@ def stallion_advance_loan(request, id):
 
     
     if user_has_loan.exists():
-        messages.info(request, 'you\'re still having a pending loan')
-        return redirect('stallion_advance_loan', id=id)
+        return HttpResponse('sorry you have pending loans not paid')
+        
     else:
 
         if request.method == "POST": 
@@ -417,8 +417,8 @@ def stallion_support_loan(request, id):
     eligible_loan = bo_info.loan_eligible
 
     if user_has_loan.exists():
-        messages.info(request, 'you\'re still having a pending loan')
-        return redirect('stallion_support_loan', id=id)
+        
+        return HttpResponse('sorry you have pending loans not paid')
     else:
 
         if request.method == "POST":
@@ -477,8 +477,7 @@ def stallion_fees_loan(request, id):
 
 
     if user_has_loan.exists():
-        messages.info(request, 'you\'re still having a pending loan')
-        return redirect('stallion_fees_loan', id=id)
+       return HttpResponse('sorry you have pending loans not paid')
     else:
         if request.method == "POST": 
             occupation      = request.POST.get('occupation')
@@ -534,8 +533,7 @@ def stallion_loans_loan(request, id):
     eligible_loan = sa_info.loan_eligible
 
     if user_has_loan.exists():
-        messages.info(request, 'you\'re still having a pending loan')
-        return redirect('stallion_loans_loan', id=id)
+        return HttpResponse('sorry you have pending loans not paid')
     else:
         if request.method == "POST": 
             occupation = request.POST.get('occupation')
@@ -586,8 +584,7 @@ def stallion_smart_loan(request, id):
 
 
     if user_has_loan.exists():
-        messages.info(request, 'you\'re still having a pending loan')
-        return redirect('stallion_smart_loan', id=id)
+        return HttpResponse('sorry you have pending loans not paid')
     else:
         if request.method == "POST": 
             occupation = request.POST.get('occupation')

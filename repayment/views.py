@@ -75,13 +75,15 @@ def make_payment(request, id):
                 ref = ''.join([random.choice(string.ascii_lowercase + string.digits) for _ in range(REF_LENGTH)])
                 response = Transaction.charge(reference=ref, authorization_code=paystack.auth_code,
                                              amount=paid_amount, email=user.email)
-                if response:
+                if response['status'] == True:
                     #claculate the loan still owing
                     repayment_obj.loan_owed = float(repayment_obj.loan_owed) -  float(response['data'].get('amount'))
                     repayment_obj.paid_amount = float(repayment_obj.paid_amount) + float(response['data'].get('amount'))
                     repayment_obj.save()
+                    return render(request,'payment.html',{'is_paid':response['status'],'amount':response['data'].get('amount')})
 
-    
+                else:
+                    return render(request,'payment.html',{'is_paid':response['status']})
         '''
         if obj.loan_owed is > 0:
             if not obj:
