@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import LoanAccount
+from .models import Document
 
 class BankStatementForm(ModelForm):
 
     class Meta:
-        model = LoanAccount
+        model = Document
         fields = ('bank_statement',)

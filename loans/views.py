@@ -61,10 +61,13 @@ def borrower_group_create(request):
 
 #the loan part starts here for client
 def user_bank_statement(request, id):
+    user_loan = LoanAccount.objects.get(user__id=id)
     if request.method == 'POST':
         form = BankStatementForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            bank_statement = form.save()
+            user_loan.bank_statement=bank_statement
+            user_loan.save()
             messages.success(request, 'Your bank statement was uploaded succesfully.')
             return redirect('loan_detail', id)
     form = BankStatementForm()
@@ -303,9 +306,9 @@ def collateral_types(request):
 def stallion_advance_loan(request, id):
 
     user_obj = get_object_or_404(User, pk=id)
-    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+    user_has_loan = LoanAccount.objects.filter(user_id=id)
     
-    if user_loan_obj.exists():
+    if user_has_loan.exists():
         messages.info(request, 'you\'re still having a pending loan')
         return redirect('stallion_advance_loan', id=id)
  
@@ -345,7 +348,8 @@ def stallion_advance_loan(request, id):
             sa_info.account_name     = account_name
             sa_info.bvn              = bvn
             sa_info.save()
-            StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
+            StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,
+                                           purpose_of_loan=purpose_of_loan)
 
            
                 
@@ -354,19 +358,16 @@ def stallion_advance_loan(request, id):
                                             loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
-
-        print('Loan Application Successful')
-        return redirect('initiate_card_first_transaction', id=id)
+            return redirect('initiate_card_first_transaction', id=id)
     return render(request, 'loan/stallion_advance_form.html',{'user_obj':user_obj})
 
 @login_required
 def stallion_allowee_loan(request, id):
 
     user_obj = get_object_or_404(User, pk=id)
-    user_loan_obj = LoanAccount.objects.filter(pk=id)
+    user_has_loan = LoanAccount.objects.filter(pk=id)
 
-    if user_loan_obj.exists():
-        
+    if user_has_loan.exists():
         return HttpResponse('sorry you have pending loans not paid')
     else:
         if request.method == "POST":
@@ -405,18 +406,16 @@ def stallion_allowee_loan(request, id):
                                             loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
                 else:
                     return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
-
-            print('Loan Application Successful')
-            return redirect('initiate_card_first_transaction', id=id)
+                return redirect('initiate_card_first_transaction', id=id)
     return render(request, 'loan/stallion_allowee_form.html')
 
 @login_required
 def stallion_support_loan(request, id):
 
     user_obj = get_object_or_404(User, pk=id)
-    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+    user_has_loan = LoanAccount.objects.filter(user_id=id)
 
-    if user_loan_obj.exists():
+    if user_has_loan.exists():
         messages.info(request, 'you\'re still having a pending loan')
         return redirect('stallion_support_loan', id=id)
     else:
@@ -469,182 +468,172 @@ def stallion_support_loan(request, id):
 
                 else:
                     return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
-
-            print('Loan Application Successful')
-            return redirect('initiate_card_first_transaction',id=id)
+                return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_support_form.html')
 
 @login_required
 def stallion_fees_loan(request, id):
     user_obj = get_object_or_404(User, pk=id)
-    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+    user_has_loan = LoanAccount.objects.filter(user_id=id)
 
-    if user_loan_obj.exists():
+    if user_has_loan.exists():
         messages.info(request, 'you\'re still having a pending loan')
         return redirect('stallion_fees_loan', id=id)
- 
+    else:
+        if request.method == "POST": 
+            occupation      = request.POST.get('occupation')
+            employment_status = request.POST.get('employment_status')
+            employer_name   = request.POST.get('employer_name')
+            work_duration   = request.POST.get('work_duration')
+            office_address  = request.POST.get('office_address')
+            official_email  = request.POST.get('official_email')
+            monthly_salary_word = request.POST.get('monthly_salary_word')
+            bank_name       = request.POST.get('bank_name')
+            account_number  = request.POST.get('account_number')
+            account_name    = request.POST.get('account_name')
+            bvn             = request.POST.get('bvn')
+            school_name     = request.POST.get('school_name')
+            education_level = request.POST.get('educational_level')
+            fees_amount     = request.POST.get('fees_amount')
+            loan_amount     = request.POST.get('loan_amount')
+            loan_tenure      = request.POST.get('loan_tenure')
+            purpose_of_loan = request.POST.get('purpose_of_loan')
+            package_list    = request.POST.get('package_list')
 
-    if request.method == "POST": 
-        occupation      = request.POST.get('occupation')
-        employment_status = request.POST.get('employment_status')
-        employer_name   = request.POST.get('employer_name')
-        work_duration   = request.POST.get('work_duration')
-        office_address  = request.POST.get('office_address')
-        official_email  = request.POST.get('official_email')
-        monthly_salary_word = request.POST.get('monthly_salary_word')
-        bank_name       = request.POST.get('bank_name')
-        account_number  = request.POST.get('account_number')
-        account_name    = request.POST.get('account_name')
-        bvn             = request.POST.get('bvn')
-        school_name     = request.POST.get('school_name')
-        education_level = request.POST.get('educational_level')
-        fees_amount     = request.POST.get('fees_amount')
-        loan_amount     = request.POST.get('loan_amount')
-        loan_tenure      = request.POST.get('loan_tenure')
-        purpose_of_loan = request.POST.get('purpose_of_loan')
-        package_list    = request.POST.get('package_list')
-
-        try:
-            sa_info = SalaryEarners.objects.get(user = user_obj)
-        except ObjectDoesNotExist:
-            return HttpResponse('Oops, You didn\'t specify any Income')
-        else:
-            sa_info.occupation       = occupation
-            sa_info.employment_status= employment_status
-            sa_info.employer_name    = employer_name
-            sa_info.work_duration    = work_duration
-            sa_info.office_address   = office_address
-            sa_info.official_email   = official_email
-            sa_info.monthly_salary_word=monthly_salary_word
-            sa_info.bank_name        = bank_name
-            sa_info.account_number   = account_number
-            sa_info.account_name     = account_name
-            sa_info.bvn              = bvn
-            sa_info.school_name      = school_name
-            sa_info.education_level  = education_level
-            sa_info.fees_amount      = fees_amount
-            sa_info.save()
-            StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
-
-            if int(loan_amount) <= sa_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
-                                        loan_amount=loan_amount ,loan_tenure=loan_tenure,purpose_of_loan=purpose_of_loan)
+            try:
+                sa_info = SalaryEarners.objects.get(user = user_obj)
+            except ObjectDoesNotExist:
+                return HttpResponse('Oops, You didn\'t specify any Income')
             else:
-                return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+                sa_info.occupation       = occupation
+                sa_info.employment_status= employment_status
+                sa_info.employer_name    = employer_name
+                sa_info.work_duration    = work_duration
+                sa_info.office_address   = office_address
+                sa_info.official_email   = official_email
+                sa_info.monthly_salary_word=monthly_salary_word
+                sa_info.bank_name        = bank_name
+                sa_info.account_number   = account_number
+                sa_info.account_name     = account_name
+                sa_info.bvn              = bvn
+                sa_info.school_name      = school_name
+                sa_info.education_level  = education_level
+                sa_info.fees_amount      = fees_amount
+                sa_info.save()
+                StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
-        print('Loan Application Successful')
-        return redirect('initiate_card_first_transaction',id=id)
+                if int(loan_amount) <= sa_info.loan_eligible:
+                    LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                                            loan_amount=loan_amount ,loan_tenure=loan_tenure,purpose_of_loan=purpose_of_loan)
+                else:
+                    return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+                return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_fees_form.html')
 
 @login_required
 def stallion_loans_loan(request, id):
     user_obj = get_object_or_404(User, pk=id)
-    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+    user_has_loan = LoanAccount.objects.filter(user_id=id)
 
-    if user_loan_obj.exists():
+    if user_has_loan.exists():
         messages.info(request, 'you\'re still having a pending loan')
         return redirect('stallion_loans_loan', id=id)
- 
+    else:
+        if request.method == "POST": 
+            occupation = request.POST.get('occupation')
+            employment_status = request.POST.get('employment_status')
+            employer_name = request.POST.get('employer_name')
+            work_duration = request.POST.get('work_duration')
+            office_address = request.POST.get('office_address')
+            official_email = request.POST.get('official_email')
+            monthly_salary_word = request.POST.get('monthly_salary_word')
+            bank_name = request.POST.get('bank_name')
+            account_number = request.POST.get('account_number')
+            account_name = request.POST.get('account_name')
+            bvn = request.POST.get('bvn')
+            loan_amount = request.POST.get('loan_amount')
+            loan_tenure      = request.POST.get('loan_tenure')
+            purpose_of_loan = request.POST.get('purpose_of_loan')
+            package_list = request.POST.get('package_list')
 
-    if request.method == "POST": 
-        occupation = request.POST.get('occupation')
-        employment_status = request.POST.get('employment_status')
-        employer_name = request.POST.get('employer_name')
-        work_duration = request.POST.get('work_duration')
-        office_address = request.POST.get('office_address')
-        official_email = request.POST.get('official_email')
-        monthly_salary_word = request.POST.get('monthly_salary_word')
-        bank_name = request.POST.get('bank_name')
-        account_number = request.POST.get('account_number')
-        account_name = request.POST.get('account_name')
-        bvn = request.POST.get('bvn')
-        loan_amount = request.POST.get('loan_amount')
-        loan_tenure      = request.POST.get('loan_tenure')
-        purpose_of_loan = request.POST.get('purpose_of_loan')
-        package_list = request.POST.get('package_list')
-
-        try:
-            sa_info = SalaryEarners.objects.get(user = user_obj)
-        except ObjectDoesNotExist:
-            return HttpResponse('Oops, You didn\'t specify any Income')
-        else:
-            sa_info.occupation       = occupation
-            sa_info.employment_status= employment_status
-            sa_info.employer_name    = employer_name
-            sa_info.work_duration    = work_duration
-            sa_info.office_address   = office_address
-            sa_info.official_email   = official_email
-            sa_info.monthly_salary_word=monthly_salary_word
-            sa_info.bank_name        = bank_name
-            sa_info.account_number   = account_number
-            sa_info.account_name     = account_name
-            sa_info.bvn              = bvn
-            sa_info.save()
-            StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
-
-            if int(loan_amount) <= sa_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
-                                        loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
+            try:
+                sa_info = SalaryEarners.objects.get(user = user_obj)
+            except ObjectDoesNotExist:
+                return HttpResponse('Oops, You didn\'t specify any Income')
             else:
-                return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
-        print('Loan Application Successful')
-        return redirect('initiate_card_first_transaction',id=id)
+                sa_info.occupation       = occupation
+                sa_info.employment_status= employment_status
+                sa_info.employer_name    = employer_name
+                sa_info.work_duration    = work_duration
+                sa_info.office_address   = office_address
+                sa_info.official_email   = official_email
+                sa_info.monthly_salary_word=monthly_salary_word
+                sa_info.bank_name        = bank_name
+                sa_info.account_number   = account_number
+                sa_info.account_name     = account_name
+                sa_info.bvn              = bvn
+                sa_info.save()
+                StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
+
+                if int(loan_amount) <= sa_info.loan_eligible:
+                    LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                                            loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
+                else:
+                    return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+                return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_loans_form.html')
 
 @login_required
 def stallion_smart_loan(request, id):
     user_obj = get_object_or_404(User, pk=id)
-    user_loan_obj = LoanAccount.objects.filter(user_id=id)
+    user_has_loan = LoanAccount.objects.filter(user_id=id)
 
-    if user_loan_obj.exists():
+    if user_has_loan.exists():
         messages.info(request, 'you\'re still having a pending loan')
         return redirect('stallion_smart_loan', id=id)
- 
+    else:
+        if request.method == "POST": 
+            occupation = request.POST.get('occupation')
+            employment_status = request.POST.get('employment_status')
+            employer_name = request.POST.get('employer_name')
+            work_duration = request.POST.get('work_duration')
+            office_address = request.POST.get('office_address')
+            official_email = request.POST.get('official_email')
+            monthly_salary_word = request.POST.get('monthly_salary_word')
+            bank_name = request.POST.get('bank_name')
+            account_number = request.POST.get('account_number')
+            account_name = request.POST.get('account_name')
+            bvn = request.POST.get('bvn')
+            loan_amount = request.POST.get('loan_amount')
+            loan_tenure      = request.POST.get('loan_tenure', "")
+            purpose_of_loan = request.POST.get('purpose_of_loan')
+            package_list = request.POST.get('package_list')
 
-    if request.method == "POST": 
-        occupation = request.POST.get('occupation')
-        employment_status = request.POST.get('employment_status')
-        employer_name = request.POST.get('employer_name')
-        work_duration = request.POST.get('work_duration')
-        office_address = request.POST.get('office_address')
-        official_email = request.POST.get('official_email')
-        monthly_salary_word = request.POST.get('monthly_salary_word')
-        bank_name = request.POST.get('bank_name')
-        account_number = request.POST.get('account_number')
-        account_name = request.POST.get('account_name')
-        bvn = request.POST.get('bvn')
-        loan_amount = request.POST.get('loan_amount')
-        loan_tenure      = request.POST.get('loan_tenure', "")
-        purpose_of_loan = request.POST.get('purpose_of_loan')
-        package_list = request.POST.get('package_list')
-
-        try:
-            sa_info = SalaryEarners.objects.get(user = user_obj)
-        except ObjectDoesNotExist:
-            return HttpResponse('Oops, You didn\'t specify any Income')
-        else:
-            sa_info.occupation       = occupation
-            sa_info.employment_status= employment_status
-            sa_info.employer_name    = employer_name
-            sa_info.work_duration    = work_duration
-            sa_info.office_address   = office_address
-            sa_info.official_email   = official_email
-            sa_info.monthly_salary_word=monthly_salary_word
-            sa_info.bank_name        = bank_name
-            sa_info.account_number   = account_number
-            sa_info.account_name     = account_name
-            sa_info.bvn              = bvn
-            sa_info.save()
-            StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
-
-            if int(loan_amount) <= sa_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
-                                        loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
+            try:
+                sa_info = SalaryEarners.objects.get(user = user_obj)
+            except ObjectDoesNotExist:
+                return HttpResponse('Oops, You didn\'t specify any Income')
             else:
-                return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+                sa_info.occupation       = occupation
+                sa_info.employment_status= employment_status
+                sa_info.employer_name    = employer_name
+                sa_info.work_duration    = work_duration
+                sa_info.office_address   = office_address
+                sa_info.official_email   = official_email
+                sa_info.monthly_salary_word=monthly_salary_word
+                sa_info.bank_name        = bank_name
+                sa_info.account_number   = account_number
+                sa_info.account_name     = account_name
+                sa_info.bvn              = bvn
+                sa_info.save()
+                StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
-        print('Loan Application Successful')
-        return redirect('initiate_card_first_transaction',id=id)
+                if int(loan_amount) <= sa_info.loan_eligible:
+                    LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                                            loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
+                else:
+                    return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+                return redirect('initiate_card_first_transaction',id=id)
     return render(request, 'loan/stallion_smart_form.html')
 
 

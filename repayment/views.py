@@ -4,6 +4,7 @@ from .models import PayStackDetails
 from loans.models import LoanAccount
 from accounts.models import User
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
 from datetime import date, timedelta
 from django.db.models import Q
 from django.http import HttpResponse
@@ -58,24 +59,28 @@ def verify_card_payment(request):
 
 
 def make_payment(request, id):
-    obj = RepaymentAccount.objects.get(user_loan__user = id)
-    user = get_object_or_404(User, pk=id)
-    response = None
 
-    if request.method == "POST":
-        paid_amount = request.POST.get('amount')
-        if paid_amount:
-            #create ref code
-            REF_LENGTH = 16
-            ref = ''.join([random.choice(string.ascii_lowercase + string.digits) for _ in range(REF_LENGTH)])
-            response = Transaction.initialize(reference=ref, amount=paid_amount, email=user.email, callback_url = 'http://127.0.0.1:8000/repayment/success')
-            if response:
-                 #import pdb; pdb.set_trace()
-                return redirect(response['data'].get('authorization_url'))
+    try:
+        repayment_obj = RepaymentAccount.objects.get(user_loan__user = id)
+        user = User.objects.get(pk=id)
+        paystack= PayStackDetails.objects.get(user__id = id)
+    except ObjectDoesNotExist:
+         pass
+    else:
+        if request.method == "POST":
+            paid_amount = request.POST.get('amount')
+            if paid_amount:
+                #create ref code
+                REF_LENGTH = 16
+                ref = ''.join([random.choice(string.ascii_lowercase + string.digits) for _ in range(REF_LENGTH)])
+                response = Transaction.charge(reference=ref, authorization_code=paystack.auth_code,
+                                             amount=paid_amount, email=user.email)
+                if response:
+                    #claculate the loan still owing
+                    repayment_obj.loan_owed = float(repayment_obj.loan_owed) -  float(response['data'].get('amount'))
 
-            obj.loan_owed = float(obj.loan_owed) -  float(paid_amount)
-            obj.paid_amount = float(obj.paid_amount) - float(paid_amount)
-            obj.save()
+                    repayment_obj.paid_amount = float(repayment_obj.paid_amount) - float(paid_amount)
+                    repayment_obj.save()
 
     
         '''
@@ -107,7 +112,7 @@ def make_payment(request, id):
         return monthly_repayment * (rate/100)
 
 '''
-    return render(request,'payment.html',{'repayment_details':obj, 'res':response})
+    return render(request,'payment.html',{'repayment_details':repayment_obj})
     
 '''
 def loan_disbursement_loan(request):
