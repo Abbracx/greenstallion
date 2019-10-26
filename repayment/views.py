@@ -78,8 +78,7 @@ def make_payment(request, id):
                 if response:
                     #claculate the loan still owing
                     repayment_obj.loan_owed = float(repayment_obj.loan_owed) -  float(response['data'].get('amount'))
-
-                    repayment_obj.paid_amount = float(repayment_obj.paid_amount) - float(paid_amount)
+                    repayment_obj.paid_amount = float(repayment_obj.paid_amount) + float(response['data'].get('amount'))
                     repayment_obj.save()
 
     

@@ -359,55 +359,56 @@ def stallion_advance_loan(request, id):
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
             return redirect('initiate_card_first_transaction', id=id)
-    return render(request, 'loan/stallion_advance_form.html',{'user_obj':user_obj})
+    
+    return render(request, 'loan/stallion_advance_form.html',{'successful_submit': True, 'eligible_loan':eligible_loan})
 
 @login_required
 def stallion_allowee_loan(request, id):
 
     user_obj = get_object_or_404(User, pk=id)
+    co_info = Corpers.objects.get(user = user_obj)
     user_has_loan = LoanAccount.objects.filter(pk=id)
-
+    
+    eligible_loan = co_info.loan_eligible
+    
     if user_has_loan.exists():
         return HttpResponse('sorry you have pending loans not paid')
     else:
         if request.method == "POST":
             
             state_code      = request.POST.get('state_code')
-            nysc_id         = request.POST.get('nysc_id', "")
+            nysc_id         = request.POST.get('nysc_id')
             validity_date   = request.POST.get('validity_date')
-            lga             = request.POST.get('lga', "")
+            lga             = request.POST.get('lga')
             bank_name       = request.POST.get('bank_name')
             account_number  = request.POST.get('account_number')
             account_name    = request.POST.get('account_name')
             bvn             = request.POST.get('bvn')
             loan_amount     = request.POST.get('loan_amount')
-            loan_tenure      = request.POST.get('loan_tenure', "")
+            loan_tenure      = request.POST.get('loan_tenure')
             purpose_of_loan = request.POST.get('purpose_of_loan')
             package_list    = request.POST.get('package_list')
 
-            try:
-                co_info = Corpers.objects.get(user = user_obj)
-            except ObjectDoesNotExist:
-                return HttpResponse('Oops, You didn\'t specify any Income')
-            else:
-                co_info.state_code    = state_code
-                co_info.nysc_id       = nysc_id
-                co_info.validity_date = validity_date
-                co_info.lga           = lga
-                co_info.bank_name     = bank_name
-                co_info.account_number= account_number
-                co_info.account_name  = account_name
-                co_info.bvn           = bvn 
-                co_info.save()
-                StallionAllowee.objects.create(corper=co_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
+    
+            co_info.state_code    = state_code
+            co_info.nysc_id       = nysc_id
+            co_info.validity_date = validity_date
+            co_info.lga           = lga
+            co_info.bank_name     = bank_name
+            co_info.account_number= account_number
+            co_info.account_name  = account_name
+            co_info.bvn           = bvn 
+            co_info.save()
+            StallionAllowee.objects.create(corper=co_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
-                if int(loan_amount) <= co_info.loan_eligible:
-                    LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
-                                            loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
-                else:
-                    return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
-                return redirect('initiate_card_first_transaction', id=id)
-    return render(request, 'loan/stallion_allowee_form.html')
+            if int(loan_amount) <= co_info.loan_eligible:
+                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                                        loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
+            else:
+                return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
+            return redirect('initiate_card_first_transaction', id=id)
+        
+    return render(request, 'loan/stallion_allowee_form.html', {'successful_submit': True, 'eligible_loan':eligible_loan})
 
 @login_required
 def stallion_support_loan(request, id):
@@ -469,7 +470,7 @@ def stallion_support_loan(request, id):
                 else:
                     return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
                 return redirect('initiate_card_first_transaction',id=id)
-    return render(request, 'loan/stallion_support_form.html')
+    return render(request, 'loan/stallion_support_form.html', {'successful_submit': True, 'eligible_loan':eligible_loan})
 
 @login_required
 def stallion_fees_loan(request, id):
@@ -528,7 +529,7 @@ def stallion_fees_loan(request, id):
                 else:
                     return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
                 return redirect('initiate_card_first_transaction',id=id)
-    return render(request, 'loan/stallion_fees_form.html')
+    return render(request, 'loan/stallion_fees_form.html', {'successful_submit': True, 'eligible_loan':eligible_loan})
 
 @login_required
 def stallion_loans_loan(request, id):
@@ -581,7 +582,7 @@ def stallion_loans_loan(request, id):
                 else:
                     return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
                 return redirect('initiate_card_first_transaction',id=id)
-    return render(request, 'loan/stallion_loans_form.html')
+    return render(request, 'loan/stallion_loans_form.html', {'successful_submit': True, 'eligible_loan':eligible_loan})
 
 @login_required
 def stallion_smart_loan(request, id):
@@ -634,7 +635,7 @@ def stallion_smart_loan(request, id):
                 else:
                     return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
                 return redirect('initiate_card_first_transaction',id=id)
-    return render(request, 'loan/stallion_smart_form.html')
+    return render(request, 'loan/stallion_smart_form.html', {'successful_submit': True, 'eligible_loan':eligible_loan})
 
 
 #approval part starts here

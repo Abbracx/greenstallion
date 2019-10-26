@@ -38,18 +38,23 @@
    
                                 <br>
                                 <br>
-                                <form action = "{% url 'process_eligible_loan' user.id %}" method = 'POST'>
+                                <form action = "{% url 'process_eligible_loan' user.id %}" method ='POST'>
                                     {% csrf_token %}
                                     <div class="form-group has-feedback has-feedback-left">
                                         <input type="text" name="monthly_income" class="form-control" placeholder=" Enter your income or monthly turnover or salary" value="" required>
                                         <div class="form-control-feedback">
-                                            <i class="icon-envelop text-muted mb-3"></i>
+                                            
                                         </div>
                                     </div>
                                     <input type="hidden" id="username" name="username" value="{{user_loan_details.user.username}}">    
-                                    <button type="submit" class="btn btn-primary" > Next
-                                        <i class="icon-arrow-right14 position-right"></i></button>
+                                    <!-- Button trigger modal and submits form -->
+                                    <button type="submit" class="btn btn-primary" >
+                                            Next
+                                            <i class="icon-arrow-right14 position-right"></i>
+                                    </button>
                                 </form>
+                            
+
                             <!-- /.panel-body -->
                             <div class="panel-footer">
                                 <div class="heading-elements">
