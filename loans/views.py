@@ -42,8 +42,8 @@ def borrower_data(request):
 
    # all_borrowers = User.objects.filter(id__in = all_models)
     #import pdb; pdb.set_trace()
-    users = LoanAccount.objects.all()
-    return render(request, 'borrower/data.html', {"users": users})
+    
+    return render(request, 'dashboard.html', {"total_borrowers": total_borrowers})
 
 @login_required
 def borrower_pending(request):

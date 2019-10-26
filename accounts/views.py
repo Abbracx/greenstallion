@@ -5,6 +5,7 @@ from .models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Profile
 from .models import user_create
+from loans.models import LoanAccount
 
 
 
@@ -94,7 +95,9 @@ def login(request):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    loans_released = LoanAccount.objects.filter(loan_disbursement=True).values()
+    total_borrowers = LoanAccount.objects.filter(loan_approval=True).count()
+    return render(request, 'dashboard.html', {"total_borrowers": total_borrowers})
 
 #users part starts here
 
