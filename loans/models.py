@@ -147,15 +147,21 @@ class StallionSupport(models.Model):
     loan_amount         = models.IntegerField(null=True)
     purpose_of_loan     = models.TextField(null=True)
 
+
+class Document (models.Model):
+    bank_statement = models.FileField('upload a valid bank statement',upload_to='documents/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
    
 
 class LoanAccount (models.Model):
     user                = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.PROTECT)
+    bank_statement      = models.ForeignKey(Document, on_delete=models.CASCADE, null=True)
     user_category       = models.CharField(max_length=200, null=True, blank=True)
     total_disbursable   = models.DecimalField(max_digits=15, decimal_places=3, default=0)
     total_payable       = models.DecimalField(max_digits=15, decimal_places=3, default=0)
     processing_fee_amount= models.DecimalField(max_digits=15, decimal_places=3, default=0)
     loan_amount         = models.IntegerField(null=True)
+    monthly_salary      = models.IntegerField(null=True)
     purpose_of_loan     = models.TextField(null=True)
     loan_tenure         = models.CharField(max_length=100, null=True)
     charged_loan_interest= models.DecimalField(max_digits=15, decimal_places=3, default=0)
@@ -164,7 +170,7 @@ class LoanAccount (models.Model):
     loan_disbursement   = models.NullBooleanField()
     loan_repayment      = models.BooleanField(default=False)
     disbursement_date   = models.DateField(null=True)
-    
+
 
     def __str__(self):
         return "Name: {0} {1}\nCategory: {2}\nPakage: {3}".format(self.user.first_name,self.user.last_name,self.user_category,self.package_list,)

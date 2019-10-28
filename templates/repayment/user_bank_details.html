@@ -1,0 +1,54 @@
+ {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Bank-Statement
+                            </h4>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'dashboard' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active">Bank Statement
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                    <section class="">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"> Upload Bank Staement </h6>
+
+                                <div class="heading-elements">
+
+                                </div>
+                            </div>
+                            <!-- /.panel-body -->
+                            <div class="panel-body">
+                               
+                                <form action="{% url 'user_bank_statement' user.id %}" method="POST", enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{form.as_p}}
+                                    <button type="submit" class="btn btn-primary pull-right">Upload File</button>
+                                </form>
+                                
+                            </div>
+                            <!-- /.panel-footer -->
+                            <div class="panel-footer">
+                                <div class="heading-elements">
+                                    
+                                </div>
+                        </div>
+                        <!-- /.box -->
+                    </section>
+ {% endblock content %}

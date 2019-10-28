@@ -20,6 +20,8 @@ urlpatterns = [
 
     #borrower starts here
     path('loan-details/data/<int:id>', views.loan_detail, name = 'loan_detail'),
+    path('user-bank-statement/<int:id>', views.user_bank_statement, name = 'user_bank_statement'),
+
     path('borrower/data-active=0', views.borrower_pending, name = 'borrower_pending'),
     path('borrower/create', views.borrower_create, name = 'borrower_create'),
     path('borrower/group/data', views.borrower_group_data, name = 'borrower_group_data'),

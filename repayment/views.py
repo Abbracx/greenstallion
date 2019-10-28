@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from .models import RepaymentAccount
+from .models import PayStackDetails
 from loans.models import LoanAccount
 from accounts.models import User
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
 from datetime import date, timedelta
 from django.db.models import Q
-from django.http import 
+from django.http import HttpResponse
 from paystackapi.transaction import Transaction
 import string
 import random
@@ -21,19 +23,67 @@ def client_repayment_history(request, id):
 
     return render(request, 'repayment/client_data.html', {'history': history})
 
+def initiate_card_first_transaction(request, id):
+
+    user = get_object_or_404(User, pk=id)
+    response = None
+    VERIFICATION_AMOUNT = 1000
+    REF_LENGTH = 16
+
+    if user.is_active:
+        ref = ''.join([random.choice(string.ascii_lowercase + string.digits) 
+                        for _ in range(REF_LENGTH)])
+        response = Transaction.initialize(reference=ref, amount=VERIFICATION_AMOUNT, email=user.email, callback_url='http://127.0.0.1:8000/repayment/card-verified')
+        if response:
+            return redirect(response['data'].get('authorization_url'))
+        else:
+            return HttpResponse('Oops! Something bad happened.')
+    
+        
+def verify_card_payment(request):
+    
+    reference  = request.GET['reference']
+    
+    verify_transaction = Transaction.verify(reference=reference)
+    auth_code          = verify_transaction['data']['authorization'].get('authorization_code')
+    signature_code     = verify_transaction['data']['authorization'].get('signature')
+    is_reusable        = verify_transaction['data']['authorization'].get('reusable')
+
+    if is_reusable:
+        PayStackDetails.objects.create(auth_code= auth_code, 
+                                       signature_code= signature_code,
+                                       user= request.user)
+        return redirect('user_bank_statement', request.user.id)
+    return redirect('apply_loan', request.user.id)
+        
+
 
 def make_payment(request, id):
-    obj = RepaymentAccount.objects.get(user_loan__user = id)
-    user = 
-    
-    if request.method == "POST":
-        paid_amount = request.POST.get('amount')
-        
-        obj.loan_owed = float(obj.loan_owed) - float(paid_amount)
-        obj.paid_amount = float(obj.paid_amount) - float(paid_amount)
-        obj.save()
 
-    
+    try:
+        repayment_obj = RepaymentAccount.objects.get(user_loan__user = id)
+        user = User.objects.get(pk=id)
+        paystack= PayStackDetails.objects.get(user__id = id)
+    except ObjectDoesNotExist:
+         pass
+    else:
+        if request.method == "POST":
+            paid_amount = request.POST.get('amount')
+            if paid_amount:
+                #create ref code
+                REF_LENGTH = 16
+                ref = ''.join([random.choice(string.ascii_lowercase + string.digits) for _ in range(REF_LENGTH)])
+                response = Transaction.charge(reference=ref, authorization_code=paystack.auth_code,
+                                             amount=paid_amount, email=user.email)
+                if response['status'] == True:
+                    #claculate the loan still owing
+                    repayment_obj.loan_owed = float(repayment_obj.loan_owed) -  float(response['data'].get('amount'))
+                    repayment_obj.paid_amount = float(repayment_obj.paid_amount) + float(response['data'].get('amount'))
+                    repayment_obj.save()
+                    return render(request,'payment.html',{'is_paid':response['status'],'amount':response['data'].get('amount')})
+
+                else:
+                    return render(request,'payment.html',{'is_paid':response['status']})
         '''
         if obj.loan_owed is > 0:
             if not obj:
@@ -63,7 +113,7 @@ def make_payment(request, id):
         return monthly_repayment * (rate/100)
 
 '''
-    return render(request,'payment.html',{'repayment_details':obj})
+    return render(request,'payment.html',{'repayment_details':repayment_obj})
     
 '''
 def loan_disbursement_loan(request):

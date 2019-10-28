@@ -5,7 +5,8 @@ from .models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Profile
 from .models import user_create
-
+from loans.models import LoanAccount
+from repayment.models import RepaymentAccount
 
 
 # Create your views here.
@@ -94,7 +95,26 @@ def login(request):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    loans_released = LoanAccount.objects.filter(loan_disbursement=True).values('loan_amount')
+    total_borrowers = LoanAccount.objects.filter(loan_approval=True).count()
+    paid_amounts = RepaymentAccount.objects.filter(applied=True).values('paid_amount')
+
+    #caalculate loans released
+    sum_of_loans = 0
+    for amount in loans_released:
+        sum_of_loans += amount.get('loan_amount')
+
+    sum_of_paid_amount = 0
+    for amount in paid_amounts:
+        sum_of_paid_amount = amount.get('paid_amount')
+
+    #calculate total borrowers
+    total_borrowers = LoanAccount.objects.filter(loan_approval=True).count()
+
+
+    return render(request, 'dashboard.html', {"total_borrowers": total_borrowers, 
+                                             'sum_of_loan':sum_of_loans,
+                                             'sum_of_paid_amount': sum_of_paid_amount})
 
 #users part starts here
 

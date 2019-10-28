@@ -44,8 +44,7 @@
                                             <th>Status</th>
                                             <th>Bank Statement</th>
                                             <th>Category</th>
-                                            <th>Bank Name</th>
-                                            <th>BVN</th>
+                                            
                                         </tr>
                                     </thead>
                         {% for loan in full_details %}
@@ -70,7 +69,8 @@
                             <span class="label label-success">Approved</span>
                             {% endif %}
                         </td>
-                        <td>{{loan.bank_statement}}</td>
+                        <td><a class="btn btn-primary" href="{{loan.bank_statement.bank_statement.url}}" role="button">Click to download</a></td> 
+                        
                         <td>{{loan.user_category}}</td>
                         <td>{{loan.bank_name}}</td>
                         <td>{{loan.bvn}}</td>

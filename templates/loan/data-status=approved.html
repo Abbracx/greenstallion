@@ -62,16 +62,16 @@
                         <td></td>
                         <td>{{loan_details.user.first_name}} {{loan_details.user.last_name}}</td>
                         <td>{{loan_details.loan_amount}}</td>
-                        <td>{{loan_details.bank_statement}}</td>
+                        <td><a class="btn btn-primary" href="{{loan.bank_statement.bank_statement.url}}" role="button">Click to download</a></td> 
                         <td>{{loan_details.user_category}}</td>
                         <td>{{loan_details.package_list}}</td>
-                        <td>{{loan_details.monthly_income}}</td>
+                        <td>{{loan_details.monthly_salary}}</td>
                         <td>
                             <div class="form-group has-feedback has-feedback-left">
                                 <label for="repayment_date"></label>
-                                    <input type="text" name="repayment_date" class="form-control" id="repayment_date" required />
+                                    <input type="date" name="repayment_date" class="form-control" id="repayment_date" required />
                             <div class="form-control-feedback">
-                                <i class="icon-envelop text-muted mb-3"></i>
+                                
                             </div>
                         </td>
                         <input type="hidden" id="username" name="username" value="{{loan_details.user.username}}">
