@@ -82,7 +82,10 @@ def login(request):
             if next_url:
                 return HttpResponseRedirect(next_url)
             else:
-                return redirect('dashboard')
+                if user.role != 'CL':
+                    return redirect('dashboard')
+                else:
+                    return redirect('dashboard_client')
         else:
             messages.info(request, 'invalid credentials')
             return redirect('login')
@@ -113,6 +116,28 @@ def dashboard(request):
 
 
     return render(request, 'dashboard.html', {"total_borrowers": total_borrowers, 
+                                             'sum_of_loan':sum_of_loans,
+                                             'sum_of_paid_amount': sum_of_paid_amount})
+                    
+def dashboard_client(request):
+    loans_released = LoanAccount.objects.filter(loan_disbursement=True).values('loan_amount')
+    total_borrowers = LoanAccount.objects.filter(loan_approval=True).count()
+    paid_amounts = RepaymentAccount.objects.filter(applied=True).values('paid_amount')
+
+    #caalculate loans released
+    sum_of_loans = 0
+    for amount in loans_released:
+        sum_of_loans += amount.get('loan_amount')
+
+    sum_of_paid_amount = 0
+    for amount in paid_amounts:
+        sum_of_paid_amount = amount.get('paid_amount')
+
+    #calculate total borrowers
+    total_borrowers = LoanAccount.objects.filter(loan_approval=True).count()
+
+
+    return render(request, 'dashboard-client.html', {"total_borrowers": total_borrowers, 
                                              'sum_of_loan':sum_of_loans,
                                              'sum_of_paid_amount': sum_of_paid_amount})
 

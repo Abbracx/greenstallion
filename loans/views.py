@@ -78,13 +78,13 @@ def loan_detail(request, id):
     
     user_loan_details = None
     user_status = {}
+    cat_details = None
     try:
         user_loan_details = LoanAccount.objects.get(user__id=id)
     except ObjectDoesNotExist:
         return HttpResponse(' No Loans Applied ')
     else:
 
-        cat_details = None
         try:
             if user_loan_details.user_category == "SAE":
                 cat_details = get_object_or_404(SalaryEarners, user__id=id)

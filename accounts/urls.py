@@ -20,6 +20,7 @@ from . import views
 urlpatterns = [
 
     path('register/', views.register, name = 'register'),
+    path('dashboard-client', views.dashboard_client, name ='dashboard_client'),
     path('dashboard', views.dashboard, name ='dashboard'),
     path('', views.login, name = 'login'),
     path('logout', views.logout, name='logout'),

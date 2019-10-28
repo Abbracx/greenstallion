@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+      <div class="page-header page-header-default">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
+                                -
+                                Dashboard
+                            </h4>
+                            <a class="heading-elements-toggle"><i class="icon-more"></i></a>
+                        </div>
+                        <div class="heading-elements">
+                            <div class="heading-btn-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href=""><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active"> Dashboard
+                            </li>
+                        </ul>
+                    </div>
+      </div>
+                <!-- /page header -->
+                    <section class="">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="panel panel-body bg-blue-400 has-bg-image">
+                                    <div class="media no-margin">
+                                        <div class="media-body">
+                                            <h3 class="no-margin">{{total_borrowers}}</h3>
+                                            <span class="text-uppercase text-size-mini">Loan Status</span>
+                                        </div>
+
+                                        <div class="media-right media-middle">
+                                            <i class="icon-users4 icon-3x opacity-75"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="panel panel-body bg-indigo-400 has-bg-image">
+                                    <div class="media no-margin">
+                                        <div class="media-body">
+                                            <h3 class="no-margin"> &#8358;{{sum_of_loan}} </h3>
+                                            <span class="text-uppercase text-size-mini">Loan</span>
+                                        </div>
+                                        <div class="media-right media-middle">
+                                            <i class="icon-drawer-out icon-3x opacity-75"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="panel panel-body bg-success-400 has-bg-image">
+                                    <div class="media no-margin">
+                                        <div class="media-body">
+                                            <h3 class="no-margin"> &#8358;{{sum_of_paid_amount}} </h3>
+                                            <span class="text-uppercase text-size-mini">Payments</span>
+                                        </div>
+                                        <div class="media-right media-middle">
+                                            <i class="icon-enter6 icon-3x opacity-75"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="panel panel-body bg-danger-400 has-bg-image">
+                                    <div class="media no-margin">
+                                        <div class="media-body">
+                                            <h3 class="no-margin"> &#8358;0.00 </h3>
+                                            <span class="text-uppercase text-size-mini">Due Amount</span>
+                                        </div>
+                                        <div class="media-right media-middle">
+                                            <i class="icon-pen-minus icon-3x opacity-75"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+{% endblock content %}
