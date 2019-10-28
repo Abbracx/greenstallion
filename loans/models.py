@@ -161,6 +161,7 @@ class LoanAccount (models.Model):
     total_payable       = models.DecimalField(max_digits=15, decimal_places=3, default=0)
     processing_fee_amount= models.DecimalField(max_digits=15, decimal_places=3, default=0)
     loan_amount         = models.IntegerField(null=True)
+    monthly_salary      = models.IntegerField(null=True)
     purpose_of_loan     = models.TextField(null=True)
     loan_tenure         = models.CharField(max_length=100, null=True)
     charged_loan_interest= models.DecimalField(max_digits=15, decimal_places=3, default=0)

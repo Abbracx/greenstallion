@@ -190,7 +190,8 @@ def loan_data(request, id):
 
 @login_required
 def loan_pending(request):
-
+    
+    
     if request.method == 'POST':
         admin_decision = request.POST.get('action')
         username = request.POST.get('username')
@@ -352,7 +353,7 @@ def stallion_advance_loan(request, id):
         
                 
             if int(loan_amount) <= sa_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                LoanAccount.objects.create(user=user_obj, monthly_salary=sa_info.monthly_salary, user_category=user_obj.category, package_list=package_list, 
                                             loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
@@ -400,7 +401,7 @@ def stallion_allowee_loan(request, id):
             StallionAllowee.objects.create(corper=co_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
             if int(loan_amount) <= co_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                LoanAccount.objects.create(user=user_obj, monthly_salary=co_info.monthly_salary, user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
@@ -457,10 +458,10 @@ def stallion_support_loan(request, id):
             bo_info.source_of_funds        = source_of_funds
             bo_info.years_in_business      = years_in_business
             bo_info.save()
-            StallionSupport.objects.create(business_owner=bo_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
+            StallionSupport.objects.create(business_owner=bo_info,  loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
             if int(loan_amount) <= bo_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                LoanAccount.objects.create(user=user_obj, monthly_salary=bo_info.monthly_salary,user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount, loan_tenure=loan_tenure,purpose_of_loan=purpose_of_loan)
 
             else:
@@ -518,7 +519,7 @@ def stallion_fees_loan(request, id):
             StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
             if int(loan_amount) <= sa_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                LoanAccount.objects.create(user=user_obj, monthly_salary=sa_info.monthly_salary,user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount ,loan_tenure=loan_tenure,purpose_of_loan=purpose_of_loan)
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
@@ -568,7 +569,7 @@ def stallion_loans_loan(request, id):
             StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
             if int(loan_amount) <= sa_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                LoanAccount.objects.create(user=user_obj,  monthly_salary=sa_info.monthly_salary,user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')
@@ -619,7 +620,7 @@ def stallion_smart_loan(request, id):
             StallionAdvance.objects.create(salary_earner=sa_info, loan_amount=loan_amount,purpose_of_loan=purpose_of_loan)
 
             if int(loan_amount) <= sa_info.loan_eligible:
-                LoanAccount.objects.create(user=user_obj, user_category=user_obj.category, package_list=package_list, 
+                LoanAccount.objects.create(user=user_obj, monthly_salary=sa_info.monthly_salary,user_category=user_obj.category, package_list=package_list, 
                                         loan_amount=loan_amount,loan_tenure=loan_tenure, purpose_of_loan=purpose_of_loan)
             else:
                 return HttpResponse(' Invalid tenure input and/or eligible loan amount ')

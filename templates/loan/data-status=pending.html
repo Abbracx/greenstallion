@@ -64,10 +64,10 @@
                                     <td></td>
                             <td>{{loan.user.first_name}} {{loan.user.last_name}}</td>
                             <td>{{loan.loan_amount}}</td>
-                            <td>{{loan.bank_statement}}</td>
+                            <td><a class="btn btn-primary" href="{{loan.bank_statement.bank_statement.url}}" role="button">Click to download</a></td> 
                             <td>{{loan.user_category}}</td>
                             <td>{{loan.package_list}}</td>
-                            <td>{{loan.monthly_income}}</td>
+                            <td>{{loan.monthly_salary}}</td>
                             <input type="hidden" id="username" name="username" value="{{loan.user.username}}">
                             <td class="col-sm-2">
                                             <select required="required" id="action"
